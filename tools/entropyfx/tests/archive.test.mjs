@@ -33,7 +33,7 @@ const recipe = `${JSON.stringify({
   schemaVersion: 1,
   seed: 1,
   source: 'source.png',
-  timeline: { frameDurationMs: 40, frames: 25 },
+  timeline: { frameRate: 25, frames: 25 },
 }, null, 2)}\n`;
 
 const project = () => ({

@@ -4,7 +4,7 @@
   "source": "source.png",
   "timeline": {
     "frames": 150,
-    "frameDurationMs": 40
+    "frameRate": 25
   },
   "output": {
     "width": 1152,

@@ -45,6 +45,8 @@ test('packs, validates, inspects, and unpacks one portable project', async () =>
     assert.equal(inspected.info.title, 'Minimal');
     assert.deepEqual(inspected.outputSettings, { bitrate: 6000000, format: 'mp4_h264' });
     assert.equal(inspected.recipe.key, 'minimal_pulse');
+    assert.equal(inspected.recipe.durationSeconds, 6);
+    assert.equal(inspected.recipe.frameRate, 25);
     await execute(process.execPath, [tool, 'unpack', projectPath, '--out', unpacked]);
     assert.deepEqual(await readFile(path.join(unpacked, 'source.png')), await readFile(sourcePath));
     assert.deepEqual(JSON.parse(await readFile(path.join(unpacked, 'recipe.json'), 'utf8')), recipe);

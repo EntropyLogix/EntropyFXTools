@@ -260,8 +260,9 @@ async function inspect(options, positional, contracts) {
     })),
     outputSettings: project.output,
     recipe: {
-      durationMs: recipe.timeline.frames * recipe.timeline.frameDurationMs,
+      durationSeconds: recipe.timeline.frames / recipe.timeline.frameRate,
       effects: recipe.primitives.map((primitive) => primitive.type),
+      frameRate: recipe.timeline.frameRate,
       frames: recipe.timeline.frames,
       key: recipe.key,
       output: recipe.output,

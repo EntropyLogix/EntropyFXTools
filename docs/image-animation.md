@@ -25,8 +25,8 @@ an explicit semantic meaning such as preserving the source color.
 
 The layer order in `primitives` is the composition order. Keep the source image
 name in `recipe.source`, normalized positions in the `0..1` image space, and a
-whole number of effect cycles in the complete loop. `timeline.frames` multiplied
-by `timeline.frameDurationMs` is the loop duration in milliseconds.
+whole number of effect cycles in the complete loop. `timeline.frames` divided
+by `timeline.frameRate` is the loop duration in seconds.
 
 Protected areas in `effectMasks` exclude their image area from effects. Version
 1 supports explicit `circle` and `rectangle` shapes.

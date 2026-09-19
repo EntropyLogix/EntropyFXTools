@@ -32,18 +32,18 @@
       "properties": {
         "frames": {
           "maximum": 1000000,
-          "minimum": 1,
+          "minimum": 2,
           "type": "integer"
         },
-        "frameDurationMs": {
-          "maximum": 1000000,
+        "frameRate": {
+          "maximum": 120,
           "minimum": 1,
           "type": "integer"
         }
       },
       "required": [
         "frames",
-        "frameDurationMs"
+        "frameRate"
       ],
       "type": "object"
     },
