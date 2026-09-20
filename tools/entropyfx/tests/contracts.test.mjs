@@ -15,6 +15,8 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
   assert.equal(contracts.recipeSchema.properties.elements.items.oneOf.length, 5);
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
+  assert.equal(spriteParticles.template.particleCount, 8);
+  assert.equal('density' in spriteParticles.template, false);
   assert.equal(spriteParticles.template.frameSelection, 'random_per_particle');
   assert.equal(spriteParticles.template.sheetColumns, 2);
   assert.equal(spriteParticles.template.sheetRows, 1);

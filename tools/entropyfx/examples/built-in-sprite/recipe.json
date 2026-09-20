@@ -24,7 +24,7 @@
       "cycles": 1,
       "phase": 0,
       "spriteImage": "builtin:sprites/v1/fireflies_atlas",
-      "density": 8,
+      "particleCount": 8,
       "emitterShape": "box",
       "emitterInnerRadius": 0,
       "emitterOuterRadius": 0.5,

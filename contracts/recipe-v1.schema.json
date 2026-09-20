@@ -8920,11 +8920,11 @@
                 "type": "string",
                 "description": "Verified shared PNG containing one particle sprite or a regular sprite sheet. Selecting it also applies the saved sheet layout."
               },
-              "density": {
+              "particleCount": {
                 "type": "integer",
                 "minimum": 1,
                 "maximum": 25000,
-                "description": "Number of deterministic particles. Large populations increase render time and memory use."
+                "description": "Total simulated particles. In any given frame, some may be fading in, fading out, or outside the visible canvas."
               },
               "emitterShape": {
                 "minLength": 1,
@@ -9102,7 +9102,7 @@
               "color": {
                 "minLength": 1,
                 "type": "string",
-                "description": "Explicit effect color stored in the project.",
+                "description": "Tint multiplied with every sprite frame; white preserves the sprite’s original colors.",
                 "pattern": "^#[0-9A-Fa-f]{6}$"
               },
               "colorOverLife": {
@@ -9182,7 +9182,7 @@
               "cycles",
               "phase",
               "spriteImage",
-              "density",
+              "particleCount",
               "emitterShape",
               "emitterInnerRadius",
               "emitterOuterRadius",
@@ -9502,10 +9502,16 @@
                 "minLength": 1,
                 "type": "string",
                 "enum": [
-                  "solid",
-                  "source"
+                  "original_image",
+                  "solid_color"
                 ],
-                "description": "Fills empty character pixels with one solid color or preserves the image entering the effect."
+                "description": "Keeps the original image behind the characters or fills the background with one color."
+              },
+              "backgroundDim": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Darkens the original image behind the characters; 0 preserves it and 1 makes it black."
               },
               "backgroundColor": {
                 "minLength": 1,
@@ -9543,6 +9549,7 @@
               "invert",
               "colorMode",
               "backgroundMode",
+              "backgroundDim",
               "backgroundColor",
               "foregroundColor",
               "foregroundColorDark",
@@ -9550,7 +9557,7 @@
             ],
             "type": "object",
             "title": "ASCII art",
-            "description": "Rebuilds image luminance with a built-in ordered character style and explicit foreground and background coloring."
+            "description": "Overlays a built-in ordered character style derived from image luminance."
           },
           {
             "additionalProperties": false,

@@ -2264,7 +2264,7 @@
         "cycles": 1,
         "phase": 0,
         "spriteImage": "sprite.png",
-        "density": 8,
+        "particleCount": 8,
         "emitterShape": "box",
         "emitterInnerRadius": 0,
         "emitterOuterRadius": 0.5,
@@ -2348,7 +2348,7 @@
     {
       "group": "Color & signal",
       "label": "ASCII art",
-      "description": "Rebuilds image luminance with a built-in ordered character style and explicit foreground and background coloring.",
+      "description": "Overlays a built-in ordered character style derived from image luminance.",
       "geometry": "region",
       "template": {
         "type": "ascii_art",
@@ -2365,7 +2365,8 @@
         "characterDensity": 0.125,
         "invert": false,
         "colorMode": "solid",
-        "backgroundMode": "solid",
+        "backgroundMode": "original_image",
+        "backgroundDim": 0,
         "backgroundColor": "#000000",
         "foregroundColor": "#ffffff",
         "foregroundColorDark": "#000000",

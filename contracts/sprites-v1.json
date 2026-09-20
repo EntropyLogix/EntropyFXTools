@@ -25,7 +25,7 @@
       "id": "builtin:sprites/v1/jellyfish_sequence",
       "key": "jellyfish_sequence",
       "purpose": "Thirty-two-frame swimming cycle with a contracting bell and moving tentacles.",
-      "recommendation": "Use low density and slow upward or lateral motion for readable silhouettes.",
+      "recommendation": "Use a low particle count and slow upward or lateral motion for readable silhouettes.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -184,7 +184,7 @@
       "id": "builtin:sprites/v1/metal_fragments_atlas",
       "key": "metal_fragments_atlas",
       "purpose": "Sixteen hard-edged plate fragments for impacts, machinery, and hull damage.",
-      "recommendation": "Use random rotation and a directional burst; keep density moderate so silhouettes remain distinct.",
+      "recommendation": "Use random rotation and a directional burst; keep the particle count moderate so silhouettes remain distinct.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -204,7 +204,7 @@
       "id": "builtin:sprites/v1/electric_arcs_atlas",
       "key": "electric_arcs_atlas",
       "purpose": "Sixteen branched line variants for flickering electricity and energy faults.",
-      "recommendation": "Change random frames quickly or layer several low-density emitters for unstable arcs.",
+      "recommendation": "Change random frames quickly or layer several low-count emitters for unstable arcs.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -264,7 +264,7 @@
       "id": "builtin:sprites/v1/galactic_dust_atlas",
       "key": "galactic_dust_atlas",
       "purpose": "Sixteen soft star-dust clusters for nebula shimmer and large particle fields.",
-      "recommendation": "Use high density at very small size, additive blending, and gentle color-over-life.",
+      "recommendation": "Use a high particle count at very small size, additive blending, and gentle color-over-life.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -284,7 +284,7 @@
       "id": "builtin:sprites/v1/halos_atlas",
       "key": "halos_atlas",
       "purpose": "Sixteen elliptical ring variants for lights, lenses, shields, and portals.",
-      "recommendation": "Use low density or one instance per light source with additive blending.",
+      "recommendation": "Use a low particle count or one instance per light source with additive blending.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -564,7 +564,7 @@
       "id": "builtin:sprites/v1/rain_drops_atlas",
       "key": "rain_drops_atlas",
       "purpose": "Sixteen streak lengths and angles for layered rain and wind-driven precipitation.",
-      "recommendation": "Use box emission, one travel direction, high density, and minimal rotation variation.",
+      "recommendation": "Use box emission, one travel direction, a high particle count, and minimal rotation variation.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -604,7 +604,7 @@
       "id": "builtin:sprites/v1/birds_sequence",
       "key": "birds_sequence",
       "purpose": "Thirty-two-frame side-view wingbeat for individual birds and distant flocks.",
-      "recommendation": "Use animated playback, low density, a shared travel direction, and modest size variation.",
+      "recommendation": "Use animated playback, a low particle count, a shared travel direction, and modest size variation.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -704,7 +704,7 @@
       "id": "builtin:sprites/v1/data_circuit_sequence",
       "key": "data_circuit_sequence",
       "purpose": "Thirty-two-frame circuit trace with moving scan and illuminated nodes for digital fields and HUD particles.",
-      "recommendation": "Use animated playback with low density, additive blending, and either grid-aligned or drifting placement.",
+      "recommendation": "Use animated playback with a low particle count, additive blending, and either grid-aligned or drifting placement.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -744,7 +744,7 @@
       "id": "builtin:sprites/v1/light_beams_atlas",
       "key": "light_beams_atlas",
       "purpose": "Sixteen tapered single and grouped beams for flashlights, windows, energy emitters, and stylized shafts.",
-      "recommendation": "Use low density, emitter-angle mapping or fixed rotation, and additive blending.",
+      "recommendation": "Use a low particle count, emitter-angle mapping or fixed rotation, and additive blending.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -824,7 +824,7 @@
       "id": "builtin:sprites/v1/hearts_atlas",
       "key": "hearts_atlas",
       "purpose": "Sixteen filled and outlined heart variants for reactions, status feedback, celebrations, and stylized particles.",
-      "recommendation": "Tint per layer and use upward drift or a short radial burst with restrained density.",
+      "recommendation": "Tint per layer and use upward drift or a short radial burst with a restrained particle count.",
       "sheet": {
         "columns": 4,
         "rows": 4,
