@@ -78,6 +78,16 @@ test('documents the image fields and conditional controls from the public contra
   assert.doesNotMatch(documentation, /atlas contract/);
 });
 
+test('keeps the repository overview on the role-based image workflow', async () => {
+  const overview = await read('README.md');
+  assert.match(overview, /role-based image field/);
+  assert.match(overview, /\[image animation guide\]\(docs\/image-animation\.md\)/);
+  assert.doesNotMatch(
+    overview,
+    /fields ending in `Source`|optional authored (?:controls|parameters)|atlas contract/i,
+  );
+});
+
 test('keeps every agent instruction on the role-based image workflow', async () => {
   const files = [
     'tools/entropyfx/agents/claude/entropyfx-image-animation.md',

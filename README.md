@@ -38,8 +38,10 @@ npm run setup
 ./run/entropyfx.sh unpack project.entropyfx --out unpacked-project
 ```
 
-Pass every user-owned image referenced by an effect field ending in `Source`
-with a named input:
+Pass every user-owned image referenced by a role-based image field with a named
+input under its exact logical project path. The
+[image animation guide](docs/image-animation.md) lists every version-1 image
+field and its mode-specific rules.
 
 ```bash
 ./run/entropyfx.sh pack \
@@ -70,9 +72,10 @@ fields and omits the optional output preset.
 - [Effect catalog](contracts/effects-v1.json)
 - [Built-in sprite catalog](contracts/sprites-v1.json)
 
-The catalogs describe public behavior and complete starting templates. Optional
-authored parameters are defined by the recipe schema. The contracts do not
-contain effect implementations or built-in sprite image files.
+The catalogs describe public behavior and complete starting templates. The
+recipe schema defines required fields, types, ranges, enums, and the
+mode-specific Bokeh variants. The contracts do not contain effect
+implementations or built-in sprite image files.
 
 ## Agent integrations
 
