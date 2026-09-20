@@ -104,10 +104,27 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
     source: { name: 'source.png' },
   };
   assert.equal(validateProjectRecipe(project, contracts).key, 'firefly_field');
+  const wrongColumns = JSON.parse(spriteRecipe);
+  wrongColumns.primitives[0].sheetColumns = 2;
+  assert.throws(
+    () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongColumns) }, contracts),
+    /sheetColumns.*must equal 4/,
+  );
+  const wrongRows = JSON.parse(spriteRecipe);
+  wrongRows.primitives[0].sheetRows = 2;
+  assert.throws(
+    () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongRows) }, contracts),
+    /sheetRows.*must equal 4/,
+  );
   const custom = JSON.parse(spriteRecipe);
   custom.primitives[0].spriteImage = 'inputs/custom.png';
-  assert.throws(() => validateProjectRecipe({ ...project, recipe: JSON.stringify(custom) }, contracts),
-    /referenced project input is missing/);
+  custom.primitives[0].sheetColumns = 7;
+  custom.primitives[0].sheetRows = 3;
+  assert.equal(validateProjectRecipe({
+    ...project,
+    auxiliaryInputs: [{ name: 'inputs/custom.png' }],
+    recipe: JSON.stringify(custom),
+  }, contracts).primitives[0].sheetColumns, 7);
 });
 
 test('requires an embedded input for every image overlay element', async () => {

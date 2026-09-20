@@ -56,6 +56,22 @@ function selectedAlternative(value, alternatives) {
 }
 
 export function validateAgainstSchema(value, schema, path = 'recipe') {
+  if (schema.allOf) {
+    for (const candidate of schema.allOf)
+      validateAgainstSchema(value, candidate, path);
+  }
+  if (schema.if) {
+    let matches = true;
+    try {
+      validateAgainstSchema(value, schema.if, path);
+    } catch {
+      matches = false;
+    }
+    if (matches && schema.then)
+      validateAgainstSchema(value, schema.then, path);
+    if (!matches && schema.else)
+      validateAgainstSchema(value, schema.else, path);
+  }
   if (schema.oneOf) {
     const selected = selectedAlternative(value, schema.oneOf);
     if (selected) {
