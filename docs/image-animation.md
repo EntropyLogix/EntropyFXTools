@@ -18,10 +18,19 @@ replace visual review in EntropyLogix FX.
 Start from the complete `template` of an effect in
 [`effects-v1.json`](../contracts/effects-v1.json). Keep every template field in
 the recipe, including values that appear inactive. Recipes do not rely on hidden
-defaults, and unknown fields are rejected by the public schema. Optional
-authored controls that are not part of a starting template are listed in
-[`recipe-v1.schema.json`](../contracts/recipe-v1.schema.json); omitting one has
-an explicit semantic meaning such as preserving the source color.
+defaults, and unknown fields are rejected by the public schema. Use
+[`recipe-v1.schema.json`](../contracts/recipe-v1.schema.json) to check types,
+ranges, enum values, and mode-specific shapes; do not invent optional controls
+outside the selected catalog template.
+
+The only structurally conditional version-1 effect fields are:
+
+- `bokeh.bladeAngle`;
+- `bokeh.bladeCount`.
+
+They belong to the `bokeh` variant whose `apertureShape` is `polygon`. The
+circle variant omits both fields. Other controls may be visually inactive in a
+particular mode, but remain explicit members of their complete template.
 
 The layer order in `primitives` is the composition order. Keep the source image
 name in `recipe.source`, normalized positions in the `0..1` image space, and a
@@ -55,8 +64,15 @@ state the choice before packaging the project.
 
 ## Use images and sprites
 
-Fields ending in `Source` name project inputs. A user-owned input uses a
-normalized logical path and must be passed to `pack` with the same name:
+Effect image fields use role-based names rather than a suffix convention.
+The complete version-1 set is:
+
+- `depthMap`, `lightMask`, `lutImage`, `motionMap`;
+- `revealedImage`, `returnMap`, `ribbonImage`, `shapeImage`;
+- `spriteImage`, `targetImage`, `tileImage`, `transitionMap`, `unlitImage`.
+
+A user-owned value in one of these fields uses a normalized logical path and
+must be passed to `pack` with the same name when its effect is enabled:
 
 ```text
 npm run entropyfx -- pack \
@@ -69,19 +85,19 @@ npm run entropyfx -- pack \
 A built-in sprite uses an ID from
 [`sprites-v1.json`](../contracts/sprites-v1.json), for example
 `builtin:sprites/v1/fireflies_atlas`. Built-in sprites are versioned references
-and are not embedded. Match `sheetColumns`, `sheetRows`, and `frameSelection`
-to the catalog entry. Custom sprites are ordinary user-owned project inputs
-and are embedded once as `AST`.
+and are not embedded. Each Sprite Sheet entry owns its `sheetColumns`,
+`sheetRows`, and recommended `frameSelection`; match those catalog values.
+Custom sprites are ordinary user-owned project inputs and are embedded once as
+`AST`.
 
-The `source` of an `image_overlay` or `text` element is also a named project
-input even though the field does not end in `Source`. Pass it through `--input`
-under the exact logical name stored in the element. The CLI does not rasterize
-fonts; a text authoring integration must embed the canonical transparent image
-that corresponds to the explicit text fields. A built-in font uses one of the
-IDs in the recipe schema. A custom font uses its content-addressed
-`inputs/fonts/<sha256>-<name>.ttf`, `.otf` or `.woff2` path and must be supplied
-as a second `--input`, so the project preserves both editable text and its
-canonical raster.
+The `source` of an `image_overlay` or `text` element is likewise a named project
+input. Pass it through `--input` under the exact logical name stored in the
+element. The CLI does not rasterize fonts; a text authoring integration must
+embed the canonical transparent image that corresponds to the explicit text
+fields. A built-in font uses one of the IDs in the recipe schema. A custom font
+uses its content-addressed `inputs/fonts/<sha256>-<name>.ttf`, `.otf` or `.woff2`
+path and must be supplied as a second `--input`, so the project preserves both
+editable text and its canonical raster.
 
 ## Review
 

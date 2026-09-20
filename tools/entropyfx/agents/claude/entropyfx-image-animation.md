@@ -11,10 +11,11 @@ omitted, infer an appropriate direction from the image and state it briefly.
 
 Read `docs/image-animation.md`, select effects from `contracts/effects-v1.json`, and
 copy complete templates without removing fields. Read
-`contracts/recipe-v1.schema.json` when optional authored controls are needed.
-Use only built-in sprite IDs
-listed in `contracts/sprites-v1.json`; pass every other image referenced by a
-field ending in `Source` as a named `--input`.
+`contracts/recipe-v1.schema.json` for types, ranges, enum values, and the
+mode-specific Bokeh shape. Follow the `Use images and sprites` field list in
+the documentation. Use only built-in Sprite Sheet IDs listed in
+`contracts/sprites-v1.json`; pass every user-owned image or custom font as a
+named `--input` under its exact logical project path.
 
 Build and check the result with:
 
