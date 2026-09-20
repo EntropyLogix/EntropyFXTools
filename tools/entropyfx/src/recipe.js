@@ -260,7 +260,7 @@ export function parseAndValidateRecipe(text, recipeSchema) {
   return recipe;
 }
 
-export function referencedAuxiliaryInputs(recipe) {
+function collectReferencedAuxiliaryInputs(recipe, activeEffectsOnly) {
   const names = new Set();
   const visit = (value, field = '') => {
     if (typeof value === 'string' && auxiliarySourceFields.has(field)) {
@@ -273,8 +273,10 @@ export function referencedAuxiliaryInputs(recipe) {
     for (const [key, child] of Object.entries(value))
       visit(child, key);
   };
-  for (const primitive of recipe.primitives)
-    visit(primitive);
+  for (const primitive of recipe.primitives) {
+    if (!activeEffectsOnly || primitive.enabled)
+      visit(primitive);
+  }
   for (const element of recipe.elements) {
     visit(element);
     if (element.type === 'text'
@@ -289,6 +291,14 @@ export function referencedAuxiliaryInputs(recipe) {
   return [...names].sort();
 }
 
+export function referencedAuxiliaryInputs(recipe) {
+  return collectReferencedAuxiliaryInputs(recipe, false);
+}
+
+export function activeReferencedAuxiliaryInputs(recipe) {
+  return collectReferencedAuxiliaryInputs(recipe, true);
+}
+
 export function validateProjectRecipe(project, contracts) {
   const recipe = parseAndValidateRecipe(project.recipe, contracts.recipeSchema);
   if (recipe.source !== project.source.name)
@@ -298,17 +308,19 @@ export function validateProjectRecipe(project, contracts) {
     throw new Error('project output columns must not exceed the recipe frame count');
   const available = new Set(project.auxiliaryInputs.map((input) => input.name));
   const builtIns = new Set(contracts.sprites.sprites.map((sprite) => sprite.id));
-  for (const name of referencedAuxiliaryInputs(recipe)) {
+  const referenced = referencedAuxiliaryInputs(recipe);
+  const active = activeReferencedAuxiliaryInputs(recipe);
+  for (const name of referenced) {
     if (name.startsWith('builtin:')) {
       if (!builtIns.has(name))
         throw new Error(`${name}: built-in sprite is not in the public catalog`);
-    } else if (!available.has(name)) {
+    } else if (active.includes(name) && !available.has(name)) {
       throw new Error(`${name}: referenced project input is missing`);
     }
   }
-  const referenced = new Set(referencedAuxiliaryInputs(recipe).filter((name) => !name.startsWith('builtin:')));
+  const embedded = new Set(referenced.filter((name) => !name.startsWith('builtin:')));
   for (const name of available) {
-    if (!referenced.has(name))
+    if (!embedded.has(name))
       throw new Error(`${name}: project input is not referenced by the recipe`);
   }
   return recipe;

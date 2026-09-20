@@ -4,6 +4,7 @@ import { test } from 'node:test';
 
 import { loadContracts } from '../src/contracts.js';
 import {
+  activeReferencedAuxiliaryInputs,
   parseAndValidateRecipe,
   referencedAuxiliaryInputs,
   validateProjectRecipe,
@@ -26,6 +27,10 @@ test('validates complete public examples and all catalog templates', async () =>
 test('rejects missing, unknown, duplicate, and invalid fields', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
+  delete recipe.primitives[0].enabled;
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
+    /enabled.*required/);
+  recipe.primitives[0].enabled = true;
   delete recipe.primitives[0].phase;
   assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
     /phase.*required/);
@@ -49,6 +54,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
     color: '#c9bdd9',
     colorSource: 'custom',
     cycles: 1,
+    enabled: true,
     phase: 0.1,
     radius: 1.1,
     intensity: 0.9,
@@ -66,6 +72,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
     colorSource: 'source_pixels',
     cycles: 1,
     direction: -45,
+    enabled: true,
     length: 0.8,
     noise: 0.2,
     phase: 0,
@@ -125,6 +132,31 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
     auxiliaryInputs: [{ name: 'inputs/custom.png' }],
     recipe: JSON.stringify(custom),
   }, contracts).primitives[0].sheetColumns, 7);
+});
+
+test('does not require an auxiliary image owned only by a disabled effect', async () => {
+  const contracts = await loadContracts();
+  const recipe = JSON.parse(await example('minimal'));
+  const reveal = structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'layer_reveal').template,
+  );
+  reveal.enabled = false;
+  recipe.primitives = [reveal];
+  const project = {
+    auxiliaryInputs: [],
+    recipe: JSON.stringify(recipe),
+    source: { name: 'source.png' },
+  };
+  assert.equal(validateProjectRecipe(project, contracts).primitives[0].enabled, false);
+  assert.deepEqual(referencedAuxiliaryInputs(recipe), [reveal.revealedImage]);
+  assert.deepEqual(activeReferencedAuxiliaryInputs(recipe), []);
+  project.auxiliaryInputs.push({ name: reveal.revealedImage });
+  assert.equal(validateProjectRecipe(project, contracts).primitives[0].enabled, false);
+  project.auxiliaryInputs = [];
+  reveal.enabled = true;
+  project.recipe = JSON.stringify(recipe);
+  assert.throws(() => validateProjectRecipe(project, contracts),
+    /referenced project input is missing/);
 });
 
 test('requires an embedded input for every image overlay element', async () => {

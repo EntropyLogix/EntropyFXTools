@@ -13,7 +13,7 @@
         "format": "mp4_h264",
         "bitrate": 6000000
       },
-      "recipe": "{\n  \"schemaVersion\": 1,\n  \"key\": \"format_fixture\",\n  \"source\": \"source.png\",\n  \"timeline\": {\n    \"frames\": 25,\n    \"frameRate\": 25\n  },\n  \"output\": {\n    \"width\": 4,\n    \"height\": 3\n  },\n  \"seed\": 7,\n  \"effectMasks\": [\n    {\n      \"shape\": \"circle\",\n      \"x\": 0.5,\n      \"y\": 0.5,\n      \"radius\": 0.2,\n      \"feather\": 0.08\n    }\n  ],\n  \"primitives\": [\n    {\n      \"type\": \"brightness_pulse\",\n      \"x\": 0.5,\n      \"y\": 0.5,\n      \"radius\": 0.25,\n      \"intensity\": 1,\n      \"cycles\": 1,\n      \"phase\": 0\n    }\n  ],\n  \"elements\": []\n}\n",
+      "recipe": "{\n  \"schemaVersion\": 1,\n  \"key\": \"format_fixture\",\n  \"source\": \"source.png\",\n  \"timeline\": {\n    \"frames\": 25,\n    \"frameRate\": 25\n  },\n  \"output\": {\n    \"width\": 4,\n    \"height\": 3\n  },\n  \"seed\": 7,\n  \"effectMasks\": [\n    {\n      \"shape\": \"circle\",\n      \"x\": 0.5,\n      \"y\": 0.5,\n      \"radius\": 0.2,\n      \"feather\": 0.08\n    }\n  ],\n  \"primitives\": [\n    {\n      \"type\": \"brightness_pulse\",\n      \"enabled\": true,\n      \"x\": 0.5,\n      \"y\": 0.5,\n      \"radius\": 0.25,\n      \"intensity\": 1,\n      \"cycles\": 1,\n      \"phase\": 0\n    }\n  ],\n  \"elements\": []\n}\n",
       "source": {
         "name": "source.png",
         "mediaType": "image/png",
@@ -33,7 +33,7 @@
           "base64": "eyJ0ZXh0IjoiY29ycHVzIn0K"
         }
       ],
-      "expectedSha256": "32061a5131e9bc9c5170140f795ae4d3ff2a2fb4ce7808b650836aff42cefff3"
+      "expectedSha256": "e6590cba25a4068d802ccc2307ef9ac84019d9d66879450d374a66b9df3112f0"
     }
   ]
 }

@@ -4,6 +4,7 @@ import path from 'node:path';
 import { createProjectArchive, openProjectArchive, validateProjectPath } from './archive.js';
 import { loadContracts } from './contracts.js';
 import {
+  activeReferencedAuxiliaryInputs,
   parseAndValidateRecipe,
   referencedAuxiliaryInputs,
   validateProjectRecipe,
@@ -145,21 +146,23 @@ async function pack(options, positional, contracts) {
   const supplied = namedFiles(options.inputs, '--input');
   const builtIns = new Set(contracts.sprites.sprites.map((sprite) => sprite.id));
   const referenced = referencedAuxiliaryInputs(recipe);
+  const active = activeReferencedAuxiliaryInputs(recipe);
   for (const name of referenced.filter((candidate) => candidate.startsWith('builtin:'))) {
     if (!builtIns.has(name))
       throw new Error(`${name}: built-in sprite is not in the public catalog`);
   }
-  const required = referenced.filter((name) => !name.startsWith('builtin:'));
+  const required = active.filter((name) => !name.startsWith('builtin:'));
+  const allowed = referenced.filter((name) => !name.startsWith('builtin:'));
   const missing = required.filter((name) => !supplied.has(name));
-  const extra = [...supplied.keys()].filter((name) => !required.includes(name));
+  const extra = [...supplied.keys()].filter((name) => !allowed.includes(name));
   if (missing.length > 0)
     throw new Error(`missing --input for ${missing.join(', ')}`);
   if (extra.length > 0)
     throw new Error(`unused --input for ${extra.join(', ')}`);
   const archive = await createProjectArchive({
-    auxiliaryInputs: await Promise.all(required.map(async (name) => {
+    auxiliaryInputs: await Promise.all([...supplied].map(async ([name, filename]) => {
       validateProjectPath(name, '--input');
-      return { bytes: await readFile(supplied.get(name)), mediaType: mediaType(name), name };
+      return { bytes: await readFile(filename), mediaType: mediaType(name), name };
     })),
     info,
     optionalChunks: await Promise.all(optionalChunks(options.chunks).map(async (chunk) => ({
@@ -177,7 +180,7 @@ async function pack(options, positional, contracts) {
   });
   const output = path.resolve(options.out);
   await writeExact(output, archive, options.force);
-  process.stdout.write(`OK: ${output} · ${required.length} input(s) · ${archive.byteLength} bytes\n`);
+  process.stdout.write(`OK: ${output} · ${supplied.size} input(s) · ${archive.byteLength} bytes\n`);
 }
 
 function safeOutputPath(root, name) {

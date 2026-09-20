@@ -15,6 +15,7 @@
   "primitives": [
     {
       "type": "sprite_particles",
+      "enabled": true,
       "region": {
         "x": 0,
         "y": 0,
