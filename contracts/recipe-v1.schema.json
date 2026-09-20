@@ -303,7 +303,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "maskMode": {
                 "minLength": 1,
@@ -380,7 +380,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "maskMode": {
                 "minLength": 1,
@@ -475,7 +475,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -565,7 +565,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -654,7 +654,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -763,7 +763,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -870,7 +870,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -970,7 +970,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1042,7 +1042,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "bands": {
                 "type": "integer",
@@ -1127,7 +1127,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1217,7 +1217,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1307,7 +1307,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1397,7 +1397,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1517,7 +1517,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -1589,7 +1589,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "feather": {
                 "type": "number",
@@ -1656,7 +1656,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "feather": {
                 "type": "number",
@@ -1705,7 +1705,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -1751,7 +1751,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -1802,7 +1802,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -1843,7 +1843,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -1889,7 +1889,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -1964,7 +1964,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2061,7 +2061,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2158,7 +2158,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2255,7 +2255,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2341,7 +2341,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2432,7 +2432,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -2527,7 +2527,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -2629,7 +2629,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -2721,7 +2721,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2825,7 +2825,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -2936,7 +2936,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -3022,7 +3022,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -3117,7 +3117,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -3237,7 +3237,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -3348,7 +3348,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -3434,7 +3434,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -3528,7 +3528,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "flashDuration": {
                 "type": "number",
@@ -3642,7 +3642,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "flashDuration": {
                 "type": "number",
@@ -3723,7 +3723,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -3808,7 +3808,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -3879,7 +3879,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -3958,7 +3958,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -4048,7 +4048,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "radius": {
                 "type": "number",
@@ -4131,7 +4131,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "radius": {
                 "type": "number",
@@ -4196,7 +4196,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -4274,7 +4274,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -4364,7 +4364,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "color": {
                 "minLength": 1,
@@ -4447,7 +4447,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -4544,7 +4544,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "color": {
                 "minLength": 1,
@@ -4634,7 +4634,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -4710,7 +4710,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -4793,7 +4793,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "color": {
                 "minLength": 1,
@@ -4858,7 +4858,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               }
             },
             "required": [
@@ -4936,7 +4936,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5019,7 +5019,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -5102,7 +5102,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5185,7 +5185,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5268,7 +5268,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "color": {
                 "minLength": 1,
@@ -5351,7 +5351,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5448,7 +5448,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5559,7 +5559,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -5624,7 +5624,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "variation": {
                 "type": "number",
@@ -5690,7 +5690,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "direction": {
                 "type": "number",
@@ -5806,7 +5806,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -5909,7 +5909,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "thickness": {
                 "type": "number",
@@ -6025,7 +6025,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "baseThickness": {
                 "type": "number",
@@ -6138,7 +6138,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "thickness": {
                 "type": "number",
@@ -6251,7 +6251,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -6381,7 +6381,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "rainAmount": {
                 "type": "number",
@@ -6513,7 +6513,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -6655,7 +6655,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                    "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
                   },
                   "radius": {
                     "type": "number",
@@ -6866,7 +6866,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                    "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
                   },
                   "radius": {
                     "type": "number",
@@ -7094,7 +7094,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "warpAmount": {
                 "type": "number",
@@ -7243,7 +7243,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -7391,7 +7391,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "radius": {
                 "type": "number",
@@ -7519,7 +7519,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "lightMask": {
                 "minLength": 1,
@@ -7628,7 +7628,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "depthMap": {
                 "minLength": 1,
@@ -7795,7 +7795,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "definition": {
                 "type": "number",
@@ -7983,7 +7983,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -8111,7 +8111,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "maskColor": {
                 "minLength": 1,
@@ -8240,7 +8240,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "ribbonImage": {
                 "minLength": 1,
@@ -8357,7 +8357,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "sides": {
                 "type": "integer",
@@ -8467,7 +8467,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -8563,7 +8563,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "bladeCount": {
                 "type": "integer",
@@ -8714,7 +8714,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "gridShape": {
                 "minLength": 1,
@@ -8930,7 +8930,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "beamCount": {
                 "type": "integer",
@@ -9050,7 +9050,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -9154,7 +9154,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "pixelSize": {
                 "type": "integer",
@@ -9280,7 +9280,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "gridShape": {
                 "minLength": 1,
@@ -9460,7 +9460,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "spriteImage": {
                 "minLength": 1,
@@ -10895,7 +10895,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "cornerRadius": {
                 "type": "number",
@@ -11083,7 +11083,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "characterStyle": {
                 "minLength": 1,
@@ -11238,7 +11238,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "pivotX": {
                 "type": "number",
@@ -11440,7 +11440,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "targetImage": {
                 "minLength": 1,
@@ -11608,7 +11608,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "mapping": {
                 "minLength": 1,
@@ -11755,7 +11755,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "levels": {
                 "type": "integer",
@@ -11845,7 +11845,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "radius": {
                 "type": "integer",
@@ -11928,7 +11928,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "sourceMode": {
                 "minLength": 1,
@@ -12121,7 +12121,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "operator": {
                 "minLength": 1,
@@ -12300,7 +12300,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "workingSpace": {
                 "minLength": 1,
@@ -12732,7 +12732,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "revealedImage": {
                 "minLength": 1,
@@ -12817,7 +12817,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -12914,7 +12914,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13032,7 +13032,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13144,7 +13144,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -13242,7 +13242,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13360,7 +13360,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13446,7 +13446,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "density": {
                 "type": "integer",
@@ -13559,7 +13559,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13680,7 +13680,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -13798,7 +13798,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "cellSize": {
                 "type": "integer",
@@ -13895,7 +13895,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scanlineSpacing": {
                 "type": "integer",
@@ -14006,7 +14006,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -14138,7 +14138,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "lutImage": {
                 "minLength": 1,
@@ -14241,7 +14241,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "innerRadius": {
                 "type": "number",
@@ -14339,7 +14339,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "offsetX": {
                 "type": "number",
@@ -14431,7 +14431,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "radialFirst": {
                 "type": "number",
@@ -14537,7 +14537,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "scale": {
                 "type": "number",
@@ -14648,7 +14648,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "motionMap": {
                 "minLength": 1,
@@ -14744,7 +14744,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "angle": {
                 "type": "number",
@@ -14862,7 +14862,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Normalized position inside the effect cycle. The editor exposes it as delay/time offset."
+                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
               },
               "axis": {
                 "minLength": 1,
