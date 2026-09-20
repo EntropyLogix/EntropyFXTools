@@ -295,6 +295,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -370,6 +372,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -463,6 +467,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -551,6 +557,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -638,6 +646,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -745,6 +755,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -850,6 +862,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -948,6 +962,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1018,6 +1034,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1101,6 +1119,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1189,6 +1209,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1277,6 +1299,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1365,6 +1389,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1483,6 +1509,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1553,6 +1581,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1618,6 +1648,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1665,6 +1697,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1709,6 +1743,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1758,6 +1794,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1797,6 +1835,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1841,6 +1881,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -1914,6 +1956,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2009,6 +2053,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2104,6 +2150,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2199,6 +2247,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2283,6 +2333,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2372,6 +2424,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2465,6 +2519,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2565,6 +2621,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2655,6 +2713,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2757,6 +2817,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2866,6 +2928,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -2950,6 +3014,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3043,6 +3109,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3161,6 +3229,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3270,6 +3340,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3354,6 +3426,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3446,6 +3520,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3558,6 +3634,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3637,6 +3715,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3720,6 +3800,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3789,6 +3871,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3866,6 +3950,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -3954,6 +4040,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4035,6 +4123,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4098,6 +4188,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4174,6 +4266,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4262,6 +4356,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4343,6 +4439,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4438,6 +4536,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4526,6 +4626,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4600,6 +4702,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4681,6 +4785,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4744,6 +4850,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4820,6 +4928,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4901,6 +5011,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -4982,6 +5094,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5063,6 +5177,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5144,6 +5260,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5225,6 +5343,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5320,6 +5440,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5429,6 +5551,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5492,6 +5616,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5556,6 +5682,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5670,6 +5798,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5771,6 +5901,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5885,6 +6017,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -5996,6 +6130,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -6107,6 +6243,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -6235,6 +6373,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -6365,6 +6505,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -6505,6 +6647,8 @@
                   },
                   "cycles": {
                     "type": "integer",
+                    "minimum": -2147483648,
+                    "maximum": 2147483647,
                     "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
                   },
                   "phase": {
@@ -6714,6 +6858,8 @@
                   },
                   "cycles": {
                     "type": "integer",
+                    "minimum": -2147483648,
+                    "maximum": 2147483647,
                     "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
                   },
                   "phase": {
@@ -6940,6 +7086,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7087,6 +7235,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7233,6 +7383,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7359,6 +7511,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7466,6 +7620,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7631,6 +7787,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7817,6 +7975,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -7943,6 +8103,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8070,6 +8232,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8185,6 +8349,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8293,6 +8459,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8387,6 +8555,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8536,6 +8706,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8750,6 +8922,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8868,6 +9042,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -8970,6 +9146,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -9094,6 +9272,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -9272,6 +9452,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -10705,6 +10887,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -10891,6 +11075,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11044,6 +11230,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11244,6 +11432,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11410,6 +11600,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11555,6 +11747,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11643,6 +11837,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11724,6 +11920,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -11915,6 +12113,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12092,6 +12292,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12522,6 +12724,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12605,6 +12809,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12700,6 +12906,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12816,6 +13024,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -12926,6 +13136,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13022,6 +13234,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13138,6 +13352,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13222,6 +13438,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13333,6 +13551,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13452,6 +13672,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13568,6 +13790,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13663,6 +13887,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13772,6 +13998,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -13902,6 +14130,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14003,6 +14233,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14099,6 +14331,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14189,6 +14423,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14293,6 +14529,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14402,6 +14640,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14496,6 +14736,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {
@@ -14612,6 +14854,8 @@
               },
               "cycles": {
                 "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
                 "description": "Complete repetitions during the whole animation loop. Negative values reverse motion; 0 applies the effect statically at its current main-control value."
               },
               "phase": {

@@ -44,6 +44,17 @@ test('rejects missing, unknown, duplicate, and invalid fields', async () => {
   outside.primitives[0].x = 2;
   assert.throws(() => parseAndValidateRecipe(JSON.stringify(outside), contracts.recipeSchema),
     /must be at most 1/);
+  for (const [cycles, message] of [
+    [-2147483649, /cycles.*must be at least -2147483648/],
+    [2147483648, /cycles.*must be at most 2147483647/],
+  ]) {
+    const outsideCycles = JSON.parse(await example('minimal'));
+    outsideCycles.primitives[0].cycles = cycles;
+    assert.throws(
+      () => parseAndValidateRecipe(JSON.stringify(outsideCycles), contracts.recipeSchema),
+      message,
+    );
+  }
 });
 
 test('accepts optional color and source-ray controls from the renderer contract', async () => {
