@@ -116,6 +116,12 @@ function normalizeOutput(value) {
       throw new Error('project output.bitrate must be a whole number from 100000 to 100000000');
     return { format: value.format, bitrate: value.bitrate };
   }
+  if (value.format === 'webp_animation') {
+    exactObject(value, ['format', 'quality'], 'project output');
+    if (!Number.isSafeInteger(value.quality) || value.quality < 1 || value.quality > 100)
+      throw new Error('project output.quality must be a whole number from 1 to 100');
+    return { format: value.format, quality: value.quality };
+  }
   if (value.format === 'png_sequence') {
     exactObject(value, ['format'], 'project output');
     return { format: value.format };
@@ -385,7 +391,8 @@ export async function openProjectArchive(value) {
   const unsupportedOutput = outputValue && typeof outputValue === 'object'
       && !Array.isArray(outputValue)
       && typeof outputValue.format === 'string'
-      && !['mp4_h264', 'png_sequence', 'png_sprite_sheet'].includes(outputValue.format)
+      && !['mp4_h264', 'webp_animation', 'png_sequence', 'png_sprite_sheet']
+        .includes(outputValue.format)
     ? outputChunk.payload.slice()
     : null;
   const output = outputValue && !unsupportedOutput ? normalizeOutput(outputValue) : null;

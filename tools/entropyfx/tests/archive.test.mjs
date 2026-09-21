@@ -145,6 +145,7 @@ test('round-trips a deterministic self-contained chunk project', async () => {
 test('supports every output preset and a missing output chunk', async () => {
   for (const output of [
     null,
+    { format: 'webp_animation', quality: 87 },
     { format: 'png_sequence' },
     { columns: 5, format: 'png_sprite_sheet' },
   ]) {
@@ -154,6 +155,9 @@ test('supports every output preset and a missing output chunk', async () => {
   await assert.rejects(createProjectArchive({
     ...project(), output: { columns: 26, format: 'png_sprite_sheet' },
   }), /must not exceed/);
+  await assert.rejects(createProjectArchive({
+    ...project(), output: { format: 'webp_animation', quality: 0 },
+  }), /quality/);
 });
 
 test('opens and preserves a future noncritical output preset without using it', async () => {
