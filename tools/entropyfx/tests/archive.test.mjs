@@ -146,8 +146,10 @@ test('supports every output preset and a missing output chunk', async () => {
   for (const output of [
     null,
     { format: 'webp_animation', quality: 87 },
+    { dithering: 'ordered', format: 'gif_animation' },
     { format: 'png_sequence' },
     { columns: 5, format: 'png_sprite_sheet' },
+    { columns: 5, format: 'tga_sprite_sheet' },
   ]) {
     const archive = await createProjectArchive({ ...project(), output });
     assert.deepEqual((await openProjectArchive(archive)).output, output);
@@ -156,8 +158,14 @@ test('supports every output preset and a missing output chunk', async () => {
     ...project(), output: { columns: 26, format: 'png_sprite_sheet' },
   }), /must not exceed/);
   await assert.rejects(createProjectArchive({
+    ...project(), output: { columns: 26, format: 'tga_sprite_sheet' },
+  }), /must not exceed/);
+  await assert.rejects(createProjectArchive({
     ...project(), output: { format: 'webp_animation', quality: 0 },
   }), /quality/);
+  await assert.rejects(createProjectArchive({
+    ...project(), output: { dithering: 'diffusion', format: 'gif_animation' },
+  }), /dithering/);
 });
 
 test('opens and preserves a future noncritical output preset without using it', async () => {

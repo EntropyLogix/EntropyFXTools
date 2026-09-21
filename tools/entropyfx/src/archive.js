@@ -122,11 +122,17 @@ function normalizeOutput(value) {
       throw new Error('project output.quality must be a whole number from 1 to 100');
     return { format: value.format, quality: value.quality };
   }
+  if (value.format === 'gif_animation') {
+    exactObject(value, ['format', 'dithering'], 'project output');
+    if (!['none', 'ordered'].includes(value.dithering))
+      throw new Error('project output.dithering must be none or ordered');
+    return { dithering: value.dithering, format: value.format };
+  }
   if (value.format === 'png_sequence') {
     exactObject(value, ['format'], 'project output');
     return { format: value.format };
   }
-  if (value.format === 'png_sprite_sheet') {
+  if (value.format === 'png_sprite_sheet' || value.format === 'tga_sprite_sheet') {
     exactObject(value, ['format', 'columns'], 'project output');
     if (!Number.isSafeInteger(value.columns) || value.columns < 1 || value.columns > 1000000)
       throw new Error('project output.columns must be a whole number from 1 to 1000000');
@@ -232,7 +238,7 @@ export async function createProjectArchive({
   if (unsupportedOutput !== null
       && (!(unsupportedOutput instanceof Uint8Array) || projectOutput !== null))
     throw new Error('unsupportedOutput must be binary data and requires output to be null');
-  if (projectOutput?.format === 'png_sprite_sheet'
+  if (['png_sprite_sheet', 'tga_sprite_sheet'].includes(projectOutput?.format)
       && projectOutput.columns > parsedRecipe?.timeline?.frames)
     throw new Error('project output.columns must not exceed recipe.timeline.frames');
   if (!Array.isArray(auxiliaryInputs))
@@ -391,12 +397,15 @@ export async function openProjectArchive(value) {
   const unsupportedOutput = outputValue && typeof outputValue === 'object'
       && !Array.isArray(outputValue)
       && typeof outputValue.format === 'string'
-      && !['mp4_h264', 'webp_animation', 'png_sequence', 'png_sprite_sheet']
+      && ![
+        'mp4_h264', 'webp_animation', 'gif_animation', 'png_sequence', 'png_sprite_sheet',
+        'tga_sprite_sheet',
+      ]
         .includes(outputValue.format)
     ? outputChunk.payload.slice()
     : null;
   const output = outputValue && !unsupportedOutput ? normalizeOutput(outputValue) : null;
-  if (output?.format === 'png_sprite_sheet'
+  if (['png_sprite_sheet', 'tga_sprite_sheet'].includes(output?.format)
       && output.columns > parsedRecipe?.timeline?.frames)
     throw new Error('project output.columns must not exceed recipe.timeline.frames');
   const source = decodeFile(byId('SRC')[0], 'source', 0);

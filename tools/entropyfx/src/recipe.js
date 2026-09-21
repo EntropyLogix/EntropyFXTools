@@ -303,7 +303,7 @@ export function validateProjectRecipe(project, contracts) {
   const recipe = parseAndValidateRecipe(project.recipe, contracts.recipeSchema);
   if (recipe.source !== project.source.name)
     throw new Error(`recipe.source ${recipe.source} does not match project source ${project.source.name}`);
-  if (project.output?.format === 'png_sprite_sheet'
+  if (['png_sprite_sheet', 'tga_sprite_sheet'].includes(project.output?.format)
       && project.output.columns > recipe.timeline.frames)
     throw new Error('project output columns must not exceed the recipe frame count');
   const available = new Set(project.auxiliaryInputs.map((input) => input.name));
