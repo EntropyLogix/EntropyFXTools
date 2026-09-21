@@ -146,6 +146,7 @@ test('supports every output preset and a missing output chunk', async () => {
   for (const output of [
     null,
     { format: 'webp_animation', quality: 87 },
+    { format: 'apng_animation' },
     { dithering: 'ordered', format: 'gif_animation' },
     { format: 'png_sequence' },
     { columns: 5, format: 'png_sprite_sheet' },

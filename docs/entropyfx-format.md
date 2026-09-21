@@ -73,6 +73,7 @@ strings are valid, and writers do not synthesize timestamps:
 ```json
 {"format":"mp4_h264","bitrate":4000000}
 {"format":"webp_animation","quality":90}
+{"format":"apng_animation"}
 {"format":"gif_animation","dithering":"ordered"}
 {"format":"png_sequence"}
 {"format":"png_sprite_sheet","columns":8}
@@ -80,14 +81,15 @@ strings are valid, and writers do not synthesize timestamps:
 ```
 
 An H.264 bitrate is an integer from 100,000 through 100,000,000 bits per
-second. Animated WebP quality is an integer from 1 through 100. Animated GIF
-dithering is `ordered` or `none`. PNG and TGA sprite-sheet columns are a
-positive integer and must also be valid for the recipe's frame count. When
-`OUT` is absent, an interactive application uses its last local output setting
-and then its initial setting without prompting. Saving from the editor writes
-the currently visible setting. A reader may open a project whose noncritical
-output preset it cannot use, but export requires an explicit
-supported selection rather than a silent substitution.
+second. Animated WebP quality is an integer from 1 through 100. Animated PNG
+has no lossy quality setting. Animated GIF dithering is `ordered` or `none`.
+PNG and TGA sprite-sheet columns are a positive integer and must also be valid
+for the recipe's frame count. When `OUT` is absent, an interactive application
+uses its last local output setting and then its initial setting without
+prompting. Saving from the editor writes the currently visible setting. A
+reader may open a project whose noncritical output preset it cannot use, but
+export requires an explicit supported selection rather than a silent
+substitution.
 
 `SRC` and `AST` begin with a 32-bit descriptor length, followed by the UTF-8
 JSON descriptor and then the original encoded file bytes. The descriptor has

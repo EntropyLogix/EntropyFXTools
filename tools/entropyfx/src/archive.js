@@ -128,6 +128,10 @@ function normalizeOutput(value) {
       throw new Error('project output.dithering must be none or ordered');
     return { dithering: value.dithering, format: value.format };
   }
+  if (value.format === 'apng_animation') {
+    exactObject(value, ['format'], 'project output');
+    return { format: value.format };
+  }
   if (value.format === 'png_sequence') {
     exactObject(value, ['format'], 'project output');
     return { format: value.format };
@@ -398,8 +402,8 @@ export async function openProjectArchive(value) {
       && !Array.isArray(outputValue)
       && typeof outputValue.format === 'string'
       && ![
-        'mp4_h264', 'webp_animation', 'gif_animation', 'png_sequence', 'png_sprite_sheet',
-        'tga_sprite_sheet',
+        'mp4_h264', 'webp_animation', 'apng_animation', 'gif_animation', 'png_sequence',
+        'png_sprite_sheet', 'tga_sprite_sheet',
       ]
         .includes(outputValue.format)
     ? outputChunk.payload.slice()
