@@ -9780,30 +9780,6 @@
                 "if": {
                   "properties": {
                     "spriteImage": {
-                      "const": "builtin:sprites/v1/fish_atlas"
-                    }
-                  },
-                  "required": [
-                    "spriteImage"
-                  ],
-                  "type": "object"
-                },
-                "then": {
-                  "properties": {
-                    "sheetColumns": {
-                      "const": 4
-                    },
-                    "sheetRows": {
-                      "const": 4
-                    }
-                  },
-                  "type": "object"
-                }
-              },
-              {
-                "if": {
-                  "properties": {
-                    "spriteImage": {
                       "const": "builtin:sprites/v1/jellyfish_sequence"
                     }
                   },
@@ -9816,6 +9792,30 @@
                   "properties": {
                     "sheetColumns": {
                       "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/fish_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
                     },
                     "sheetRows": {
                       "const": 4
@@ -10813,6 +10813,150 @@
                   "properties": {
                     "spriteImage": {
                       "const": "builtin:sprites/v1/lanterns_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/hud_reticles_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/arcane_sigils_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/bats_swarm_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/celestial_spheres_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/glitch_artifacts_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/coins_gems_atlas"
                     }
                   },
                   "required": [

@@ -8,9 +8,9 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
   assert.equal(contracts.effects.effects.length, 121);
-  assert.equal(contracts.sprites.sprites.length, 44);
+  assert.equal(contracts.sprites.sprites.length, 50);
   assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 121);
-  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 44);
+  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 50);
   assert.equal(contracts.recipeSchema.properties.primitives.items.oneOf.length, 121);
   assert.equal(contracts.recipeSchema.properties.elements.items.oneOf.length, 5);
   const spriteParticles = contracts.effects.effects.find(
@@ -21,14 +21,18 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
   assert.equal(spriteParticles.template.sheetColumns, 2);
   assert.equal(spriteParticles.template.sheetRows, 1);
   assert.equal('atlasColumns' in spriteParticles.template, false);
+  assert.equal(
+    contracts.sprites.sprites[0].id,
+    'builtin:sprites/v1/jellyfish_sequence',
+  );
   assert.deepEqual(
     contracts.sprites.sprites[0].sheet,
     {
-      columns: 4,
-      frames: 16,
+      columns: 8,
+      frames: 32,
       gutterPixels: 8,
-      kind: 'variants',
-      recommendedFrameSelection: 'random_per_particle',
+      kind: 'sequence',
+      recommendedFrameSelection: 'particle_age',
       rows: 4,
     },
   );

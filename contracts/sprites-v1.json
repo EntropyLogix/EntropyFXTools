@@ -3,25 +3,6 @@
   "sprites": [
     {
       "category": "animals",
-      "id": "builtin:sprites/v1/fish_atlas",
-      "key": "fish_atlas",
-      "purpose": "Sixteen side-view fish silhouettes for schools and ambient underwater motion.",
-      "recommendation": "Use many small instances with a shared travel direction and restrained rotation.",
-      "sheet": {
-        "columns": 4,
-        "rows": 4,
-        "frames": 16,
-        "kind": "variants",
-        "recommendedFrameSelection": "random_per_particle",
-        "gutterPixels": 8
-      },
-      "similarTo": [
-        "jellyfish_sequence"
-      ],
-      "title": "Fish silhouettes"
-    },
-    {
-      "category": "animals",
       "id": "builtin:sprites/v1/jellyfish_sequence",
       "key": "jellyfish_sequence",
       "purpose": "Thirty-two-frame swimming cycle with a contracting bell and moving tentacles.",
@@ -38,6 +19,25 @@
         "fish_atlas"
       ],
       "title": "Jellyfish pulse"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/fish_atlas",
+      "key": "fish_atlas",
+      "purpose": "Sixteen side-view fish silhouettes for schools and ambient underwater motion.",
+      "recommendation": "Use many small instances with a shared travel direction and restrained rotation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "jellyfish_sequence"
+      ],
+      "title": "Fish silhouettes"
     },
     {
       "category": "atmosphere",
@@ -878,6 +878,126 @@
         "candle_flame_sequence"
       ],
       "title": "Floating lanterns"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/hud_reticles_atlas",
+      "key": "hud_reticles_atlas",
+      "purpose": "Sixteen high-tech targeting reticles, lock-on sights, telemetry dials, and radar crosshairs for sci-fi interfaces.",
+      "recommendation": "Use additive blending with cyan, amber, or green tint; pair with ring or box emitters for futuristic telemetry.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "technical_glyphs_atlas",
+        "data_circuit_sequence"
+      ],
+      "title": "HUD reticles"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/arcane_sigils_atlas",
+      "key": "arcane_sigils_atlas",
+      "purpose": "Sixteen intricate sacred geometry and alchemical seals for magic portals, ritual circles, and esoteric notation.",
+      "recommendation": "Use a ring emitter with emitter-angle mapping, slow rotation, and luminous color-over-life.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "emitter_angle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "magic_circles_atlas",
+        "runes_atlas"
+      ],
+      "title": "Arcane sigils"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/bats_swarm_atlas",
+      "key": "bats_swarm_atlas",
+      "purpose": "Sixteen aerodynamic flight silhouettes for bat swarms, gothic atmosphere, and dark nocturnal scenes.",
+      "recommendation": "Use dark tint, upward or diagonal velocity, lateral turbulence, and size variation against moonlit skies.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "birds_sequence",
+        "butterflies_sequence"
+      ],
+      "title": "Bat flock"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/celestial_spheres_atlas",
+      "key": "celestial_spheres_atlas",
+      "purpose": "Sixteen textured celestial bodies including ringed gas giants, cratered moons, solar coronas, and eclipses.",
+      "recommendation": "Use the depth emitter with slow perspective motion and low particle count for deep cosmic backdrops.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "asteroids_atlas",
+        "galactic_dust_atlas"
+      ],
+      "title": "Celestial spheres"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/glitch_artifacts_atlas",
+      "key": "glitch_artifacts_atlas",
+      "purpose": "Sixteen chromatic digital noise blocks, pixel-sorting fragments, and corrupted scanline clusters.",
+      "recommendation": "Use high speed variation, short lifetime, horizontal drift, and pair with chromatic aberration or glitch effects.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "data_circuit_sequence",
+        "metal_fragments_atlas"
+      ],
+      "title": "Glitch artifacts"
+    },
+    {
+      "category": "celebration",
+      "id": "builtin:sprites/v1/coins_gems_atlas",
+      "key": "coins_gems_atlas",
+      "purpose": "Sixteen tumbling 3D gold coins, medallions, and faceted gemstone variants for rewards and celebrations.",
+      "recommendation": "Use an upward burst with downward gravity, random rotation, and normal blending for reward fountains.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "variants",
+        "recommendedFrameSelection": "random_per_particle",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "confetti_atlas",
+        "crystal_shards_atlas"
+      ],
+      "title": "Coins and gems"
     }
   ]
 }
