@@ -7,11 +7,11 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
   const contracts = await loadContracts();
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
-  assert.equal(contracts.effects.effects.length, 121);
+  assert.equal(contracts.effects.effects.length, 122);
   assert.equal(contracts.sprites.sprites.length, 50);
-  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 121);
+  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 122);
   assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 50);
-  assert.equal(contracts.recipeSchema.properties.primitives.items.oneOf.length, 121);
+  assert.equal(contracts.recipeSchema.properties.primitives.items.oneOf.length, 122);
   assert.equal(contracts.recipeSchema.properties.elements.items.oneOf.length, 5);
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
@@ -50,7 +50,7 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
         `${effect.type} schema does not require its main control`);
     }
   }
-  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 14, strength: 31 });
+  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 15, strength: 31 });
 });
 
 test('uses role-based image fields throughout the public effect contract', async () => {
@@ -67,6 +67,7 @@ test('uses role-based image fields throughout the public effect contract', async
     ['masked_lighting', ['lightMask', 'unlitImage']],
     ['parallax', ['depthMap', 'depthDirection', 'stationaryDepth']],
     ['spotlight', ['shapeImage']],
+    ['sprite_layer', ['spriteImage']],
     ['sprite_particles', ['spriteImage']],
     ['tiling_array', ['tileImage']],
   ]);

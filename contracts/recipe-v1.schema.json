@@ -9409,6 +9409,1407 @@
             "additionalProperties": false,
             "properties": {
               "type": {
+                "const": "sprite_layer"
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "region": {
+                "additionalProperties": false,
+                "properties": {
+                  "x": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                  },
+                  "y": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1,
+                    "description": "Normalized width of the band or affected feature."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1,
+                    "description": "Normalized height of the selected rectangle."
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height"
+                ],
+                "type": "object"
+              },
+              "spriteImage": {
+                "minLength": 1,
+                "type": "string",
+                "description": "One built-in or project sprite sheet rendered directly in the composition."
+              },
+              "sheetColumns": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 64,
+                "description": "Equal-width frame columns in the selected sprite sheet."
+              },
+              "sheetRows": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 64,
+                "description": "Equal-height frame rows in the selected sprite sheet."
+              },
+              "playback": {
+                "minLength": 1,
+                "type": "string",
+                "enum": [
+                  "loop",
+                  "once_hold",
+                  "fixed_frame"
+                ],
+                "description": "Loop repeats a sequence, Once & hold stops on its final frame, and Fixed frame shows one zero-based cell. Once & hold restarts with the project, so looping exports may intentionally contain a visible seam."
+              },
+              "cycles": {
+                "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "description": "Loop repetitions across the timeline, or Once & hold playback speed. Negative values reverse direction; zero is not supported.",
+                "not": {
+                  "const": 0
+                }
+              },
+              "phase": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Initial playback progress and rotation offset. In Once & hold it advances the starting frame rather than delaying the layer."
+              },
+              "angle": {
+                "type": "number",
+                "minimum": -360,
+                "maximum": 360,
+                "description": "Initial clockwise rotation of the sprite layer."
+              },
+              "rotationCycles": {
+                "type": "number",
+                "minimum": -20,
+                "maximum": 20,
+                "description": "Complete rotations of the whole layer across the timeline; negative values reverse direction."
+              },
+              "opacity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Opacity of the sprite layer; 0 leaves the source unchanged and 1 uses the full sprite alpha."
+              },
+              "color": {
+                "minLength": 1,
+                "type": "string",
+                "description": "Tint multiplied with the sprite; white preserves its original colors.",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "blendMode": {
+                "minLength": 1,
+                "type": "string",
+                "enum": [
+                  "normal",
+                  "additive",
+                  "screen"
+                ],
+                "description": "Composites the sprite normally, additively, or by screen."
+              },
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4095,
+                "description": "Zero-based cell shown in Fixed frame mode."
+              }
+            },
+            "required": [
+              "type",
+              "enabled",
+              "region",
+              "spriteImage",
+              "sheetColumns",
+              "sheetRows",
+              "playback",
+              "phase",
+              "angle",
+              "rotationCycles",
+              "opacity",
+              "color",
+              "blendMode"
+            ],
+            "type": "object",
+            "title": "Sprite layer",
+            "description": "Places one animated or fixed sprite directly in the composition.",
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/jellyfish_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/fish_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/embers_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/explosion_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/fire_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/fog_puffs_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/smoke_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/confetti_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/crystal_shards_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/metal_fragments_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/electric_arcs_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/energy_orb_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/shockwave_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/galactic_dust_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/halos_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/hyperdrive_stars_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/lens_flares_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/sparks_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/feathers_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/leaves_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/petals_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/asteroids_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/magic_circles_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/runes_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/technical_glyphs_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/bubbles_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/ripples_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/splash_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/rain_drops_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/snowflakes_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/birds_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/butterflies_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/splatter_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/paper_sheets_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/energy_aura_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/data_circuit_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/plant_sway_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/light_beams_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/wind_streaks_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/fireflies_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/candle_flame_sequence"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 8
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/hearts_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/music_notes_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/lanterns_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/hud_reticles_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/arcane_sigils_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/bats_swarm_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/celestial_spheres_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/glitch_artifacts_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "spriteImage": {
+                      "const": "builtin:sprites/v1/coins_gems_atlas"
+                    }
+                  },
+                  "required": [
+                    "spriteImage"
+                  ],
+                  "type": "object"
+                },
+                "then": {
+                  "properties": {
+                    "sheetColumns": {
+                      "const": 4
+                    },
+                    "sheetRows": {
+                      "const": 4
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              {
+                "oneOf": [
+                  {
+                    "not": {
+                      "required": [
+                        "frame"
+                      ]
+                    },
+                    "properties": {
+                      "playback": {
+                        "const": "loop"
+                      }
+                    },
+                    "required": [
+                      "cycles"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "not": {
+                      "required": [
+                        "frame"
+                      ]
+                    },
+                    "properties": {
+                      "playback": {
+                        "const": "once_hold"
+                      }
+                    },
+                    "required": [
+                      "cycles"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "not": {
+                      "required": [
+                        "cycles"
+                      ]
+                    },
+                    "properties": {
+                      "playback": {
+                        "const": "fixed_frame"
+                      }
+                    },
+                    "required": [
+                      "frame"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "type": {
                 "const": "sprite_particles"
               },
               "enabled": {

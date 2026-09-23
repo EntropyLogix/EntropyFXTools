@@ -2335,6 +2335,39 @@
     },
     {
       "group": "Particles & scenes",
+      "label": "Sprite layer",
+      "description": "Places one animated or fixed sprite directly in the composition.",
+      "geometry": "region",
+      "angleIndicator": {
+        "kind": "direction",
+        "parameter": "angle"
+      },
+      "template": {
+        "type": "sprite_layer",
+        "enabled": true,
+        "region": {
+          "x": 0.25,
+          "y": 0.25,
+          "width": 0.5,
+          "height": 0.5
+        },
+        "spriteImage": "sprite.png",
+        "sheetColumns": 2,
+        "sheetRows": 1,
+        "playback": "loop",
+        "cycles": 1,
+        "phase": 0,
+        "angle": 0,
+        "rotationCycles": 0,
+        "opacity": 1,
+        "color": "#ffffff",
+        "blendMode": "normal"
+      },
+      "type": "sprite_layer",
+      "mainControl": "opacity"
+    },
+    {
+      "group": "Particles & scenes",
       "label": "Sprite particles",
       "description": "Emits deterministic moving instances from one sprite image or sprite sheet.",
       "geometry": "region",
