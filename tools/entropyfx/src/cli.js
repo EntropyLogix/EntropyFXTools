@@ -134,7 +134,7 @@ async function pack(options, positional, contracts) {
     help('pack requires --recipe, --source, and --out');
   requireExtension(options.out);
   const recipeText = await readFile(options.recipe, 'utf8');
-  const recipe = parseAndValidateRecipe(recipeText, contracts.recipeSchema);
+  const recipe = parseAndValidateRecipe(recipeText, contracts.recipeSchemas);
   const info = options.info
     ? JSON.parse(await readFile(options.info, 'utf8'))
     : { author: '', description: '', title: '', version: '' };

@@ -15,34 +15,42 @@ const example = (name) => readFile(new URL(`../examples/${name}/recipe.json`, im
 test('validates complete public examples and all catalog templates', async () => {
   const contracts = await loadContracts();
   for (const name of ['minimal', 'built-in-sprite'])
-    assert.equal(parseAndValidateRecipe(await example(name), contracts.recipeSchema).schemaVersion, 1);
+    assert.equal(parseAndValidateRecipe(await example(name), contracts.recipeSchemas).schemaVersion, 2);
   for (const effect of contracts.effects.effects) {
     const recipe = JSON.parse(await example('minimal'));
     recipe.primitives = [effect.template];
-    assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema)
+    assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
       .primitives[0].type, effect.type);
   }
+});
+
+test('selects the frozen v1 schema for existing recipes', async () => {
+  const contracts = await loadContracts();
+  const recipe = JSON.parse(await example('minimal'));
+  recipe.schemaVersion = 1;
+  assert.equal(parseAndValidateRecipe(
+    JSON.stringify(recipe), contracts.recipeSchemas).schemaVersion, 1);
 });
 
 test('rejects missing, unknown, duplicate, and invalid fields', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
   delete recipe.primitives[0].enabled;
-  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /enabled.*required/);
   recipe.primitives[0].enabled = true;
   delete recipe.primitives[0].phase;
-  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /phase.*required/);
   recipe.primitives[0].phase = 0;
   recipe.primitives[0].unexpected = true;
-  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /unexpected.*not allowed/);
   assert.throws(() => parseAndValidateRecipe('{"schemaVersion":1,"schemaVersion":1}',
-    contracts.recipeSchema), /schemaVersion.*duplicated/);
+    contracts.recipeSchemas), /schemaVersion.*duplicated/);
   const outside = JSON.parse(await example('minimal'));
   outside.primitives[0].x = 2;
-  assert.throws(() => parseAndValidateRecipe(JSON.stringify(outside), contracts.recipeSchema),
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(outside), contracts.recipeSchemas),
     /must be at most 1/);
   for (const [cycles, message] of [
     [-2147483649, /cycles.*must be at least -2147483648/],
@@ -51,7 +59,7 @@ test('rejects missing, unknown, duplicate, and invalid fields', async () => {
     const outsideCycles = JSON.parse(await example('minimal'));
     outsideCycles.primitives[0].cycles = cycles;
     assert.throws(
-      () => parseAndValidateRecipe(JSON.stringify(outsideCycles), contracts.recipeSchema),
+      () => parseAndValidateRecipe(JSON.stringify(outsideCycles), contracts.recipeSchemas),
       message,
     );
   }
@@ -74,7 +82,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
     x: 0.46,
     y: 0.02,
   }];
-  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema)
+  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
     .primitives[0].color, '#c9bdd9');
   assert.deepEqual(referencedAuxiliaryInputs(recipe), []);
 
@@ -93,7 +101,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
     threshold: 0.4,
     type: 'directional_source_rays',
   }];
-  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema)
+  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
     .primitives[0].direction, -45);
 });
 
@@ -105,11 +113,11 @@ test('accepts built-in ASCII styles without auxiliary project inputs', async () 
   );
   recipe.primitives = [ascii];
   assert.deepEqual(referencedAuxiliaryInputs(recipe), []);
-  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema)
+  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
     .primitives[0].characterStyle, 'classic_ascii');
 
   ascii.glyphAtlasSource = 'inputs/glyphs.png';
-  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchema),
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /glyphAtlasSource.*not allowed/);
 });
 
@@ -126,13 +134,13 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
   wrongColumns.primitives[0].sheetColumns = 2;
   assert.throws(
     () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongColumns) }, contracts),
-    /sheetColumns.*must equal 4/,
+    /matches a forbidden shape/,
   );
   const wrongRows = JSON.parse(spriteRecipe);
   wrongRows.primitives[0].sheetRows = 2;
   assert.throws(
     () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongRows) }, contracts),
-    /sheetRows.*must equal 4/,
+    /matches a forbidden shape/,
   );
   const custom = JSON.parse(spriteRecipe);
   custom.primitives[0].spriteImage = 'inputs/custom.png';

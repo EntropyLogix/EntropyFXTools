@@ -10,11 +10,13 @@ Translate that direction into explicit public effect parameters. If it is
 omitted, infer an appropriate direction from the image and state it briefly.
 
 Read `docs/image-animation.md`, select effects from `contracts/effects-v1.json`, and
-copy complete templates without removing fields. Read
-`contracts/recipe-v1.schema.json` for types, ranges, enum values, and the
+copy complete templates without removing fields, except for the catalog-owned
+layout fields of a built-in sprite. Read `contracts/recipe-v2.schema.json` for
+types, ranges, enum values, and the
 mode-specific Bokeh shape. Follow the `Use images and sprites` field list in
 the documentation. Use only built-in Sprite Sheet IDs listed in
-`contracts/sprites-v1.json`; pass every user-owned image or custom font as a
+`contracts/sprites-v1.json`; omit `sheetColumns` and `sheetRows` for those
+built-in references, and pass every user-owned image or custom font as a
 named `--input` under its exact logical project path.
 
 Build and check the result with:

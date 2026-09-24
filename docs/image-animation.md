@@ -5,7 +5,7 @@
 Creating an animation produces one `.entropyfx` project containing:
 
 - one source image;
-- one explicit version-1 recipe;
+- one explicit version-2 recipe;
 - every referenced user-owned auxiliary image or font;
 - user-editable title, author, version, and description;
 - an optional current output preset.
@@ -19,11 +19,11 @@ Start from the complete `template` of an effect in
 [`effects-v1.json`](../contracts/effects-v1.json). Keep every template field in
 the recipe, including values that appear inactive. Recipes do not rely on hidden
 defaults, and unknown fields are rejected by the public schema. Use
-[`recipe-v1.schema.json`](../contracts/recipe-v1.schema.json) to check types,
+[`recipe-v2.schema.json`](../contracts/recipe-v2.schema.json) to check types,
 ranges, enum values, and mode-specific shapes; do not invent optional controls
 outside the selected catalog template.
 
-The only structurally conditional version-1 effect fields are:
+Structurally conditional version-2 fields include:
 
 - `bokeh.bladeAngle`;
 - `bokeh.bladeCount`.
@@ -31,6 +31,9 @@ The only structurally conditional version-1 effect fields are:
 They belong to the `bokeh` variant whose `apertureShape` is `polygon`. The
 circle variant omits both fields. Other controls may be visually inactive in a
 particular mode, but remain explicit members of their complete template.
+Built-in Sprite Layer and Sprite Particles entries omit `sheetColumns` and
+`sheetRows` because the built-in sprite catalog owns that layout. Custom
+sprites require both fields.
 
 The layer order in `primitives` is the composition order. Keep the source image
 name in `recipe.source`, normalized positions in the `0..1` image space, and a
@@ -45,10 +48,10 @@ image may remain in the project so re-enabling the effect does not discard the
 author's input.
 
 Protected areas in `effectMasks` exclude their image area from effects. Version
-1 supports explicit `circle` and `rectangle` shapes.
+2 supports explicit `circle`, `rectangle`, `ellipse`, and `lasso` shapes.
 
 Static `elements` are composited in list order after effects and protected
-areas. Version 1 supports an inward `frame`, an `image_overlay` whose image is
+areas. Version 2 supports an inward `frame`, an `image_overlay` whose image is
 embedded in the project, and editable `text` backed by its embedded canonical
 raster. Later elements appear above earlier elements.
 
@@ -65,7 +68,7 @@ state the choice before packaging the project.
 ## Use images and sprites
 
 Effect image fields use role-based names rather than a suffix convention.
-The complete version-1 set is:
+The complete version-2 set is:
 
 - `depthMap`, `lightMask`, `lutImage`, `motionMap`;
 - `revealedImage`, `returnMap`, `ribbonImage`, `shapeImage`;
@@ -86,8 +89,9 @@ A built-in sprite uses an ID from
 [`sprites-v1.json`](../contracts/sprites-v1.json), for example
 `builtin:sprites/v1/fireflies_atlas`. Built-in sprites are versioned references
 and are not embedded. Each Sprite Sheet entry owns its `sheetColumns`,
-`sheetRows`, and recommended `frameSelection`; match those catalog values.
-Custom sprites are ordinary user-owned project inputs and are embedded once as
+`sheetRows`, and recommended `frameSelection`. Do not copy the two layout fields
+into a built-in sprite effect. Custom sprites keep explicit `sheetColumns` and
+`sheetRows`, are ordinary user-owned project inputs, and are embedded once as
 `AST`.
 
 The `source` of an `image_overlay` or `text` element is likewise a named project

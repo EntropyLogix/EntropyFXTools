@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "key": "firefly_field",
   "source": "source.png",
   "timeline": {
@@ -25,6 +25,7 @@
       "cycles": 1,
       "phase": 0,
       "spriteImage": "builtin:sprites/v1/fireflies_atlas",
+      "flipHorizontal": false,
       "particleCount": 8,
       "emitterShape": "box",
       "emitterInnerRadius": 0,
@@ -60,8 +61,6 @@
       "colorChangeStart": 0,
       "colorChangeEnd": 1,
       "brightnessVariation": 0.15,
-      "sheetColumns": 4,
-      "sheetRows": 4,
       "frameSelection": "random_per_particle",
       "blendMode": "normal",
       "fadeIn": 0.05,

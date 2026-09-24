@@ -12,7 +12,12 @@ export async function loadContracts() {
   loaded ??= Promise.all([
     readJson('effects-v1.json'),
     readJson('recipe-v1.schema.json'),
+    readJson('recipe-v2.schema.json'),
     readJson('sprites-v1.json'),
-  ]).then(([effects, recipeSchema, sprites]) => ({ effects, recipeSchema, sprites }));
+  ]).then(([effects, recipeV1, recipeV2, sprites]) => ({
+    effects,
+    recipeSchemas: new Map([[1, recipeV1], [2, recipeV2]]),
+    sprites,
+  }));
   return loaded;
 }

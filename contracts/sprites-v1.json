@@ -5,7 +5,7 @@
       "category": "animals",
       "id": "builtin:sprites/v1/jellyfish_sequence",
       "key": "jellyfish_sequence",
-      "purpose": "Thirty-two-frame swimming cycle with a contracting bell and moving tentacles.",
+      "purpose": "A swimming jellyfish with a contracting bell and flowing tentacles.",
       "recommendation": "Use a low particle count and slow upward or lateral motion for readable silhouettes.",
       "sheet": {
         "columns": 8,
@@ -18,13 +18,13 @@
       "similarTo": [
         "fish_atlas"
       ],
-      "title": "Jellyfish pulse"
+      "title": "Jellyfish swim"
     },
     {
       "category": "animals",
       "id": "builtin:sprites/v1/fish_atlas",
       "key": "fish_atlas",
-      "purpose": "Sixteen side-view fish silhouettes for schools and ambient underwater motion.",
+      "purpose": "Side-view fish silhouettes for schools and ambient underwater motion.",
       "recommendation": "Use many small instances with a shared travel direction and restrained rotation.",
       "sheet": {
         "columns": 4,
@@ -43,7 +43,7 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/embers_atlas",
       "key": "embers_atlas",
-      "purpose": "Sixteen warm clusters for fire motes, welding debris, and hot atmospheric dust.",
+      "purpose": "Warm ember clusters for fire motes, welding debris, and hot atmospheric dust.",
       "recommendation": "Use additive blending, upward gravity, and short trails only for the brightest particles.",
       "sheet": {
         "columns": 4,
@@ -63,7 +63,7 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/explosion_sequence",
       "key": "explosion_sequence",
-      "purpose": "Thirty-two-frame radial flash, ray, and dissipation sequence.",
+      "purpose": "A radial explosion that flashes, throws rays, and dissipates.",
       "recommendation": "Pair one short-lived burst with a larger shockwave rather than filling a whole region.",
       "sheet": {
         "columns": 8,
@@ -83,12 +83,12 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/fire_sequence",
       "key": "fire_sequence",
-      "purpose": "Thirty-two-frame compact flame cycle for burners, vents, and localized fires.",
-      "recommendation": "Use animated playback with slight size and brightness variation across instances.",
+      "purpose": "A volumetric flame with a hot core, rising tongues, smoke, and micro-embers.",
+      "recommendation": "Use additive or screen blending with restrained brightness variation for torches, burners, and open flame.",
       "sheet": {
-        "columns": 8,
+        "columns": 4,
         "rows": 4,
-        "frames": 32,
+        "frames": 16,
         "kind": "sequence",
         "recommendedFrameSelection": "particle_age",
         "gutterPixels": 8
@@ -97,13 +97,13 @@
         "embers_atlas",
         "explosion_sequence"
       ],
-      "title": "Flame cycle"
+      "title": "Fire sequence"
     },
     {
       "category": "atmosphere",
       "id": "builtin:sprites/v1/fog_puffs_atlas",
       "key": "fog_puffs_atlas",
-      "purpose": "Sixteen soft irregular puffs for layered mist and low-frequency atmospheric movement.",
+      "purpose": "Soft irregular puffs for layered mist and slow atmospheric movement.",
       "recommendation": "Layer large, low-opacity sprites with slow motion and normal blending.",
       "sheet": {
         "columns": 4,
@@ -123,8 +123,8 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/smoke_sequence",
       "key": "smoke_sequence",
-      "purpose": "Thirty-two-frame expanding and dissipating smoke puff.",
-      "recommendation": "Use animated playback, normal blending, and slow upward drift.",
+      "purpose": "An expanding smoke puff that thins and dissipates.",
+      "recommendation": "Use normal blending with slow upward drift and enough space for the puff to dissipate.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -143,7 +143,7 @@
       "category": "celebration",
       "id": "builtin:sprites/v1/confetti_atlas",
       "key": "confetti_atlas",
-      "purpose": "Sixteen tintable geometric variants for celebrations and stylized debris.",
+      "purpose": "Tintable geometric variants for celebrations and stylized debris.",
       "recommendation": "Use random frames, strong rotation variation, and a vivid tint per layer.",
       "sheet": {
         "columns": 4,
@@ -163,7 +163,7 @@
       "category": "debris",
       "id": "builtin:sprites/v1/crystal_shards_atlas",
       "key": "crystal_shards_atlas",
-      "purpose": "Sixteen translucent-looking shard variants for glass, ice, and crystalline debris.",
+      "purpose": "Faceted shard variants for glass, ice, and crystalline debris.",
       "recommendation": "Use normal blending with rotation and brightness variation; tint for glass, ice, or alien crystal.",
       "sheet": {
         "columns": 4,
@@ -183,7 +183,7 @@
       "category": "debris",
       "id": "builtin:sprites/v1/metal_fragments_atlas",
       "key": "metal_fragments_atlas",
-      "purpose": "Sixteen hard-edged plate fragments for impacts, machinery, and hull damage.",
+      "purpose": "Hard-edged plate fragments for impacts, machinery, and hull damage.",
       "recommendation": "Use random rotation and a directional burst; keep the particle count moderate so silhouettes remain distinct.",
       "sheet": {
         "columns": 4,
@@ -203,8 +203,8 @@
       "category": "energy",
       "id": "builtin:sprites/v1/electric_arcs_atlas",
       "key": "electric_arcs_atlas",
-      "purpose": "Sixteen branched line variants for flickering electricity and energy faults.",
-      "recommendation": "Change random frames quickly or layer several low-count emitters for unstable arcs.",
+      "purpose": "Branched arc variants for flickering electricity and unstable energy.",
+      "recommendation": "Use short-lived particles or layer several low-count emitters to create unstable flicker.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -223,12 +223,12 @@
       "category": "energy",
       "id": "builtin:sprites/v1/energy_orb_sequence",
       "key": "energy_orb_sequence",
-      "purpose": "Thirty-two-frame rotating ring and glowing core sequence.",
-      "recommendation": "Use one or a few animated instances with additive blending and restrained movement.",
+      "purpose": "A rotating energy sphere with a dense core and orbital containment rings.",
+      "recommendation": "Use one or a few instances with additive blending and restrained movement.",
       "sheet": {
-        "columns": 8,
+        "columns": 4,
         "rows": 4,
-        "frames": 32,
+        "frames": 16,
         "kind": "sequence",
         "recommendedFrameSelection": "particle_age",
         "gutterPixels": 8
@@ -243,8 +243,8 @@
       "category": "energy",
       "id": "builtin:sprites/v1/shockwave_sequence",
       "key": "shockwave_sequence",
-      "purpose": "Thirty-two-frame expanding ring that fades over its lifetime.",
-      "recommendation": "Use a single animated particle for impacts, pulses, portals, or weapon discharge.",
+      "purpose": "An expanding shockwave ring that fades over its lifetime.",
+      "recommendation": "Use one animated instance for impacts, pulses, portals, or weapon discharge.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -263,8 +263,8 @@
       "category": "light",
       "id": "builtin:sprites/v1/galactic_dust_atlas",
       "key": "galactic_dust_atlas",
-      "purpose": "Sixteen soft star-dust clusters for nebula shimmer and large particle fields.",
-      "recommendation": "Use a high particle count at very small size, additive blending, and gentle color-over-life.",
+      "purpose": "Soft stardust clusters for nebula shimmer and broad particle fields.",
+      "recommendation": "Use many very small instances with additive blending and a gentle color transition.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -283,7 +283,7 @@
       "category": "light",
       "id": "builtin:sprites/v1/halos_atlas",
       "key": "halos_atlas",
-      "purpose": "Sixteen elliptical ring variants for lights, lenses, shields, and portals.",
+      "purpose": "Elliptical halo variants for lights, lenses, shields, and portals.",
       "recommendation": "Use a low particle count or one instance per light source with additive blending.",
       "sheet": {
         "columns": 4,
@@ -303,8 +303,8 @@
       "category": "light",
       "id": "builtin:sprites/v1/hyperdrive_stars_atlas",
       "key": "hyperdrive_stars_atlas",
-      "purpose": "Sixteen bright star-head and short-streak variants for perspective travel fields.",
-      "recommendation": "Use the depth emitter, radial perspective motion, speed variation, and trails.",
+      "purpose": "Bright star points with short streaks for perspective travel fields.",
+      "recommendation": "Use a depth emitter with high speed variation and short trails.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -323,7 +323,7 @@
       "category": "light",
       "id": "builtin:sprites/v1/lens_flares_atlas",
       "key": "lens_flares_atlas",
-      "purpose": "Sixteen starburst variants for lamps, suns, reflections, and optical accents.",
+      "purpose": "Starburst variants for lamps, suns, reflections, and optical accents.",
       "recommendation": "Prefer one restrained additive instance per important light source.",
       "sheet": {
         "columns": 4,
@@ -343,7 +343,7 @@
       "category": "light",
       "id": "builtin:sprites/v1/sparks_atlas",
       "key": "sparks_atlas",
-      "purpose": "Sixteen short luminous streaks for impacts, welding, and electrical discharge.",
+      "purpose": "Short luminous streaks for impacts, welding, and electrical discharge.",
       "recommendation": "Use directional radial emission with short lifetime and additive blending.",
       "sheet": {
         "columns": 4,
@@ -363,7 +363,7 @@
       "category": "nature",
       "id": "builtin:sprites/v1/feathers_atlas",
       "key": "feathers_atlas",
-      "purpose": "Sixteen feather orientations for air currents, dreamlike scenes, and organic debris.",
+      "purpose": "Feather orientations for air currents, dreamlike scenes, and organic debris.",
       "recommendation": "Use slow gravity, lateral turbulence, and broad rotation variation.",
       "sheet": {
         "columns": 4,
@@ -383,7 +383,7 @@
       "category": "nature",
       "id": "builtin:sprites/v1/leaves_atlas",
       "key": "leaves_atlas",
-      "purpose": "Sixteen leaf orientations for wind, foliage drift, and seasonal scenes.",
+      "purpose": "Leaf orientations for wind, foliage drift, and seasonal scenes.",
       "recommendation": "Use random frames, directional drift, turbulence, and rotation variation.",
       "sheet": {
         "columns": 4,
@@ -403,7 +403,7 @@
       "category": "nature",
       "id": "builtin:sprites/v1/petals_atlas",
       "key": "petals_atlas",
-      "purpose": "Sixteen petal silhouettes for blossom fall, soft debris, and stylized particles.",
+      "purpose": "Petal silhouettes for blossom fall, soft debris, and stylized motion.",
       "recommendation": "Use low gravity, gentle turbulence, and alternating tint layers.",
       "sheet": {
         "columns": 4,
@@ -423,7 +423,7 @@
       "category": "space",
       "id": "builtin:sprites/v1/asteroids_atlas",
       "key": "asteroids_atlas",
-      "purpose": "Sixteen rocky asteroid variants for fields, impacts, and perspective fly-throughs.",
+      "purpose": "Rocky asteroid variants for fields, impacts, and perspective fly-throughs.",
       "recommendation": "Use the depth emitter with random rotation and size variation for a perspective field.",
       "sheet": {
         "columns": 4,
@@ -443,8 +443,8 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/magic_circles_atlas",
       "key": "magic_circles_atlas",
-      "purpose": "Sixteen circular glyph assemblies for portals, spells, interfaces, and ritual geometry.",
-      "recommendation": "Use a ring emitter with emitter-angle mapping, orbit motion, and color-over-life.",
+      "purpose": "Circular glyph assemblies for portals, spells, interfaces, and ritual geometry.",
+      "recommendation": "Arrange variants around a ring, map frame choice to the emitter angle, and add slow orbital motion.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -463,8 +463,8 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/runes_atlas",
       "key": "runes_atlas",
-      "purpose": "Sixteen clean tintable runes for orbiting glyphs, magic particles, and alien notation.",
-      "recommendation": "Use random frames for free particles or emitter-angle mapping around a ring.",
+      "purpose": "Clean tintable runes for orbiting glyphs, magic effects, and alien notation.",
+      "recommendation": "Use random variants for drifting particles, or map frame choice to the angle around a ring.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -483,7 +483,7 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/technical_glyphs_atlas",
       "key": "technical_glyphs_atlas",
-      "purpose": "Sixteen machine-readable-looking symbols for HUD particles and synthetic notation.",
+      "purpose": "Geometric machine glyphs for HUD texture, synthetic notation, and sci-fi interfaces.",
       "recommendation": "Use small random frames with limited rotation for legible interface texture.",
       "sheet": {
         "columns": 4,
@@ -503,7 +503,7 @@
       "category": "water",
       "id": "builtin:sprites/v1/bubbles_atlas",
       "key": "bubbles_atlas",
-      "purpose": "Sixteen bubble sizes and highlight variants for water, gas, and abstract floaters.",
+      "purpose": "Bubble variants with different sizes and highlights for water, gas, and abstract motion.",
       "recommendation": "Use upward motion, low opacity, size variation, and normal blending.",
       "sheet": {
         "columns": 4,
@@ -523,8 +523,8 @@
       "category": "water",
       "id": "builtin:sprites/v1/ripples_sequence",
       "key": "ripples_sequence",
-      "purpose": "Thirty-two-frame expanding elliptical ripple for surfaces and impact rings.",
-      "recommendation": "Use one animated sprite per impact with normal or subtle additive blending.",
+      "purpose": "An expanding elliptical ripple for water surfaces and impact rings.",
+      "recommendation": "Use one instance per impact with normal or subtle additive blending.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -543,8 +543,8 @@
       "category": "water",
       "id": "builtin:sprites/v1/splash_sequence",
       "key": "splash_sequence",
-      "purpose": "Thirty-two-frame droplet arc and surface-ring splash cycle.",
-      "recommendation": "Use sparse animated instances at collision points rather than as a continuous field.",
+      "purpose": "A water splash that rises in droplet arcs and settles into a surface ring.",
+      "recommendation": "Use sparse instances at collision points rather than a continuous field.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -563,7 +563,7 @@
       "category": "weather",
       "id": "builtin:sprites/v1/rain_drops_atlas",
       "key": "rain_drops_atlas",
-      "purpose": "Sixteen streak lengths and angles for layered rain and wind-driven precipitation.",
+      "purpose": "Rain streaks with varied lengths and angles for layered or wind-driven precipitation.",
       "recommendation": "Use box emission, one travel direction, a high particle count, and minimal rotation variation.",
       "sheet": {
         "columns": 4,
@@ -583,7 +583,7 @@
       "category": "weather",
       "id": "builtin:sprites/v1/snowflakes_atlas",
       "key": "snowflakes_atlas",
-      "purpose": "Sixteen radial snowflake variants for snow, frost, and stylized cold particles.",
+      "purpose": "Radial snowflake variants for snow, frost, and stylized cold effects.",
       "recommendation": "Use slow downward motion, lateral turbulence, and broad rotation variation.",
       "sheet": {
         "columns": 4,
@@ -603,8 +603,8 @@
       "category": "animals",
       "id": "builtin:sprites/v1/birds_sequence",
       "key": "birds_sequence",
-      "purpose": "Thirty-two-frame side-view wingbeat for individual birds and distant flocks.",
-      "recommendation": "Use animated playback, a low particle count, a shared travel direction, and modest size variation.",
+      "purpose": "A side-view wingbeat for individual birds and distant flocks.",
+      "recommendation": "Use a low particle count, shared travel direction, and modest size variation.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -623,8 +623,8 @@
       "category": "animals",
       "id": "builtin:sprites/v1/butterflies_sequence",
       "key": "butterflies_sequence",
-      "purpose": "Thirty-two-frame symmetric wingbeat for butterflies, moths, and stylized flying insects.",
-      "recommendation": "Use slow travel, gentle turbulence, and independent phase through particle age.",
+      "purpose": "A symmetric wingbeat for butterflies, moths, and stylized flying insects.",
+      "recommendation": "Use slow travel, gentle turbulence, and staggered animation phases.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -643,8 +643,8 @@
       "category": "surface",
       "id": "builtin:sprites/v1/splatter_atlas",
       "key": "splatter_atlas",
-      "purpose": "Sixteen irregular impact shapes for paint, ink, fluid stains, corrosion, or stylized blood.",
-      "recommendation": "Use a short directional burst or a few long-lived impacts, then tint per authored layer.",
+      "purpose": "Irregular impact shapes for paint, ink, fluid stains, corrosion, or stylized blood.",
+      "recommendation": "Use a short directional burst or a few long-lived impacts, then tint each layer to suit the material.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -663,7 +663,7 @@
       "category": "objects",
       "id": "builtin:sprites/v1/paper_sheets_atlas",
       "key": "paper_sheets_atlas",
-      "purpose": "Sixteen bent sheet variants for loose documents, cards, litter, and lightweight debris.",
+      "purpose": "Bent paper variants for loose documents, cards, litter, and lightweight debris.",
       "recommendation": "Use random frames with broad rotation, oscillation, and a weak downward drift.",
       "sheet": {
         "columns": 4,
@@ -683,12 +683,12 @@
       "category": "energy",
       "id": "builtin:sprites/v1/energy_aura_sequence",
       "key": "energy_aura_sequence",
-      "purpose": "Thirty-two-frame rising corona for charged objects, power-ups, reactors, and supernatural energy.",
-      "recommendation": "Place one large animated instance around a subject and use additive blending with restrained opacity.",
+      "purpose": "A hollow amber corona for surrounding characters, portals, and machinery.",
+      "recommendation": "Place one large anchored instance around the subject and use screen or additive blending at restrained opacity.",
       "sheet": {
-        "columns": 8,
+        "columns": 4,
         "rows": 4,
-        "frames": 32,
+        "frames": 16,
         "kind": "sequence",
         "recommendedFrameSelection": "particle_age",
         "gutterPixels": 8
@@ -703,8 +703,8 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/data_circuit_sequence",
       "key": "data_circuit_sequence",
-      "purpose": "Thirty-two-frame circuit trace with moving scan and illuminated nodes for digital fields and HUD particles.",
-      "recommendation": "Use animated playback with a low particle count, additive blending, and either grid-aligned or drifting placement.",
+      "purpose": "A circuit trace with a moving scan and illuminated nodes for digital overlays.",
+      "recommendation": "Use a low particle count with additive blending and either grid-aligned or drifting placement.",
       "sheet": {
         "columns": 8,
         "rows": 4,
@@ -723,12 +723,12 @@
       "category": "nature",
       "id": "builtin:sprites/v1/plant_sway_sequence",
       "key": "plant_sway_sequence",
-      "purpose": "Thirty-two-frame anchored plant cluster bending in a closed wind cycle.",
-      "recommendation": "Use one or a few stationary instances at the bottom of a region; avoid particle-like travel.",
+      "purpose": "An anchored fern cluster bending through a natural wind loop.",
+      "recommendation": "Keep instances anchored near the bottom of a region and vary scale slightly rather than adding travel.",
       "sheet": {
-        "columns": 8,
+        "columns": 4,
         "rows": 4,
-        "frames": 32,
+        "frames": 16,
         "kind": "sequence",
         "recommendedFrameSelection": "particle_age",
         "gutterPixels": 8
@@ -743,8 +743,8 @@
       "category": "light",
       "id": "builtin:sprites/v1/light_beams_atlas",
       "key": "light_beams_atlas",
-      "purpose": "Sixteen tapered single and grouped beams for flashlights, windows, energy emitters, and stylized shafts.",
-      "recommendation": "Use a low particle count, emitter-angle mapping or fixed rotation, and additive blending.",
+      "purpose": "Tapered single and grouped beams for flashlights, windows, energy emitters, and stylized shafts.",
+      "recommendation": "Use a low particle count, align variants with the emitter angle or a fixed rotation, and choose additive blending.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -763,8 +763,8 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/wind_streaks_atlas",
       "key": "wind_streaks_atlas",
-      "purpose": "Sixteen curved line groups for visible gusts, speed lines, air currents, and underwater flow.",
-      "recommendation": "Use aligned rotation and travel with low opacity; vary frames instead of adding long reconstructed trails.",
+      "purpose": "Curved line groups for visible gusts, speed lines, air currents, and underwater flow.",
+      "recommendation": "Align rotation with travel, keep opacity low, and vary the streak shape instead of adding long trails.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -783,7 +783,7 @@
       "category": "light",
       "id": "builtin:sprites/v1/fireflies_atlas",
       "key": "fireflies_atlas",
-      "purpose": "Sixteen small warm light clusters for fireflies, fairy lights, bioluminescence, and ambient motes.",
+      "purpose": "Small warm light clusters for fireflies, fairy lights, bioluminescence, and ambient motes.",
       "recommendation": "Use additive blending, slow irregular movement, low brightness, and no trail.",
       "sheet": {
         "columns": 4,
@@ -803,7 +803,7 @@
       "category": "atmosphere",
       "id": "builtin:sprites/v1/candle_flame_sequence",
       "key": "candle_flame_sequence",
-      "purpose": "Thirty-two-frame narrow flame cycle for candles, pilot lights, lamps, and small burners.",
+      "purpose": "A narrow flame for candles, pilot lights, lamps, and small burners.",
       "recommendation": "Use one small stationary instance per flame and avoid random rotation.",
       "sheet": {
         "columns": 8,
@@ -823,7 +823,7 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/hearts_atlas",
       "key": "hearts_atlas",
-      "purpose": "Sixteen filled and outlined heart variants for reactions, status feedback, celebrations, and stylized particles.",
+      "purpose": "Filled and outlined hearts for reactions, status feedback, and celebrations.",
       "recommendation": "Tint per layer and use upward drift or a short radial burst with a restrained particle count.",
       "sheet": {
         "columns": 4,
@@ -843,7 +843,7 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/music_notes_atlas",
       "key": "music_notes_atlas",
-      "purpose": "Sixteen note and headphone-like variants for audio, rhythm, radio, and celebratory motion.",
+      "purpose": "Note and headphone-inspired variants for audio, rhythm, radio, and celebratory motion.",
       "recommendation": "Use gentle upward or orbital movement and random frames; tint to match the authored scene.",
       "sheet": {
         "columns": 4,
@@ -863,7 +863,7 @@
       "category": "objects",
       "id": "builtin:sprites/v1/lanterns_atlas",
       "key": "lanterns_atlas",
-      "purpose": "Sixteen warm lantern variants for festivals, beacons, memorials, and atmospheric background motion.",
+      "purpose": "Warm lantern and lamp variants for festivals, beacons, and atmospheric motion.",
       "recommendation": "Use sparse upward drift, gentle oscillation, normal blending, and limited rotation.",
       "sheet": {
         "columns": 4,
@@ -883,8 +883,8 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/hud_reticles_atlas",
       "key": "hud_reticles_atlas",
-      "purpose": "Sixteen high-tech targeting reticles, lock-on sights, telemetry dials, and radar crosshairs for sci-fi interfaces.",
-      "recommendation": "Use additive blending with cyan, amber, or green tint; pair with ring or box emitters for futuristic telemetry.",
+      "purpose": "Targeting reticles, lock-on sights, telemetry dials, and radar crosshairs.",
+      "recommendation": "Use additive blending and pair with ring or box emitters for restrained interface telemetry.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -903,8 +903,8 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/arcane_sigils_atlas",
       "key": "arcane_sigils_atlas",
-      "purpose": "Sixteen intricate sacred geometry and alchemical seals for magic portals, ritual circles, and esoteric notation.",
-      "recommendation": "Use a ring emitter with emitter-angle mapping, slow rotation, and luminous color-over-life.",
+      "purpose": "Sacred geometry and alchemical seals for portals, rituals, and arcane notation.",
+      "recommendation": "Arrange variants around a ring, map frame choice to the emitter angle, and add slow rotation with a gentle color transition.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -923,7 +923,7 @@
       "category": "animals",
       "id": "builtin:sprites/v1/bats_swarm_atlas",
       "key": "bats_swarm_atlas",
-      "purpose": "Sixteen aerodynamic flight silhouettes for bat swarms, gothic atmosphere, and dark nocturnal scenes.",
+      "purpose": "Aerodynamic silhouettes for bat swarms, gothic atmosphere, and dark nocturnal scenes.",
       "recommendation": "Use dark tint, upward or diagonal velocity, lateral turbulence, and size variation against moonlit skies.",
       "sheet": {
         "columns": 4,
@@ -943,7 +943,7 @@
       "category": "space",
       "id": "builtin:sprites/v1/celestial_spheres_atlas",
       "key": "celestial_spheres_atlas",
-      "purpose": "Sixteen textured celestial bodies including ringed gas giants, cratered moons, solar coronas, and eclipses.",
+      "purpose": "Celestial bodies ranging from ringed planets and moons to coronas and eclipses.",
       "recommendation": "Use the depth emitter with slow perspective motion and low particle count for deep cosmic backdrops.",
       "sheet": {
         "columns": 4,
@@ -963,7 +963,7 @@
       "category": "symbols",
       "id": "builtin:sprites/v1/glitch_artifacts_atlas",
       "key": "glitch_artifacts_atlas",
-      "purpose": "Sixteen chromatic digital noise blocks, pixel-sorting fragments, and corrupted scanline clusters.",
+      "purpose": "Chromatic noise blocks, pixel-sorting fragments, and corrupted scanline clusters.",
       "recommendation": "Use high speed variation, short lifetime, horizontal drift, and pair with chromatic aberration or glitch effects.",
       "sheet": {
         "columns": 4,
@@ -981,10 +981,10 @@
     },
     {
       "category": "celebration",
-      "id": "builtin:sprites/v1/coins_gems_atlas",
-      "key": "coins_gems_atlas",
-      "purpose": "Sixteen tumbling 3D gold coins, medallions, and faceted gemstone variants for rewards and celebrations.",
-      "recommendation": "Use an upward burst with downward gravity, random rotation, and normal blending for reward fountains.",
+      "id": "builtin:sprites/v1/achievement_emblems_atlas",
+      "key": "achievement_emblems_atlas",
+      "purpose": "Restrained metal-and-crystal emblems for milestones, ranks, objectives, and rewards.",
+      "recommendation": "Use a fixed frame in Sprite layer for one chosen emblem, or random variants with normal blending for a restrained reward burst.",
       "sheet": {
         "columns": 4,
         "rows": 4,
@@ -994,10 +994,1051 @@
         "gutterPixels": 8
       },
       "similarTo": [
-        "confetti_atlas",
-        "crystal_shards_atlas"
+        "arcane_sigils_atlas",
+        "technical_glyphs_atlas"
       ],
-      "title": "Coins and gems"
+      "title": "Achievement emblems"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/wormhole_vortex_sequence",
+      "key": "wormhole_vortex_sequence",
+      "purpose": "A rotating space-time tunnel with a warm accretion disc and a deep central void.",
+      "recommendation": "Use one large animated instance with additive blending and slow rotation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Wormhole vortex"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/plasma_thruster_sequence",
+      "key": "plasma_thruster_sequence",
+      "purpose": "A pulsing rocket exhaust with a bright ion core and visible shock diamonds.",
+      "recommendation": "Align it with an engine outlet and use additive blending with minimal extra motion.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Plasma thruster"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/radar_sweep_sequence",
+      "key": "radar_sweep_sequence",
+      "purpose": "A full radar rotation with a fading phosphor sweep, rings, and calibration marks.",
+      "recommendation": "Use as an anchored sprite layer or a small number of particles with additive blending.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Radar sweep"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/target_lock_sequence",
+      "key": "target_lock_sequence",
+      "purpose": "A mechanical targeting reticle that converges, acquires, and confirms a lock.",
+      "recommendation": "Place it over a subject as an anchored layer; use additive blending on dark scenes or normal blending on light scenes.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Target lock-on"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/matrix_binary_sequence",
+      "key": "matrix_binary_sequence",
+      "purpose": "A vertical stream of luminous binary digits moving through a restrained digital cascade.",
+      "recommendation": "Use additive blending with a downward drift and low overlap.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Binary cascade"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/hex_shield_sequence",
+      "key": "hex_shield_sequence",
+      "purpose": "A localized impact that spreads across a hexagonal force-field surface and fades.",
+      "recommendation": "Place it at the hit point with additive blending and a short lifetime.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Hex shield impact"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/hovering_drone_sequence",
+      "key": "hovering_drone_sequence",
+      "purpose": "A compact mechanical probe hovering with subtle stabilization and pulsing optics.",
+      "recommendation": "Use normal blending, low movement, and restrained rotation so the silhouette stays readable.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Hovering probe drone"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/digital_glitch_sequence",
+      "key": "digital_glitch_sequence",
+      "purpose": "A monochrome wave of scanline tears, luminance noise, and displaced signal blocks.",
+      "recommendation": "Use brief lifetimes and sparse rectangular placement; tint only when the scene needs it.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Digital glitch wave"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/supernova_flare_sequence",
+      "key": "supernova_flare_sequence",
+      "purpose": "A stellar flare that expands from a white core into a fading coronal burst.",
+      "recommendation": "Use additive blending and scale growth for a single prominent burst.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Supernova flare"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/cyber_eye_sequence",
+      "key": "cyber_eye_sequence",
+      "purpose": "A mechanical iris that opens, scans, focuses, and closes around a sapphire sensor.",
+      "recommendation": "Keep it anchored to the subject with normal blending so the mechanical housing remains readable.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Cybernetic iris"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/alchemy_circle_sequence",
+      "key": "alchemy_circle_sequence",
+      "purpose": "A rotating alchemical seal with geometric construction lines, glyphs, and a bright center.",
+      "recommendation": "Use additive blending in a ring or as one anchored sprite layer.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Alchemical summoning circle"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/spectral_flame_sequence",
+      "key": "spectral_flame_sequence",
+      "purpose": "An ethereal forest light swaying around a pale core with a spectral trail.",
+      "recommendation": "Use additive blending, low speed, and gentle turbulence.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Spectral flame"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/void_singularity_sequence",
+      "key": "void_singularity_sequence",
+      "purpose": "A compact dark singularity pulling muted violet matter around its event horizon.",
+      "recommendation": "Use one anchored instance with normal blending and slow rotation; add surrounding light as a separate layer if needed.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Void singularity"
+    },
+    {
+      "category": "light",
+      "id": "builtin:sprites/v1/holy_radiance_sequence",
+      "key": "holy_radiance_sequence",
+      "purpose": "A restrained golden halo that breathes through rays, motes, and a soft central glow.",
+      "recommendation": "Use additive blending at low opacity behind or around the subject.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Holy radiance"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/power_crystal_sequence",
+      "key": "power_crystal_sequence",
+      "purpose": "A faceted quartz crystal that levitates, turns, and catches spectral light.",
+      "recommendation": "Use normal blending to preserve the faceted body; add a separate restrained glow if needed.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Floating power crystal"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/acid_bubble_sequence",
+      "key": "acid_bubble_sequence",
+      "purpose": "A corrosive bubble that swells, trembles, and bursts into droplets.",
+      "recommendation": "Use a short lifetime with normal blending and restrained upward drift.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Acid bubble burst"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/shadow_tendrils_sequence",
+      "key": "shadow_tendrils_sequence",
+      "purpose": "Dark tendrils that curl out of a void and dissolve into muted haze.",
+      "recommendation": "Use normal blending, low opacity, and slow motion around a focal point.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Shadow tendrils"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/lost_souls_sequence",
+      "key": "lost_souls_sequence",
+      "purpose": "Pale spectral forms that emerge from ground mist and rise before fading.",
+      "recommendation": "Use sparse upward motion with screen or additive blending.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Lost souls rising"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/runestone_ignition_sequence",
+      "key": "runestone_ignition_sequence",
+      "purpose": "An ancient carved stone whose markings ignite in a controlled sequence.",
+      "recommendation": "Use normal blending and keep the sprite anchored while the glyphs animate.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Runestone ignition"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/magic_missile_sequence",
+      "key": "magic_missile_sequence",
+      "purpose": "A compact mana projectile with a bright core and a tightly spiralling trail.",
+      "recommendation": "Use additive blending and orient it along the direction of travel.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Magic missile spiral"
+    },
+    {
+      "category": "weather",
+      "id": "builtin:sprites/v1/lightning_bolt_sequence",
+      "key": "lightning_bolt_sequence",
+      "purpose": "A branching lightning discharge that flashes, forks, and decays across sixteen frames.",
+      "recommendation": "Use additive blending, a short lifetime, and little or no rotation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Forked lightning strike"
+    },
+    {
+      "category": "weather",
+      "id": "builtin:sprites/v1/dust_devil_sequence",
+      "key": "dust_devil_sequence",
+      "purpose": "A rotating column of natural dust and sand with a grounded widening base.",
+      "recommendation": "Use normal blending, slow travel, and restrained opacity over dry environments.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Dust devil"
+    },
+    {
+      "category": "atmosphere",
+      "id": "builtin:sprites/v1/steam_jet_sequence",
+      "key": "steam_jet_sequence",
+      "purpose": "A pressurized cone of steam that expands into translucent vapour.",
+      "recommendation": "Anchor it to a vent and use screen or normal blending with directional motion.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Pressurized steam jet"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/lava_splash_sequence",
+      "key": "lava_splash_sequence",
+      "purpose": "A hot magma splash that throws droplets and cools into dark crust.",
+      "recommendation": "Use normal blending for the cooling crust, or additive blending when the molten glow matters more; add downward gravity and a short lifetime.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Lava splash"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/burning_meteor_sequence",
+      "key": "burning_meteor_sequence",
+      "purpose": "A dense meteor wrapped in a hot plasma envelope and trailing sparks.",
+      "recommendation": "Orient it along a fast diagonal path; use normal blending to retain the meteor body or additive blending for a lighter streak.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Burning meteor"
+    },
+    {
+      "category": "water",
+      "id": "builtin:sprites/v1/waterfall_mist_sequence",
+      "key": "waterfall_mist_sequence",
+      "purpose": "A low cloud of droplets and vapour kicked up by falling water.",
+      "recommendation": "Use screen blending at low opacity near the base of a waterfall.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Waterfall mist"
+    },
+    {
+      "category": "weather",
+      "id": "builtin:sprites/v1/snow_crystal_sequence",
+      "key": "snow_crystal_sequence",
+      "purpose": "A detailed snow crystal rotating through a controlled three-dimensional tumble.",
+      "recommendation": "Use normal or screen blending with slow fall and gentle rotation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Tumbling snow crystal"
+    },
+    {
+      "category": "nature",
+      "id": "builtin:sprites/v1/maple_leaf_sequence",
+      "key": "maple_leaf_sequence",
+      "purpose": "An autumn maple leaf turning and rocking through a closed falling cycle.",
+      "recommendation": "Use normal blending, downward motion, and mild lateral turbulence.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Tumbling maple leaf"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/bat_flight_sequence",
+      "key": "bat_flight_sequence",
+      "purpose": "A complete anatomical wingbeat cycle for a bat seen in flight.",
+      "recommendation": "Use multiple small instances with shared travel and varied phase.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Bat flight"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/hovering_dragonfly_sequence",
+      "key": "hovering_dragonfly_sequence",
+      "purpose": "A dragonfly holding position while its transparent wings beat rapidly.",
+      "recommendation": "Use normal blending, low travel, and small phase offsets between instances.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Hovering dragonfly"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/raven_flight_sequence",
+      "key": "raven_flight_sequence",
+      "purpose": "A dark raven moving through a measured wingbeat and short glide cycle.",
+      "recommendation": "Use normal blending and a steady shared direction with modest size variation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Raven flight"
+    },
+    {
+      "category": "nature",
+      "id": "builtin:sprites/v1/bioluminescent_spores_sequence",
+      "key": "bioluminescent_spores_sequence",
+      "purpose": "Organic spores that brighten, dim, and disperse through a soft floating cycle.",
+      "recommendation": "Use screen or additive blending with slow drift and low density.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Bioluminescent spores"
+    },
+    {
+      "category": "nature",
+      "id": "builtin:sprites/v1/dandelion_seed_sequence",
+      "key": "dandelion_seed_sequence",
+      "purpose": "A light dandelion seed rocking and turning in a gentle air current.",
+      "recommendation": "Use normal blending, low gravity, and restrained turbulence.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Dandelion seed drift"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/jellyfish_pulse_sequence",
+      "key": "jellyfish_pulse_sequence",
+      "purpose": "A deep-sea jellyfish contracting its bell and trailing tentacles.",
+      "recommendation": "Use normal or screen blending with slow upward drift and few instances.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Deep-sea jellyfish"
+    },
+    {
+      "category": "animals",
+      "id": "builtin:sprites/v1/crawling_spiders_sequence",
+      "key": "crawling_spiders_sequence",
+      "purpose": "Small spiders running through a readable ground-level crawl cycle.",
+      "recommendation": "Use normal blending, small scale, and directional surface travel.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Crawling spiders"
+    },
+    {
+      "category": "light",
+      "id": "builtin:sprites/v1/firefly_pulse_sequence",
+      "key": "firefly_pulse_sequence",
+      "purpose": "A firefly whose abdomen brightens and fades through a natural glow cycle.",
+      "recommendation": "Use sparse instances, slow wandering motion, and additive light at low opacity.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Firefly pulse"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/anime_impact_sequence",
+      "key": "anime_impact_sequence",
+      "purpose": "A sharp graphic impact that expands through rays and collapses into fragments.",
+      "recommendation": "Use a short lifetime and one-shot scale growth with normal or additive blending.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Anime star impact"
+    },
+    {
+      "category": "atmosphere",
+      "id": "builtin:sprites/v1/muzzle_flash_sequence",
+      "key": "muzzle_flash_sequence",
+      "purpose": "A compact muzzle flash that expands, breaks into smoke, and extinguishes.",
+      "recommendation": "Anchor it to a barrel with a very short lifetime and additive blending.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Muzzle flash"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/sword_slash_sequence",
+      "key": "sword_slash_sequence",
+      "purpose": "A curved blade trail that sweeps through a complete high-speed strike.",
+      "recommendation": "Align it with the attack, use additive or screen blending, and keep the lifetime short.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Sword slash arc"
+    },
+    {
+      "category": "surface",
+      "id": "builtin:sprites/v1/liquid_splash_sequence",
+      "key": "liquid_splash_sequence",
+      "purpose": "A dark liquid splash that spreads into droplets and a fading stain-like shape.",
+      "recommendation": "Use normal blending with scale growth and downward gravity for detached droplets.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Dark liquid splash"
+    },
+    {
+      "category": "atmosphere",
+      "id": "builtin:sprites/v1/dust_ring_sequence",
+      "key": "dust_ring_sequence",
+      "purpose": "A grounded dust ring that expands outward after a heavy impact.",
+      "recommendation": "Use normal blending, one large instance, and rapid scale growth near the floor.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Dust impact ring"
+    },
+    {
+      "category": "debris",
+      "id": "builtin:sprites/v1/bullet_shell_sequence",
+      "key": "bullet_shell_sequence",
+      "purpose": "A dark, weathered cartridge case rotating through a complete airborne tumble.",
+      "recommendation": "Use normal blending with gravity, lateral ejection, and modest spin variation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Tumbling bullet shell"
+    },
+    {
+      "category": "light",
+      "id": "builtin:sprites/v1/metal_sparks_sequence",
+      "key": "metal_sparks_sequence",
+      "purpose": "A directional shower of hot metal sparks that grows and then falls away.",
+      "recommendation": "Use additive blending, a short lifetime, and gravity along the spark trajectories.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Grinding sparks"
+    },
+    {
+      "category": "celebration",
+      "id": "builtin:sprites/v1/spinning_coin_sequence",
+      "key": "spinning_coin_sequence",
+      "purpose": "A dark electrum reward coin turning between orbit and starburst faces.",
+      "recommendation": "Use one anchored Sprite layer for a reward icon, or several particles with upward motion, gravity, and varied phase.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Spinning reward coin"
+    },
+    {
+      "category": "celebration",
+      "id": "builtin:sprites/v1/diamond_glint_sequence",
+      "key": "diamond_glint_sequence",
+      "purpose": "A cut diamond catching a restrained moving highlight across its facets.",
+      "recommendation": "Use normal blending for the diamond and keep motion low so the glint stays readable.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Diamond glint"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/beating_heart_sequence",
+      "key": "beating_heart_sequence",
+      "purpose": "A dark ruby heart talisman responding with a restrained double heartbeat pulse.",
+      "recommendation": "Use normal blending as a health, life, or recovery symbol and keep rotation restrained.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Vitality heart"
+    },
+    {
+      "category": "celebration",
+      "id": "builtin:sprites/v1/level_star_sequence",
+      "key": "level_star_sequence",
+      "purpose": "A crystal-and-electrum reward star that grows, brightens, and settles.",
+      "recommendation": "Use normal blending as one prominent milestone or reward element with restrained scale.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Level-up star"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/quest_marker_sequence",
+      "key": "quest_marker_sequence",
+      "purpose": "A floating brass navigation beacon activating through an expanding signal ring.",
+      "recommendation": "Use normal blending and anchor it above an objective, character, object, or location.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Objective beacon"
+    },
+    {
+      "category": "objects",
+      "id": "builtin:sprites/v1/rolling_die_sequence",
+      "key": "rolling_die_sequence",
+      "purpose": "A dark metal twenty-sided die rotating through a readable roll.",
+      "recommendation": "Use normal blending with short physical travel and restrained bounce.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Rolling D20"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/cyber_spinner_sequence",
+      "key": "cyber_spinner_sequence",
+      "purpose": "A segmented precision spinner with muted cobalt progress lights and calibration marks.",
+      "recommendation": "Use as an anchored sprite layer with normal or additive blending.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Cyber loading spinner"
+    },
+    {
+      "category": "atmosphere",
+      "id": "builtin:sprites/v1/flame_burst_sequence",
+      "key": "flame_burst_sequence",
+      "purpose": "A brighter, broader flame cycle with rising tongues and a soft ember halo.",
+      "recommendation": "Use additive or screen blending for stylized burners, torches, and magical fire.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Flame burst"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/solar_orb_sequence",
+      "key": "solar_orb_sequence",
+      "purpose": "A warm stellar sphere with active surface texture, a bright core, and a soft corona.",
+      "recommendation": "Use one anchored instance with additive blending and slow animation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Solar orb"
+    },
+    {
+      "category": "nature",
+      "id": "builtin:sprites/v1/windblown_foliage_sequence",
+      "key": "windblown_foliage_sequence",
+      "purpose": "A dense foliage cluster bending through a stronger directional wind cycle.",
+      "recommendation": "Keep it anchored and use normal blending along the lower edge of a scene.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [],
+      "title": "Windblown foliage"
+    },
+    {
+      "category": "atmosphere",
+      "id": "builtin:sprites/v1/incense_smoke_sequence",
+      "key": "incense_smoke_sequence",
+      "purpose": "Pale incense smoke rising through soft curls and dissipating wisps.",
+      "recommendation": "Use normal blending, a slow upward drift, and one or a few long-lived particles.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "smoke_sequence",
+        "fog_puffs_atlas"
+      ],
+      "title": "Incense smoke"
+    },
+    {
+      "category": "impact",
+      "id": "builtin:sprites/v1/blood_splatter_sequence",
+      "key": "blood_splatter_sequence",
+      "purpose": "A dark crimson droplet impact opening into a crown splash before settling into a pool.",
+      "recommendation": "Use normal blending as a short one-shot impact; Once & hold preserves the settled final frame.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "liquid_splash_sequence",
+        "anime_impact_sequence"
+      ],
+      "title": "Blood splatter"
+    },
+    {
+      "category": "nature",
+      "id": "builtin:sprites/v1/sakura_drift_sequence",
+      "key": "sakura_drift_sequence",
+      "purpose": "A small cluster of blossom petals tumbling gently through a continuous breeze.",
+      "recommendation": "Use normal blending with low gravity, gentle turbulence, and varied phase across a sparse field.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "petals_atlas",
+        "maple_leaf_sequence"
+      ],
+      "title": "Sakura petal drift"
+    },
+    {
+      "category": "light",
+      "id": "builtin:sprites/v1/candle_flicker_sequence",
+      "key": "candle_flicker_sequence",
+      "purpose": "An anchored candle flame and wick swaying subtly through a warm, natural flicker.",
+      "recommendation": "Use one anchored sprite layer with normal or screen blending and no random rotation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "candle_flame_sequence",
+        "fire_sequence"
+      ],
+      "title": "Candle flicker"
+    },
+    {
+      "category": "energy",
+      "id": "builtin:sprites/v1/emp_shockwave_sequence",
+      "key": "emp_shockwave_sequence",
+      "purpose": "An electrical flash expanding into a crackling pulse and fading energy ring.",
+      "recommendation": "Use additive blending as a single short-lived pulse centered on an impact or device.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "shockwave_sequence",
+        "hex_shield_sequence"
+      ],
+      "title": "EMP shockwave"
+    },
+    {
+      "category": "magic",
+      "id": "builtin:sprites/v1/fairy_sparkle_dust_sequence",
+      "key": "fairy_sparkle_dust_sequence",
+      "purpose": "A restrained ribbon of warm micro-sparks, soft bokeh, and sparse starlight glints.",
+      "recommendation": "Use additive blending at low opacity with slow drift and modest scale variation.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "galactic_dust_atlas",
+        "firefly_pulse_sequence"
+      ],
+      "title": "Fairy sparkle dust"
+    },
+    {
+      "category": "space",
+      "id": "builtin:sprites/v1/black_hole_horizon_sequence",
+      "key": "black_hole_horizon_sequence",
+      "purpose": "A dark event horizon wrapped in a thin photon ring and slowly rotating lensed starlight.",
+      "recommendation": "Use one anchored Sprite layer with normal blending and a slow loop so the dark horizon remains visible.",
+      "sheet": {
+        "columns": 4,
+        "rows": 4,
+        "frames": 16,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "void_singularity_sequence",
+        "wormhole_vortex_sequence"
+      ],
+      "title": "Black hole horizon"
     }
   ]
 }

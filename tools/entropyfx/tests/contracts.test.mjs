@@ -3,16 +3,18 @@ import { test } from 'node:test';
 
 import { loadContracts } from '../src/contracts.js';
 
-test('ships one versioned schema and unique effect and sprite catalogs', async () => {
+test('ships versioned recipe schemas and unique effect and sprite catalogs', async () => {
   const contracts = await loadContracts();
+  const recipeSchema = contracts.recipeSchemas.get(2);
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
   assert.equal(contracts.effects.effects.length, 122);
-  assert.equal(contracts.sprites.sprites.length, 50);
+  assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2]);
+  assert.equal(contracts.sprites.sprites.length, 110);
   assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 122);
-  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 50);
-  assert.equal(contracts.recipeSchema.properties.primitives.items.oneOf.length, 122);
-  assert.equal(contracts.recipeSchema.properties.elements.items.oneOf.length, 5);
+  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);
+  assert.equal(recipeSchema.properties.primitives.items.oneOf.length, 122);
+  assert.equal(recipeSchema.properties.elements.items.oneOf.length, 5);
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
   assert.equal(spriteParticles.template.particleCount, 8);
@@ -41,7 +43,7 @@ test('ships one versioned schema and unique effect and sprite catalogs', async (
     assert.ok(effect.mainControl in mainControls, `${effect.type} has an unknown main control`);
     mainControls[effect.mainControl] += 1;
     assert.equal(typeof effect.template[effect.mainControl], 'number');
-    const schema = contracts.recipeSchema.properties.primitives.items.oneOf[index];
+    const schema = recipeSchema.properties.primitives.items.oneOf[index];
     const variants = schema.oneOf ?? [schema];
     for (const variant of variants) {
       assert.ok(variant.properties[effect.mainControl],

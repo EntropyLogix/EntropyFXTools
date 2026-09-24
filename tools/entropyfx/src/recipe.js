@@ -56,6 +56,28 @@ function selectedAlternative(value, alternatives) {
 }
 
 export function validateAgainstSchema(value, schema, path = 'recipe') {
+  if (schema.not) {
+    let matches = true;
+    try {
+      validateAgainstSchema(value, schema.not, path);
+    } catch {
+      matches = false;
+    }
+    if (matches)
+      fail(path, 'matches a forbidden shape');
+  }
+  if (schema.anyOf) {
+    const matches = schema.anyOf.some((candidate) => {
+      try {
+        validateAgainstSchema(value, candidate, path);
+        return true;
+      } catch {
+        return false;
+      }
+    });
+    if (!matches)
+      fail(path, 'does not match any allowed shape');
+  }
   if (schema.allOf) {
     for (const candidate of schema.allOf)
       validateAgainstSchema(value, candidate, path);
@@ -96,7 +118,8 @@ export function validateAgainstSchema(value, schema, path = 'recipe') {
     fail(path, `must be one of ${schema.enum.join(', ')}`);
   if (schema.type && !matchesType(value, schema.type))
     fail(path, `must be ${schema.type}; received ${valueType(value)}`);
-  if (schema.type === 'string') {
+  if (typeof value === 'string'
+      && (schema.type === 'string' || schema.minLength !== undefined || schema.pattern)) {
     if (schema.minLength !== undefined && value.length < schema.minLength)
       fail(path, `must contain at least ${schema.minLength} character(s)`);
     if (schema.pattern && !new RegExp(schema.pattern).test(value))
@@ -116,7 +139,9 @@ export function validateAgainstSchema(value, schema, path = 'recipe') {
     for (let index = 0; index < value.length; index++)
       validateAgainstSchema(value[index], schema.items, `${path}[${index}]`);
   }
-  if (schema.type === 'object') {
+  if (value !== null && typeof value === 'object' && !Array.isArray(value)
+      && (schema.type === 'object' || schema.required || schema.properties
+        || schema.additionalProperties !== undefined)) {
     for (const required of schema.required ?? []) {
       if (!(required in value))
         fail(`${path}.${required}`, 'is required');
@@ -244,7 +269,7 @@ function validateRegions(value, path = 'recipe') {
     validateRegions(child, Array.isArray(value) ? `${path}[${key}]` : `${path}.${key}`);
 }
 
-export function parseAndValidateRecipe(text, recipeSchema) {
+export function parseAndValidateRecipe(text, recipeSchemas) {
   if (typeof text !== 'string')
     throw new Error('recipe text is required');
   rejectDuplicateKeys(text);
@@ -254,6 +279,9 @@ export function parseAndValidateRecipe(text, recipeSchema) {
   } catch (error) {
     throw new Error(`recipe is invalid JSON: ${error instanceof Error ? error.message : error}`);
   }
+  const recipeSchema = recipeSchemas.get(recipe?.schemaVersion);
+  if (!recipeSchema)
+    fail('recipe.schemaVersion', 'is not supported');
   validateAgainstSchema(recipe, recipeSchema);
   validateProjectPath(recipe.source, 'recipe source');
   validateRegions(recipe);
@@ -300,7 +328,7 @@ export function activeReferencedAuxiliaryInputs(recipe) {
 }
 
 export function validateProjectRecipe(project, contracts) {
-  const recipe = parseAndValidateRecipe(project.recipe, contracts.recipeSchema);
+  const recipe = parseAndValidateRecipe(project.recipe, contracts.recipeSchemas);
   if (recipe.source !== project.source.name)
     throw new Error(`recipe.source ${recipe.source} does not match project source ${project.source.name}`);
   if (['png_sprite_sheet', 'tga_sprite_sheet'].includes(project.output?.format)

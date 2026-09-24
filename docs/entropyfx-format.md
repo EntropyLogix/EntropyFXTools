@@ -1,7 +1,29 @@
 # EntropyLogix FX Project (`.entropyfx`) format
 
-Status: public specification draft. Version 1 may be replaced in place before
-the first public EntropyLogix FX release.
+Status: public specification. Container version 1 was published with
+EntropyLogix FX 1.0.
+
+## Versioning model
+
+The EntropyLogix FX product version, container version, chunk version and
+recipe schema version are independent contracts.
+
+- The product version describes the set of application features and fixes.
+- The container version changes only when the byte-level framing or required
+  core-chunk contract becomes incompatible. Adding a noncritical optional chunk
+  does not by itself require a new container version.
+- Each chunk version identifies an incompatible change to that chunk's payload.
+- The recipe `schemaVersion` identifies an incompatible generation of the JSON
+  language. A compatible new primitive or element variant can extend the
+  current generation. Renaming or reinterpreting an existing field, or adding
+  a required field to an existing shape without a versioned migration, requires
+  a new recipe schema generation.
+
+A writer emits one complete canonical recipe generation without hidden
+defaults. A reader may support older generations through an explicit,
+version-selected migration into the current complete model. Published schema
+files remain available under their original versioned names and are not
+rewritten to describe a later incompatible generation.
 
 ## Byte order and file header
 
