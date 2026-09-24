@@ -428,27 +428,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -518,27 +518,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -716,27 +716,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -823,27 +823,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -923,27 +923,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1080,27 +1080,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1170,27 +1170,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1260,27 +1260,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1350,27 +1350,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1470,27 +1470,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -1917,27 +1917,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2014,27 +2014,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2111,27 +2111,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2208,27 +2208,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2674,27 +2674,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2778,27 +2778,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -2889,27 +2889,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -3190,27 +3190,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -3301,27 +3301,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -3761,27 +3761,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -3911,27 +3911,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4001,27 +4001,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4084,27 +4084,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4227,27 +4227,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Length of the spatial blur in the selected direction."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4317,27 +4317,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4400,27 +4400,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4497,27 +4497,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4587,27 +4587,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4663,27 +4663,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4746,27 +4746,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4889,27 +4889,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -4972,27 +4972,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5055,27 +5055,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5138,27 +5138,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5221,27 +5221,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5304,27 +5304,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5401,27 +5401,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -5512,27 +5512,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -6334,27 +6334,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -6466,27 +6466,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -6608,27 +6608,27 @@
                     "properties": {
                       "x": {
                         "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                        "minimum": -32767,
+                        "maximum": 32767,
+                        "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                       },
                       "y": {
                         "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                        "minimum": -32767,
+                        "maximum": 32767,
+                        "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                       },
                       "width": {
                         "type": "number",
                         "exclusiveMinimum": 0,
-                        "maximum": 1,
-                        "description": "Normalized width of the band or affected feature."
+                        "maximum": 32767,
+                        "description": "Full normalized width of the effect region before canvas clipping."
                       },
                       "height": {
                         "type": "number",
                         "exclusiveMinimum": 0,
-                        "maximum": 1,
-                        "description": "Normalized height of the selected rectangle."
+                        "maximum": 32767,
+                        "description": "Full normalized height of the effect region before canvas clipping."
                       }
                     },
                     "required": [
@@ -6819,27 +6819,27 @@
                     "properties": {
                       "x": {
                         "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                        "minimum": -32767,
+                        "maximum": 32767,
+                        "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                       },
                       "y": {
                         "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                        "minimum": -32767,
+                        "maximum": 32767,
+                        "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                       },
                       "width": {
                         "type": "number",
                         "exclusiveMinimum": 0,
-                        "maximum": 1,
-                        "description": "Normalized width of the band or affected feature."
+                        "maximum": 32767,
+                        "description": "Full normalized width of the effect region before canvas clipping."
                       },
                       "height": {
                         "type": "number",
                         "exclusiveMinimum": 0,
-                        "maximum": 1,
-                        "description": "Normalized height of the selected rectangle."
+                        "maximum": 32767,
+                        "description": "Full normalized height of the effect region before canvas clipping."
                       }
                     },
                     "required": [
@@ -7047,27 +7047,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -7344,27 +7344,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -7472,27 +7472,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -7581,27 +7581,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -7748,27 +7748,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -7936,27 +7936,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -8193,27 +8193,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -8420,27 +8420,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -8667,27 +8667,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -9003,27 +9003,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -9107,27 +9107,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -9233,27 +9233,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -9419,27 +9419,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -9774,27 +9774,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -10301,27 +10301,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -10489,27 +10489,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -10644,27 +10644,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -10846,27 +10846,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11014,27 +11014,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11161,27 +11161,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11251,27 +11251,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11334,27 +11334,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11527,27 +11527,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -11706,27 +11706,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12223,27 +12223,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12320,27 +12320,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12438,27 +12438,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12648,27 +12648,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12766,27 +12766,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -12965,27 +12965,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13086,27 +13086,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13204,27 +13204,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13301,27 +13301,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13412,27 +13412,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13544,27 +13544,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13647,27 +13647,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13751,27 +13751,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -13943,27 +13943,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -14054,27 +14054,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -14150,27 +14150,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [
@@ -14268,27 +14268,27 @@
                 "properties": {
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Horizontal position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Vertical position of the effect region’s top-left corner. Values outside 0–1 move it beyond the image."
                   },
                   "width": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized width of the band or affected feature."
+                    "maximum": 32767,
+                    "description": "Full normalized width of the effect region before canvas clipping."
                   },
                   "height": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
-                    "description": "Normalized height of the selected rectangle."
+                    "maximum": 32767,
+                    "description": "Full normalized height of the effect region before canvas clipping."
                   }
                 },
                 "required": [

@@ -32,6 +32,41 @@ test('selects the frozen v1 schema for existing recipes', async () => {
     JSON.stringify(recipe), contracts.recipeSchemas).schemaVersion, 1);
 });
 
+test('accepts off-canvas effect regions without widening other rectangles', async () => {
+  const contracts = await loadContracts();
+  const recipe = JSON.parse(await example('minimal'));
+  const shimmer = structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'shimmer').template);
+  shimmer.region = { x: -0.5, y: 1.25, width: 2, height: 0.5 };
+  recipe.primitives = [shimmer];
+  assert.deepEqual(
+    parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
+      .primitives[0].region,
+    shimmer.region,
+  );
+
+  recipe.effectMasks = [{
+    feather: 0,
+    region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
+    shape: 'rectangle',
+  }];
+  assert.throws(
+    () => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
+    /effectMasks.*region.*x.*must be at least 0/,
+  );
+
+  recipe.effectMasks = [];
+  const tiling = structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'tiling_array').template);
+  tiling.region = shimmer.region;
+  tiling.tileRegion.x = -0.1;
+  recipe.primitives = [tiling];
+  assert.throws(
+    () => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
+    /tileRegion.*x.*must be at least 0/,
+  );
+});
+
 test('rejects missing, unknown, duplicate, and invalid fields', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));

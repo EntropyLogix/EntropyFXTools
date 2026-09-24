@@ -255,18 +255,26 @@ function rejectDuplicateKeys(text) {
     fail('recipe', `contains trailing input at byte ${state.index}`);
 }
 
-function validateRegions(value, path = 'recipe') {
+function validateRegions(value, schemaVersion, path = 'recipe') {
   if (!value || typeof value !== 'object')
     return;
   if (!Array.isArray(value)
       && ['x', 'y', 'width', 'height'].every((key) => typeof value[key] === 'number')) {
-    if (value.x + value.width > 1)
-      fail(path, 'x plus width must not exceed 1');
-    if (value.y + value.height > 1)
-      fail(path, 'y plus height must not exceed 1');
+    const effectRegion = schemaVersion === 2
+      && /^recipe\.primitives\[\d+\]\.region$/u.test(path);
+    if (!effectRegion) {
+      if (value.x + value.width > 1)
+        fail(path, 'x plus width must not exceed 1');
+      if (value.y + value.height > 1)
+        fail(path, 'y plus height must not exceed 1');
+    }
   }
   for (const [key, child] of Object.entries(value))
-    validateRegions(child, Array.isArray(value) ? `${path}[${key}]` : `${path}.${key}`);
+    validateRegions(
+      child,
+      schemaVersion,
+      Array.isArray(value) ? `${path}[${key}]` : `${path}.${key}`,
+    );
 }
 
 export function parseAndValidateRecipe(text, recipeSchemas) {
@@ -284,7 +292,7 @@ export function parseAndValidateRecipe(text, recipeSchemas) {
     fail('recipe.schemaVersion', 'is not supported');
   validateAgainstSchema(recipe, recipeSchema);
   validateProjectPath(recipe.source, 'recipe source');
-  validateRegions(recipe);
+  validateRegions(recipe, recipe.schemaVersion);
   return recipe;
 }
 
