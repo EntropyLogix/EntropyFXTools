@@ -227,6 +227,44 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
   }, contracts).primitives[0].sheetColumns, 7);
 });
 
+test('validates every nested Sprite morph source', async () => {
+  const contracts = await loadContracts();
+  const recipe = JSON.parse(await example('minimal'));
+  const morph = structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'sprite_morph').template,
+  );
+  recipe.primitives = [morph];
+  const project = {
+    auxiliaryInputs: morph.stages.map((stage) => ({ name: stage.spriteImage })),
+    recipe: JSON.stringify(recipe),
+    source: { name: 'source.png' },
+  };
+  assert.deepEqual(
+    validateProjectRecipe(project, contracts).primitives[0].stages
+      .map((stage) => stage.spriteImage),
+    ['sprite.png', 'morph-target.png'],
+  );
+  assert.throws(
+    () => validateProjectRecipe({ ...project, auxiliaryInputs: project.auxiliaryInputs.slice(0, 1) },
+      contracts),
+    /referenced project input is missing/,
+  );
+
+  const builtIn = structuredClone(recipe);
+  for (const [index, stage] of builtIn.primitives[0].stages.entries()) {
+    stage.spriteImage = index === 0
+      ? 'builtin:sprites/v1/jellyfish_sequence'
+      : 'builtin:sprites/v1/fish_atlas';
+    delete stage.sheetColumns;
+    delete stage.sheetRows;
+  }
+  assert.equal(validateProjectRecipe({
+    ...project,
+    auxiliaryInputs: [],
+    recipe: JSON.stringify(builtIn),
+  }, contracts).primitives[0].type, 'sprite_morph');
+});
+
 test('does not require an auxiliary image owned only by a disabled effect', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));

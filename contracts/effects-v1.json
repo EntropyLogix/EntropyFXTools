@@ -2335,6 +2335,70 @@
     },
     {
       "group": "Particles & scenes",
+      "label": "Sprite morph",
+      "description": "Morphs an ordered chain of sprite sources with automatic shape, particle, or growth transitions.",
+      "geometry": "region",
+      "angleIndicator": {
+        "kind": "rotation",
+        "parameter": "angle"
+      },
+      "template": {
+        "type": "sprite_morph",
+        "enabled": true,
+        "region": {
+          "x": 0.25,
+          "y": 0.25,
+          "width": 0.5,
+          "height": 0.5
+        },
+        "playback": "loop",
+        "stages": [
+          {
+            "spriteImage": "sprite.png",
+            "flipHorizontal": false,
+            "sheetColumns": 1,
+            "sheetRows": 1,
+            "playback": "fixed_frame",
+            "frame": 0
+          },
+          {
+            "spriteImage": "morph-target.png",
+            "flipHorizontal": false,
+            "sheetColumns": 1,
+            "sheetRows": 1,
+            "playback": "fixed_frame",
+            "frame": 0
+          }
+        ],
+        "transitions": [
+          {
+            "start": 0,
+            "duration": 0.4,
+            "method": "shape",
+            "shapeEasing": "smoothstep",
+            "colorEasing": "smoothstep",
+            "sampling": "smooth"
+          },
+          {
+            "start": 0.6,
+            "duration": 0.4,
+            "method": "shape",
+            "shapeEasing": "smoothstep",
+            "colorEasing": "smoothstep",
+            "sampling": "smooth"
+          }
+        ],
+        "angle": 0,
+        "rotationCycles": 0,
+        "opacity": 1,
+        "color": "#ffffff",
+        "blendMode": "normal"
+      },
+      "type": "sprite_morph",
+      "mainControl": "opacity"
+    },
+    {
+      "group": "Particles & scenes",
       "label": "Sprite layer",
       "description": "Places one animated or fixed sprite directly in the composition.",
       "geometry": "region",

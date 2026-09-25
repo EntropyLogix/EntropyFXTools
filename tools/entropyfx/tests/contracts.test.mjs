@@ -8,12 +8,12 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
   const recipeSchema = contracts.recipeSchemas.get(2);
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
-  assert.equal(contracts.effects.effects.length, 122);
+  assert.equal(contracts.effects.effects.length, 123);
   assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2]);
   assert.equal(contracts.sprites.sprites.length, 110);
-  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 122);
+  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 123);
   assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);
-  assert.equal(recipeSchema.properties.primitives.items.oneOf.length, 122);
+  assert.equal(recipeSchema.properties.primitives.items.oneOf.length, 123);
   assert.equal(recipeSchema.properties.elements.items.oneOf.length, 5);
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
@@ -52,7 +52,7 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
         `${effect.type} schema does not require its main control`);
     }
   }
-  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 15, strength: 31 });
+  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 16, strength: 31 });
 });
 
 test('uses role-based image fields throughout the public effect contract', async () => {
@@ -78,6 +78,10 @@ test('uses role-based image fields throughout the public effect contract', async
     for (const field of fields)
       assert.ok(field in template, `${type}.${field} is missing`);
   }
+  assert.deepEqual(
+    effects.get('sprite_morph').template.stages.map((stage) => stage.spriteImage),
+    ['sprite.png', 'morph-target.png'],
+  );
 });
 
 test('uses reviewed advanced effect field names', async () => {

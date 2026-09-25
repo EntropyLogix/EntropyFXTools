@@ -25,12 +25,17 @@ function codeNames(text) {
 }
 
 function contractImageFields(contracts) {
+  const replaceStrings = (value) => {
+    for (const [field, child] of Object.entries(value)) {
+      if (typeof child === 'string')
+        value[field] = `inputs/${field}/contract.png`;
+      else if (child && typeof child === 'object')
+        replaceStrings(child);
+    }
+  };
   const primitives = contracts.effects.effects.map((effect) => {
     const primitive = structuredClone(effect.template);
-    for (const [field, value] of Object.entries(primitive)) {
-      if (typeof value === 'string')
-        primitive[field] = `inputs/${field}/${effect.type}.png`;
-    }
+    replaceStrings(primitive);
     return primitive;
   });
   return [...new Set(referencedAuxiliaryInputs({ elements: [], primitives })

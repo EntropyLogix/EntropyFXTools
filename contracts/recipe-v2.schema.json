@@ -9407,6 +9407,435 @@
           },
           {
             "additionalProperties": false,
+            "description": "Morphs an ordered chain of sprite sources with automatic shape, particle, or growth transitions.",
+            "properties": {
+              "type": {
+                "const": "sprite_morph"
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "region": {
+                "additionalProperties": false,
+                "properties": {
+                  "x": {
+                    "maximum": 32767,
+                    "minimum": -32767,
+                    "type": "number"
+                  },
+                  "y": {
+                    "maximum": 32767,
+                    "minimum": -32767,
+                    "type": "number"
+                  },
+                  "width": {
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "type": "number"
+                  },
+                  "height": {
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height"
+                ],
+                "type": "object"
+              },
+              "playback": {
+                "enum": [
+                  "loop",
+                  "once_hold"
+                ],
+                "type": "string"
+              },
+              "stages": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "spriteImage": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "flipHorizontal": {
+                      "type": "boolean"
+                    },
+                    "sheetColumns": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "sheetRows": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "playback": {
+                      "enum": [
+                        "loop",
+                        "once_hold",
+                        "fixed_frame"
+                      ],
+                      "type": "string"
+                    },
+                    "cycles": {
+                      "maximum": 2147483647,
+                      "minimum": -2147483648,
+                      "not": {
+                        "const": 0
+                      },
+                      "type": "integer"
+                    },
+                    "phase": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "frame": {
+                      "maximum": 4095,
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "spriteImage",
+                    "flipHorizontal",
+                    "playback"
+                  ],
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "else": {
+                        "required": [
+                          "sheetColumns",
+                          "sheetRows"
+                        ]
+                      },
+                      "if": {
+                        "properties": {
+                          "spriteImage": {
+                            "pattern": "^builtin:sprites/"
+                          }
+                        },
+                        "required": [
+                          "spriteImage"
+                        ],
+                        "type": "object"
+                      },
+                      "then": {
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "sheetColumns"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "sheetRows"
+                              ]
+                            }
+                          ]
+                        },
+                        "properties": {
+                          "spriteImage": {
+                            "enum": [
+                              "builtin:sprites/v1/jellyfish_sequence",
+                              "builtin:sprites/v1/fish_atlas",
+                              "builtin:sprites/v1/embers_atlas",
+                              "builtin:sprites/v1/explosion_sequence",
+                              "builtin:sprites/v1/fire_sequence",
+                              "builtin:sprites/v1/fog_puffs_atlas",
+                              "builtin:sprites/v1/smoke_sequence",
+                              "builtin:sprites/v1/confetti_atlas",
+                              "builtin:sprites/v1/crystal_shards_atlas",
+                              "builtin:sprites/v1/metal_fragments_atlas",
+                              "builtin:sprites/v1/electric_arcs_atlas",
+                              "builtin:sprites/v1/energy_orb_sequence",
+                              "builtin:sprites/v1/shockwave_sequence",
+                              "builtin:sprites/v1/galactic_dust_atlas",
+                              "builtin:sprites/v1/halos_atlas",
+                              "builtin:sprites/v1/hyperdrive_stars_atlas",
+                              "builtin:sprites/v1/lens_flares_atlas",
+                              "builtin:sprites/v1/sparks_atlas",
+                              "builtin:sprites/v1/feathers_atlas",
+                              "builtin:sprites/v1/leaves_atlas",
+                              "builtin:sprites/v1/petals_atlas",
+                              "builtin:sprites/v1/asteroids_atlas",
+                              "builtin:sprites/v1/magic_circles_atlas",
+                              "builtin:sprites/v1/runes_atlas",
+                              "builtin:sprites/v1/technical_glyphs_atlas",
+                              "builtin:sprites/v1/bubbles_atlas",
+                              "builtin:sprites/v1/ripples_sequence",
+                              "builtin:sprites/v1/splash_sequence",
+                              "builtin:sprites/v1/rain_drops_atlas",
+                              "builtin:sprites/v1/snowflakes_atlas",
+                              "builtin:sprites/v1/birds_sequence",
+                              "builtin:sprites/v1/butterflies_sequence",
+                              "builtin:sprites/v1/splatter_atlas",
+                              "builtin:sprites/v1/paper_sheets_atlas",
+                              "builtin:sprites/v1/energy_aura_sequence",
+                              "builtin:sprites/v1/data_circuit_sequence",
+                              "builtin:sprites/v1/plant_sway_sequence",
+                              "builtin:sprites/v1/light_beams_atlas",
+                              "builtin:sprites/v1/wind_streaks_atlas",
+                              "builtin:sprites/v1/fireflies_atlas",
+                              "builtin:sprites/v1/candle_flame_sequence",
+                              "builtin:sprites/v1/hearts_atlas",
+                              "builtin:sprites/v1/music_notes_atlas",
+                              "builtin:sprites/v1/lanterns_atlas",
+                              "builtin:sprites/v1/hud_reticles_atlas",
+                              "builtin:sprites/v1/arcane_sigils_atlas",
+                              "builtin:sprites/v1/bats_swarm_atlas",
+                              "builtin:sprites/v1/celestial_spheres_atlas",
+                              "builtin:sprites/v1/glitch_artifacts_atlas",
+                              "builtin:sprites/v1/achievement_emblems_atlas",
+                              "builtin:sprites/v1/wormhole_vortex_sequence",
+                              "builtin:sprites/v1/plasma_thruster_sequence",
+                              "builtin:sprites/v1/radar_sweep_sequence",
+                              "builtin:sprites/v1/target_lock_sequence",
+                              "builtin:sprites/v1/matrix_binary_sequence",
+                              "builtin:sprites/v1/hex_shield_sequence",
+                              "builtin:sprites/v1/hovering_drone_sequence",
+                              "builtin:sprites/v1/digital_glitch_sequence",
+                              "builtin:sprites/v1/supernova_flare_sequence",
+                              "builtin:sprites/v1/cyber_eye_sequence",
+                              "builtin:sprites/v1/alchemy_circle_sequence",
+                              "builtin:sprites/v1/spectral_flame_sequence",
+                              "builtin:sprites/v1/void_singularity_sequence",
+                              "builtin:sprites/v1/holy_radiance_sequence",
+                              "builtin:sprites/v1/power_crystal_sequence",
+                              "builtin:sprites/v1/acid_bubble_sequence",
+                              "builtin:sprites/v1/shadow_tendrils_sequence",
+                              "builtin:sprites/v1/lost_souls_sequence",
+                              "builtin:sprites/v1/runestone_ignition_sequence",
+                              "builtin:sprites/v1/magic_missile_sequence",
+                              "builtin:sprites/v1/lightning_bolt_sequence",
+                              "builtin:sprites/v1/dust_devil_sequence",
+                              "builtin:sprites/v1/steam_jet_sequence",
+                              "builtin:sprites/v1/lava_splash_sequence",
+                              "builtin:sprites/v1/burning_meteor_sequence",
+                              "builtin:sprites/v1/waterfall_mist_sequence",
+                              "builtin:sprites/v1/snow_crystal_sequence",
+                              "builtin:sprites/v1/maple_leaf_sequence",
+                              "builtin:sprites/v1/bat_flight_sequence",
+                              "builtin:sprites/v1/hovering_dragonfly_sequence",
+                              "builtin:sprites/v1/raven_flight_sequence",
+                              "builtin:sprites/v1/bioluminescent_spores_sequence",
+                              "builtin:sprites/v1/dandelion_seed_sequence",
+                              "builtin:sprites/v1/jellyfish_pulse_sequence",
+                              "builtin:sprites/v1/crawling_spiders_sequence",
+                              "builtin:sprites/v1/firefly_pulse_sequence",
+                              "builtin:sprites/v1/anime_impact_sequence",
+                              "builtin:sprites/v1/muzzle_flash_sequence",
+                              "builtin:sprites/v1/sword_slash_sequence",
+                              "builtin:sprites/v1/liquid_splash_sequence",
+                              "builtin:sprites/v1/dust_ring_sequence",
+                              "builtin:sprites/v1/bullet_shell_sequence",
+                              "builtin:sprites/v1/metal_sparks_sequence",
+                              "builtin:sprites/v1/spinning_coin_sequence",
+                              "builtin:sprites/v1/diamond_glint_sequence",
+                              "builtin:sprites/v1/beating_heart_sequence",
+                              "builtin:sprites/v1/level_star_sequence",
+                              "builtin:sprites/v1/quest_marker_sequence",
+                              "builtin:sprites/v1/rolling_die_sequence",
+                              "builtin:sprites/v1/cyber_spinner_sequence",
+                              "builtin:sprites/v1/flame_burst_sequence",
+                              "builtin:sprites/v1/solar_orb_sequence",
+                              "builtin:sprites/v1/windblown_foliage_sequence",
+                              "builtin:sprites/v1/incense_smoke_sequence",
+                              "builtin:sprites/v1/blood_splatter_sequence",
+                              "builtin:sprites/v1/sakura_drift_sequence",
+                              "builtin:sprites/v1/candle_flicker_sequence",
+                              "builtin:sprites/v1/emp_shockwave_sequence",
+                              "builtin:sprites/v1/fairy_sparkle_dust_sequence",
+                              "builtin:sprites/v1/black_hole_horizon_sequence"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "not": {
+                            "required": [
+                              "frame"
+                            ]
+                          },
+                          "properties": {
+                            "playback": {
+                              "const": "loop"
+                            }
+                          },
+                          "required": [
+                            "cycles",
+                            "phase"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "not": {
+                            "required": [
+                              "frame"
+                            ]
+                          },
+                          "properties": {
+                            "playback": {
+                              "const": "once_hold"
+                            }
+                          },
+                          "required": [
+                            "cycles",
+                            "phase"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "not": {
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "cycles"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "phase"
+                                ]
+                              }
+                            ]
+                          },
+                          "properties": {
+                            "playback": {
+                              "const": "fixed_frame"
+                            }
+                          },
+                          "required": [
+                            "frame"
+                          ],
+                          "type": "object"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "minItems": 2,
+                "type": "array"
+              },
+              "transitions": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "start": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "duration": {
+                      "exclusiveMinimum": 0,
+                      "maximum": 1,
+                      "type": "number"
+                    },
+                    "method": {
+                      "enum": [
+                        "shape",
+                        "particle",
+                        "growth"
+                      ],
+                      "type": "string"
+                    },
+                    "shapeEasing": {
+                      "enum": [
+                        "linear",
+                        "smoothstep",
+                        "ease_in",
+                        "ease_out"
+                      ],
+                      "type": "string"
+                    },
+                    "colorEasing": {
+                      "enum": [
+                        "linear",
+                        "smoothstep",
+                        "ease_in",
+                        "ease_out"
+                      ],
+                      "type": "string"
+                    },
+                    "sampling": {
+                      "enum": [
+                        "pixel",
+                        "smooth"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "duration",
+                    "method",
+                    "shapeEasing",
+                    "colorEasing",
+                    "sampling"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "angle": {
+                "maximum": 360,
+                "minimum": -360,
+                "type": "number"
+              },
+              "rotationCycles": {
+                "maximum": 20,
+                "minimum": -20,
+                "type": "number"
+              },
+              "opacity": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "color": {
+                "pattern": "^#[0-9A-Fa-f]{6}$",
+                "type": "string"
+              },
+              "blendMode": {
+                "enum": [
+                  "normal",
+                  "additive",
+                  "screen"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "enabled",
+              "region",
+              "playback",
+              "stages",
+              "transitions",
+              "angle",
+              "rotationCycles",
+              "opacity",
+              "color",
+              "blendMode"
+            ],
+            "title": "Sprite morph",
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
             "properties": {
               "type": {
                 "const": "sprite_layer"
