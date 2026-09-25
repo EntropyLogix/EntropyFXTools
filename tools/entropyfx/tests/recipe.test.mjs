@@ -32,7 +32,7 @@ test('selects the frozen v1 schema for existing recipes', async () => {
     JSON.stringify(recipe), contracts.recipeSchemas).schemaVersion, 1);
 });
 
-test('accepts off-canvas effect regions without widening other rectangles', async () => {
+test('accepts v2 composition geometry off-canvas without widening source crops', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
   const shimmer = structuredClone(
@@ -45,17 +45,56 @@ test('accepts off-canvas effect regions without widening other rectangles', asyn
     shimmer.region,
   );
 
-  recipe.effectMasks = [{
-    feather: 0,
-    region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
-    shape: 'rectangle',
-  }];
+  recipe.effectMasks = [
+    { feather: 0, radius: 0.5, shape: 'circle', x: -0.1, y: 0.5 },
+    {
+      feather: 0,
+      region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
+      shape: 'rectangle',
+    },
+    {
+      angle: 0, feather: 0, radiusX: 0.5, radiusY: 0.25,
+      shape: 'ellipse', x: 1.1, y: 0.5,
+    },
+    {
+      feather: 0,
+      points: [{ x: -0.2, y: 0.2 }, { x: 0.5, y: -0.2 }, { x: 1.2, y: 0.8 }],
+      shape: 'lasso',
+    },
+  ];
+  recipe.elements = [
+    {
+      borderColor: '#ffffff', borderOpacity: 1, borderStyle: 'solid',
+      fillColor: '#000000', fillOpacity: 0,
+      region: { x: -0.5, y: 0, width: 1, height: 1 },
+      thickness: 0.01, type: 'frame',
+    },
+    {
+      angle: 0, fit: 'contain', opacity: 1,
+      region: { x: 0.5, y: -0.5, width: 1, height: 1.5 },
+      source: 'overlay.png', type: 'image_overlay',
+    },
+    {
+      color: '#ffffff', direction: 'ltr', font: 'builtin:fonts/v1/inter_regular',
+      fontSize: 0.1, horizontalAlign: 'center', lineHeight: 1.2, opacity: 1,
+      region: { x: 1.1, y: 1.1, width: 0.5, height: 0.5 },
+      source: 'text.png', text: 'TEST', type: 'text',
+      verticalAlign: 'middle', wrap: 'word',
+    },
+  ];
+  const authored = parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas);
+  assert.equal(authored.effectMasks.length, 4);
+  assert.equal(authored.elements.length, 3);
+
+  const v1 = structuredClone(recipe);
+  v1.schemaVersion = 1;
   assert.throws(
-    () => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
-    /effectMasks.*region.*x.*must be at least 0/,
+    () => parseAndValidateRecipe(JSON.stringify(v1), contracts.recipeSchemas),
+    /effectMasks.*must be at least 0|elements.*must be at least 0/,
   );
 
   recipe.effectMasks = [];
+  recipe.elements = [];
   const tiling = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'tiling_array').template);
   tiling.region = shimmer.region;

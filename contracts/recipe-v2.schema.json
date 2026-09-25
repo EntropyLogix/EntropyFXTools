@@ -82,18 +82,18 @@
                 "const": "circle"
               },
               "x": {
-                "maximum": 1,
-                "minimum": 0,
+                "maximum": 32767,
+                "minimum": -32767,
                 "type": "number"
               },
               "y": {
-                "maximum": 1,
-                "minimum": 0,
+                "maximum": 32767,
+                "minimum": -32767,
                 "type": "number"
               },
               "radius": {
                 "exclusiveMinimum": 0,
-                "maximum": 2,
+                "maximum": 32767,
                 "type": "number"
               },
               "feather": {
@@ -121,23 +121,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },
@@ -169,23 +169,23 @@
                 "const": "ellipse"
               },
               "x": {
-                "maximum": 1,
-                "minimum": 0,
+                "maximum": 32767,
+                "minimum": -32767,
                 "type": "number"
               },
               "y": {
-                "maximum": 1,
-                "minimum": 0,
+                "maximum": 32767,
+                "minimum": -32767,
                 "type": "number"
               },
               "radiusX": {
                 "exclusiveMinimum": 0,
-                "maximum": 2,
+                "maximum": 32767,
                 "type": "number"
               },
               "radiusY": {
                 "exclusiveMinimum": 0,
-                "maximum": 2,
+                "maximum": 32767,
                 "type": "number"
               },
               "angle": {
@@ -221,13 +221,13 @@
                   "additionalProperties": false,
                   "properties": {
                     "x": {
-                      "maximum": 1,
-                      "minimum": 0,
+                      "maximum": 32767,
+                      "minimum": -32767,
                       "type": "number"
                     },
                     "y": {
-                      "maximum": 1,
-                      "minimum": 0,
+                      "maximum": 32767,
+                      "minimum": -32767,
                       "type": "number"
                     }
                   },
@@ -14388,23 +14388,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },
@@ -14465,23 +14465,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },
@@ -14554,23 +14554,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },
@@ -14635,23 +14635,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },
@@ -14709,23 +14709,23 @@
                 "additionalProperties": false,
                 "properties": {
                   "x": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "y": {
-                    "maximum": 1,
-                    "minimum": 0,
+                    "maximum": 32767,
+                    "minimum": -32767,
                     "type": "number"
                   },
                   "width": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   },
                   "height": {
                     "exclusiveMinimum": 0,
-                    "maximum": 1,
+                    "maximum": 32767,
                     "type": "number"
                   }
                 },

@@ -260,9 +260,10 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
     return;
   if (!Array.isArray(value)
       && ['x', 'y', 'width', 'height'].every((key) => typeof value[key] === 'number')) {
-    const effectRegion = schemaVersion === 2
-      && /^recipe\.primitives\[\d+\]\.region$/u.test(path);
-    if (!effectRegion) {
+    const compositionRegion = schemaVersion === 2
+      && (/^recipe\.(?:primitives|elements)\[\d+\]\.region$/u.test(path)
+        || /^recipe\.effectMasks\[\d+\]\.region$/u.test(path));
+    if (!compositionRegion) {
       if (value.x + value.width > 1)
         fail(path, 'x plus width must not exceed 1');
       if (value.y + value.height > 1)
