@@ -2393,7 +2393,8 @@
         "rotationCycles": 0,
         "opacity": 1,
         "color": "#ffffff",
-        "blendMode": "normal"
+        "blendMode": "normal",
+        "spriteEffects": []
       },
       "type": "sprite_morph",
       "mainControl": "opacity"
@@ -2427,7 +2428,8 @@
         "rotationCycles": 0,
         "opacity": 1,
         "color": "#ffffff",
-        "blendMode": "normal"
+        "blendMode": "normal",
+        "spriteEffects": []
       },
       "type": "sprite_layer",
       "mainControl": "opacity"

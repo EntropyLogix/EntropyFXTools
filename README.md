@@ -40,7 +40,7 @@ npm run setup
 
 Pass every user-owned image referenced by a role-based image field with a named
 input under its exact logical project path. The
-[image animation guide](docs/image-animation.md) lists every version-2 image
+[image animation guide](docs/image-animation.md) lists every version-3 image
 field and its mode-specific rules.
 
 ```bash
@@ -68,14 +68,16 @@ fields and omits the optional output preset.
 
 - [Project format](docs/entropyfx-format.md)
 - [Image animation guide](docs/image-animation.md)
-- [Current recipe schema](contracts/recipe-v2.schema.json)
+- [Current recipe schema](contracts/recipe-v3.schema.json)
+- [Published recipe v2 schema](contracts/recipe-v2.schema.json)
 - [Published recipe v1 schema](contracts/recipe-v1.schema.json)
 - [Effect catalog](contracts/effects-v1.json)
 - [Built-in sprite catalog](contracts/sprites-v1.json)
 
 The catalogs describe public behavior and complete starting templates. The
-recipe schema defines required fields, types, ranges, enums, and the
-mode-specific Bokeh variants. The contracts do not contain effect
+recipe schema defines required fields, types, ranges, enums, mode-specific
+Bokeh variants, and the Sprite FX variants available to Sprite layers and
+morphs. The contracts do not contain effect
 implementations or built-in sprite image files.
 
 ## Agent integrations

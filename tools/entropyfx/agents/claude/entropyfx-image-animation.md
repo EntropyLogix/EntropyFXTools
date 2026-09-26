@@ -11,7 +11,7 @@ omitted, infer an appropriate direction from the image and state it briefly.
 
 Read `docs/image-animation.md`, select effects from `contracts/effects-v1.json`, and
 copy complete templates without removing fields, except for the catalog-owned
-layout fields of a built-in sprite. Read `contracts/recipe-v2.schema.json` for
+layout fields of a built-in sprite. Read `contracts/recipe-v3.schema.json` for
 types, ranges, enum values, and the
 mode-specific Bokeh shape. Follow the `Use images and sprites` field list in
 the documentation. Use only built-in Sprite Sheet IDs listed in

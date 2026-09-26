@@ -23,7 +23,7 @@ the image and explain the choice briefly.
 3. Search [`contracts/effects-v1.json`](../../../../../contracts/effects-v1.json) for the
    relevant effects. Copy complete templates and change explicit values without
    deleting fields, except for the catalog-owned layout fields of a built-in
-   sprite. Consult [`contracts/recipe-v2.schema.json`](../../../../../contracts/recipe-v2.schema.json)
+   sprite. Consult [`contracts/recipe-v3.schema.json`](../../../../../contracts/recipe-v3.schema.json)
    for types, ranges, enum values, and the mode-specific Bokeh shape.
 4. Follow the `Use images and sprites` field list in the documentation. When
    using a built-in Sprite Sheet, read

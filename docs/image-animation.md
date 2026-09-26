@@ -5,7 +5,7 @@
 Creating an animation produces one `.entropyfx` project containing:
 
 - one source image;
-- one explicit version-2 recipe;
+- one explicit version-3 recipe;
 - every referenced user-owned auxiliary image or font;
 - user-editable title, author, version, and description;
 - an optional current output preset.
@@ -19,11 +19,11 @@ Start from the complete `template` of an effect in
 [`effects-v1.json`](../contracts/effects-v1.json). Keep every template field in
 the recipe, including values that appear inactive. Recipes do not rely on hidden
 defaults, and unknown fields are rejected by the public schema. Use
-[`recipe-v2.schema.json`](../contracts/recipe-v2.schema.json) to check types,
+[`recipe-v3.schema.json`](../contracts/recipe-v3.schema.json) to check types,
 ranges, enum values, and mode-specific shapes; do not invent optional controls
 outside the selected catalog template.
 
-Structurally conditional version-2 fields include:
+Structurally conditional version-3 fields include:
 
 - `bokeh.bladeAngle`;
 - `bokeh.bladeCount`.
@@ -34,6 +34,17 @@ particular mode, but remain explicit members of their complete template.
 Built-in Sprite Layer and Sprite Particles entries omit `sheetColumns` and
 `sheetRows` because the built-in sprite catalog owns that layout. Custom
 sprites require both fields.
+
+Version 3 requires an ordered `spriteEffects` array on every `sprite_layer`
+and `sprite_morph`, including an empty array when no local modifier is wanted.
+Each entry must use one complete `hit_flash`, `outline_glow`, or
+`disintegration` shape from the recipe schema. Array order is render order.
+`sprite_particles` does not accept this public field in version 3.
+
+Sprite morph transitions are ordered and may touch without overlapping. The
+semantic validator uses an inclusive `1e-9` tolerance for adjacency and for a
+transition ending at timeline position `1`, matching the renderer's public
+timing rule.
 
 The layer order in `primitives` is the composition order. Keep the source image
 name in `recipe.source`, normalized positions in the `0..1` image space, and a
@@ -48,12 +59,13 @@ image may remain in the project so re-enabling the effect does not discard the
 author's input.
 
 Protected areas in `effectMasks` exclude their image area from effects. Version
-2 supports explicit `circle`, `rectangle`, `ellipse`, and `lasso` shapes.
+2 and later support explicit `circle`, `rectangle`, `ellipse`, and `lasso`
+shapes.
 
 Static `elements` are composited in list order after effects and protected
-areas. Version 2 supports an inward `frame`, an `image_overlay` whose image is
-embedded in the project, and editable `text` backed by its embedded canonical
-raster. Later elements appear above earlier elements.
+areas. Version 2 and later support an inward `frame`, an `image_overlay` whose
+image is embedded in the project, and editable `text` backed by its embedded
+canonical raster. Later elements appear above earlier elements.
 
 ## Give an agent visual direction
 
@@ -68,7 +80,7 @@ state the choice before packaging the project.
 ## Use images and sprites
 
 Effect image fields use role-based names rather than a suffix convention.
-The complete version-2 set is:
+The complete version-3 set is:
 
 - `depthMap`, `lightMask`, `lutImage`, `motionMap`;
 - `revealedImage`, `returnMap`, `ribbonImage`, `shapeImage`;

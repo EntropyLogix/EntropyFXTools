@@ -260,7 +260,7 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
     return;
   if (!Array.isArray(value)
       && ['x', 'y', 'width', 'height'].every((key) => typeof value[key] === 'number')) {
-    const compositionRegion = schemaVersion === 2
+    const compositionRegion = schemaVersion >= 2
       && (/^recipe\.(?:primitives|elements)\[\d+\]\.region$/u.test(path)
         || /^recipe\.effectMasks\[\d+\]\.region$/u.test(path));
     if (!compositionRegion) {
@@ -318,6 +318,21 @@ function validateSpriteMorphSemantics(recipe) {
   }
 }
 
+function validateSpriteEffectSemantics(recipe) {
+  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+    if (!Array.isArray(primitive.spriteEffects))
+      continue;
+    for (const [effectIndex, effect] of primitive.spriteEffects.entries()) {
+      if (effect.start + effect.duration > 1 + spriteMorphTimingEpsilon) {
+        fail(
+          `recipe.primitives[${primitiveIndex}].spriteEffects[${effectIndex}].duration`,
+          'must end at or before timeline position 1',
+        );
+      }
+    }
+  }
+}
+
 export function parseAndValidateRecipe(text, recipeSchemas) {
   if (typeof text !== 'string')
     throw new Error('recipe text is required');
@@ -335,6 +350,7 @@ export function parseAndValidateRecipe(text, recipeSchemas) {
   validateProjectPath(recipe.source, 'recipe source');
   validateRegions(recipe, recipe.schemaVersion);
   validateSpriteMorphSemantics(recipe);
+  validateSpriteEffectSemantics(recipe);
   return recipe;
 }
 

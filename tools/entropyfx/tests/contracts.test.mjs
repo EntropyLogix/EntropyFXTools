@@ -5,11 +5,11 @@ import { loadContracts } from '../src/contracts.js';
 
 test('ships versioned recipe schemas and unique effect and sprite catalogs', async () => {
   const contracts = await loadContracts();
-  const recipeSchema = contracts.recipeSchemas.get(2);
+  const recipeSchema = contracts.recipeSchemas.get(3);
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
   assert.equal(contracts.effects.effects.length, 123);
-  assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2]);
+  assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2, 3]);
   assert.equal(contracts.sprites.sprites.length, 110);
   assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 123);
   assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);

@@ -44,7 +44,7 @@ function contractImageFields(contracts) {
 
 function conditionalEffectFields(contracts) {
   const fields = [];
-  for (const entry of contracts.recipeSchemas.get(2).properties.primitives.items.oneOf) {
+  for (const entry of contracts.recipeSchemas.get(3).properties.primitives.items.oneOf) {
     if (!entry.oneOf || entry.oneOf.length < 2)
       continue;
     const type = entry.oneOf[0].properties.type.const;
@@ -69,12 +69,12 @@ test('documents the image fields and conditional controls from the public contra
   const documentation = await read('docs/image-animation.md');
   const conditional = section(
     documentation,
-    'Structurally conditional version-2 fields include:',
+    'Structurally conditional version-3 fields include:',
     'They belong to the `bokeh` variant',
   );
   const images = section(
     documentation,
-    'The complete version-2 set is:',
+    'The complete version-3 set is:',
     'A user-owned value in one of these fields',
   );
   assert.deepEqual(codeNames(conditional), conditionalEffectFields(contracts));

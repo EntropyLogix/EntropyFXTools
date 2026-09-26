@@ -15,7 +15,7 @@ const example = (name) => readFile(new URL(`../examples/${name}/recipe.json`, im
 test('validates complete public examples and all catalog templates', async () => {
   const contracts = await loadContracts();
   for (const name of ['minimal', 'built-in-sprite'])
-    assert.equal(parseAndValidateRecipe(await example(name), contracts.recipeSchemas).schemaVersion, 2);
+    assert.equal(parseAndValidateRecipe(await example(name), contracts.recipeSchemas).schemaVersion, 3);
   for (const effect of contracts.effects.effects) {
     const recipe = JSON.parse(await example('minimal'));
     recipe.primitives = [effect.template];
@@ -324,6 +324,46 @@ test('validates Sprite morph timing, transition count, and fixed frames', async 
       source: { name: 'source.png' },
     }, contracts),
     /stages\[0\]\.frame.*32-cell sprite layout/,
+  );
+});
+
+test('validates complete Sprite FX stacks and their timeline envelopes', async () => {
+  const contracts = await loadContracts();
+  const base = JSON.parse(await example('minimal'));
+  const layer = structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'sprite_layer').template,
+  );
+  layer.spriteImage = 'builtin:sprites/v1/jellyfish_sequence';
+  delete layer.sheetColumns;
+  delete layer.sheetRows;
+  layer.spriteEffects = [
+    {
+      color: '#ffffff', duration: 0.2, easing: 'smoothstep', enabled: true,
+      intensity: 1, playback: 'once_hold', start: 0.1, type: 'hit_flash',
+    },
+    {
+      color: '#00ffff', duration: 1, easing: 'linear', enabled: true,
+      intensity: 0.8, playback: 'ping_pong', softness: 2, start: 0,
+      type: 'outline_glow', width: 1,
+    },
+    {
+      duration: 0.5, easing: 'ease_out', enabled: true, endOpacity: 0,
+      fragmentSize: 2, front: 'radial_out', frontAngle: 0, gravity: 8,
+      gravityAngle: 90, playback: 'once_hold', seed: 7,
+      sourceMode: 'capture_at_start', speed: 12, spread: 30, start: 0.5,
+      type: 'disintegration',
+    },
+  ];
+  base.primitives = [layer];
+  assert.equal(
+    parseAndValidateRecipe(JSON.stringify(base), contracts.recipeSchemas)
+      .primitives[0].spriteEffects.length,
+    3,
+  );
+  layer.spriteEffects[0].duration = 1;
+  assert.throws(
+    () => parseAndValidateRecipe(JSON.stringify(base), contracts.recipeSchemas),
+    /spriteEffects\[0\]\.duration.*timeline position 1/,
   );
 });
 
