@@ -9445,67 +9445,70 @@
                   "width",
                   "height"
                 ],
-                "type": "object"
+                "type": "object",
+                "description": "Normalized rectangle limiting the effect. Its x/y are the top-left corner; the rectangle may extend beyond the image and is clipped at the canvas edge."
               },
               "playback": {
                 "enum": [
                   "loop",
                   "once_hold"
                 ],
-                "type": "string"
+                "type": "string",
+                "description": "Loop uses every authored transition including the explicit return to Stage A. Play once stops on the last stage."
+              },
+              "outputSampling": {
+                "enum": [
+                  "pixel",
+                  "smooth"
+                ],
+                "type": "string",
+                "description": "Sampling used when the complete Sprite Surface is scaled and composited, including held stages."
               },
               "stages": {
+                "description": "Ordered sprite sources participating in the morph chain.",
                 "items": {
                   "additionalProperties": false,
                   "properties": {
                     "spriteImage": {
                       "minLength": 1,
-                      "type": "string"
+                      "type": "string",
+                      "description": "Verified shared PNG containing one particle sprite or a regular sprite sheet. Selecting it also applies the saved sheet layout."
                     },
                     "flipHorizontal": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Mirrors this stage horizontally before it participates in the transition."
                     },
                     "sheetColumns": {
                       "maximum": 64,
                       "minimum": 1,
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of equal frames across the sprite sheet."
                     },
                     "sheetRows": {
                       "maximum": 64,
                       "minimum": 1,
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of equal frames down the sprite sheet."
                     },
-                    "playback": {
+                    "frameMode": {
                       "enum": [
-                        "loop",
-                        "once_hold",
+                        "sequence",
                         "fixed_frame"
                       ],
-                      "type": "string"
-                    },
-                    "cycles": {
-                      "maximum": 2147483647,
-                      "minimum": -2147483648,
-                      "not": {
-                        "const": 0
-                      },
-                      "type": "integer"
-                    },
-                    "phase": {
-                      "maximum": 1,
-                      "minimum": 0,
-                      "type": "number"
+                      "type": "string",
+                      "description": "Animated sequence advances from the first to the last source frame during the transition that introduces this stage. Fixed frame always uses one selected cell."
                     },
                     "frame": {
                       "maximum": 4095,
                       "minimum": 0,
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Zero-based source-sheet cell shown by this stage in Fixed frame mode."
                     }
                   },
                   "required": [
                     "spriteImage",
                     "flipHorizontal",
-                    "playback"
+                    "frameMode"
                   ],
                   "type": "object",
                   "allOf": [
@@ -9670,50 +9673,15 @@
                             ]
                           },
                           "properties": {
-                            "playback": {
-                              "const": "loop"
+                            "frameMode": {
+                              "const": "sequence"
                             }
                           },
-                          "required": [
-                            "cycles",
-                            "phase"
-                          ],
                           "type": "object"
                         },
                         {
-                          "not": {
-                            "required": [
-                              "frame"
-                            ]
-                          },
                           "properties": {
-                            "playback": {
-                              "const": "once_hold"
-                            }
-                          },
-                          "required": [
-                            "cycles",
-                            "phase"
-                          ],
-                          "type": "object"
-                        },
-                        {
-                          "not": {
-                            "anyOf": [
-                              {
-                                "required": [
-                                  "cycles"
-                                ]
-                              },
-                              {
-                                "required": [
-                                  "phase"
-                                ]
-                              }
-                            ]
-                          },
-                          "properties": {
-                            "playback": {
+                            "frameMode": {
                               "const": "fixed_frame"
                             }
                           },
@@ -9730,18 +9698,21 @@
                 "type": "array"
               },
               "transitions": {
+                "description": "Authored transitions between consecutive stages and the loop return.",
                 "items": {
                   "additionalProperties": false,
                   "properties": {
                     "start": {
                       "maximum": 1,
                       "minimum": 0,
-                      "type": "number"
+                      "type": "number",
+                      "description": "Normalized timeline position at which this transition begins."
                     },
                     "duration": {
                       "exclusiveMinimum": 0,
                       "maximum": 1,
-                      "type": "number"
+                      "type": "number",
+                      "description": "Normalized timeline span occupied by this transition."
                     },
                     "method": {
                       "enum": [
@@ -9749,7 +9720,8 @@
                         "particle",
                         "growth"
                       ],
-                      "type": "string"
+                      "type": "string",
+                      "description": "Shape deforms both silhouettes, Particle transports paired pixels, and Growth expands the target from shared neighborhoods."
                     },
                     "shapeEasing": {
                       "enum": [
@@ -9758,7 +9730,8 @@
                         "ease_in",
                         "ease_out"
                       ],
-                      "type": "string"
+                      "type": "string",
+                      "description": "Timing curve used for geometry and particle movement."
                     },
                     "colorEasing": {
                       "enum": [
@@ -9767,14 +9740,16 @@
                         "ease_in",
                         "ease_out"
                       ],
-                      "type": "string"
+                      "type": "string",
+                      "description": "Timing curve used for color and opacity interpolation."
                     },
                     "sampling": {
                       "enum": [
                         "pixel",
                         "smooth"
                       ],
-                      "type": "string"
+                      "type": "string",
+                      "description": "Sampling used only while calculating this transition's intermediate deformation."
                     }
                   },
                   "required": [
@@ -9793,21 +9768,25 @@
               "angle": {
                 "maximum": 360,
                 "minimum": -360,
-                "type": "number"
+                "type": "number",
+                "description": "Direction or orientation in image coordinates; 0 points right and 90 points down."
               },
               "rotationCycles": {
                 "maximum": 20,
                 "minimum": -20,
-                "type": "number"
+                "type": "number",
+                "description": "Complete rotations of the morphed Sprite Surface across the timeline."
               },
               "opacity": {
                 "maximum": 1,
                 "minimum": 0,
-                "type": "number"
+                "type": "number",
+                "description": "Opacity of the complete morphed Sprite Surface."
               },
               "color": {
                 "pattern": "^#[0-9A-Fa-f]{6}$",
-                "type": "string"
+                "type": "string",
+                "description": "Tint multiplied with the complete morphed Sprite Surface."
               },
               "blendMode": {
                 "enum": [
@@ -9815,7 +9794,8 @@
                   "additive",
                   "screen"
                 ],
-                "type": "string"
+                "type": "string",
+                "description": "Composites the morphed Sprite Surface normally, additively, or by screen."
               }
             },
             "required": [
@@ -9823,6 +9803,7 @@
               "enabled",
               "region",
               "playback",
+              "outputSampling",
               "stages",
               "transitions",
               "angle",
@@ -9907,13 +9888,13 @@
                   "once_hold",
                   "fixed_frame"
                 ],
-                "description": "Loop repeats a sequence, Once & hold stops on its final frame, and Fixed frame shows one zero-based cell. Once & hold restarts with the project, so looping exports may intentionally contain a visible seam."
+                "description": "Loop repeats a sequence, Play once stops on its final frame, and Fixed frame shows one zero-based cell. Play once restarts with the project, so looping exports may intentionally contain a visible seam."
               },
               "cycles": {
                 "type": "integer",
                 "minimum": -2147483648,
                 "maximum": 2147483647,
-                "description": "Loop repetitions across the timeline, or Once & hold playback speed. Negative values reverse direction; zero is not supported.",
+                "description": "Loop repetitions across the timeline, or Play once speed. Negative values reverse direction; zero is not supported.",
                 "not": {
                   "const": 0
                 }
@@ -9922,7 +9903,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Initial playback progress and rotation offset. In Once & hold it advances the starting frame rather than delaying the layer."
+                "description": "Initial playback progress and rotation offset. In Play once it advances the starting frame rather than delaying the layer."
               },
               "angle": {
                 "type": "number",

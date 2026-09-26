@@ -278,6 +278,46 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
     );
 }
 
+const spriteMorphTimingEpsilon = 1e-9;
+
+function validateSpriteMorphFrame(stage, path, columns, rows) {
+  if (stage.frameMode !== 'fixed_frame')
+    return;
+  const frameCount = columns * rows;
+  if (stage.frame >= frameCount)
+    fail(`${path}.frame`, `must be less than the ${frameCount}-cell sprite layout`);
+}
+
+function validateSpriteMorphSemantics(recipe) {
+  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+    if (primitive.type !== 'sprite_morph')
+      continue;
+    const path = `recipe.primitives[${primitiveIndex}]`;
+    const requiredTransitions = primitive.playback === 'loop'
+      ? primitive.stages.length : primitive.stages.length - 1;
+    if (primitive.transitions.length !== requiredTransitions) {
+      fail(`${path}.transitions`,
+        `must contain ${requiredTransitions} transition(s) for ${primitive.playback}`);
+    }
+    let previousEnd = 0;
+    for (const [transitionIndex, transition] of primitive.transitions.entries()) {
+      const transitionPath = `${path}.transitions[${transitionIndex}]`;
+      const end = transition.start + transition.duration;
+      if (transition.start + spriteMorphTimingEpsilon < previousEnd)
+        fail(`${transitionPath}.start`, 'must not overlap the previous transition');
+      if (end > 1 + spriteMorphTimingEpsilon)
+        fail(`${transitionPath}.duration`, 'must end at or before timeline position 1');
+      previousEnd = end;
+    }
+    for (const [stageIndex, stage] of primitive.stages.entries()) {
+      if (Number.isInteger(stage.sheetColumns) && Number.isInteger(stage.sheetRows)) {
+        validateSpriteMorphFrame(
+          stage, `${path}.stages[${stageIndex}]`, stage.sheetColumns, stage.sheetRows);
+      }
+    }
+  }
+}
+
 export function parseAndValidateRecipe(text, recipeSchemas) {
   if (typeof text !== 'string')
     throw new Error('recipe text is required');
@@ -294,6 +334,7 @@ export function parseAndValidateRecipe(text, recipeSchemas) {
   validateAgainstSchema(recipe, recipeSchema);
   validateProjectPath(recipe.source, 'recipe source');
   validateRegions(recipe, recipe.schemaVersion);
+  validateSpriteMorphSemantics(recipe);
   return recipe;
 }
 
@@ -344,7 +385,9 @@ export function validateProjectRecipe(project, contracts) {
       && project.output.columns > recipe.timeline.frames)
     throw new Error('project output columns must not exceed the recipe frame count');
   const available = new Set(project.auxiliaryInputs.map((input) => input.name));
-  const builtIns = new Set(contracts.sprites.sprites.map((sprite) => sprite.id));
+  const builtInSprites = new Map(
+    contracts.sprites.sprites.map((sprite) => [sprite.id, sprite]));
+  const builtIns = new Set(builtInSprites.keys());
   const referenced = referencedAuxiliaryInputs(recipe);
   const active = activeReferencedAuxiliaryInputs(recipe);
   for (const name of referenced) {
@@ -359,6 +402,21 @@ export function validateProjectRecipe(project, contracts) {
   for (const name of available) {
     if (!embedded.has(name))
       throw new Error(`${name}: project input is not referenced by the recipe`);
+  }
+  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+    if (primitive.type !== 'sprite_morph')
+      continue;
+    for (const [stageIndex, stage] of primitive.stages.entries()) {
+      const sprite = builtInSprites.get(stage.spriteImage);
+      if (sprite) {
+        validateSpriteMorphFrame(
+          stage,
+          `recipe.primitives[${primitiveIndex}].stages[${stageIndex}]`,
+          sprite.sheet.columns,
+          sprite.sheet.rows,
+        );
+      }
+    }
   }
   return recipe;
 }

@@ -2352,13 +2352,14 @@
           "height": 0.5
         },
         "playback": "loop",
+        "outputSampling": "smooth",
         "stages": [
           {
             "spriteImage": "sprite.png",
             "flipHorizontal": false,
             "sheetColumns": 1,
             "sheetRows": 1,
-            "playback": "fixed_frame",
+            "frameMode": "fixed_frame",
             "frame": 0
           },
           {
@@ -2366,7 +2367,7 @@
             "flipHorizontal": false,
             "sheetColumns": 1,
             "sheetRows": 1,
-            "playback": "fixed_frame",
+            "frameMode": "fixed_frame",
             "frame": 0
           }
         ],

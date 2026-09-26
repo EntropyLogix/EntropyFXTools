@@ -82,6 +82,12 @@ test('uses role-based image fields throughout the public effect contract', async
     effects.get('sprite_morph').template.stages.map((stage) => stage.spriteImage),
     ['sprite.png', 'morph-target.png'],
   );
+  for (const stage of effects.get('sprite_morph').template.stages) {
+    assert.equal(stage.frameMode, 'fixed_frame');
+    assert.equal('playback' in stage, false);
+    assert.equal('cycles' in stage, false);
+    assert.equal('phase' in stage, false);
+  }
 });
 
 test('uses reviewed advanced effect field names', async () => {

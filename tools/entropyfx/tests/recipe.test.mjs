@@ -265,6 +265,68 @@ test('validates every nested Sprite morph source', async () => {
   }, contracts).primitives[0].type, 'sprite_morph');
 });
 
+test('validates Sprite morph timing, transition count, and fixed frames', async () => {
+  const contracts = await loadContracts();
+  const base = JSON.parse(await example('minimal'));
+  base.primitives = [structuredClone(
+    contracts.effects.effects.find((effect) => effect.type === 'sprite_morph').template,
+  )];
+  const parseCandidate = (mutate) => {
+    const candidate = structuredClone(base);
+    mutate(candidate.primitives[0]);
+    return parseAndValidateRecipe(JSON.stringify(candidate), contracts.recipeSchemas);
+  };
+
+  assert.throws(
+    () => parseCandidate((morph) => morph.transitions.pop()),
+    /transitions.*must contain 2 transition\(s\) for loop/,
+  );
+  assert.throws(
+    () => parseCandidate((morph) => { morph.playback = 'once_hold'; }),
+    /transitions.*must contain 1 transition\(s\) for once_hold/,
+  );
+  assert.throws(
+    () => parseCandidate((morph) => { morph.transitions[1].start = 0.3; }),
+    /transitions\[1\]\.start.*must not overlap/,
+  );
+  assert.throws(
+    () => parseCandidate((morph) => {
+      morph.transitions[1].start = 0.8;
+      morph.transitions[1].duration = 0.3;
+    }),
+    /transitions\[1\]\.duration.*at or before timeline position 1/,
+  );
+  assert.equal(parseCandidate((morph) => {
+    morph.transitions[0].start = 0.1;
+    morph.transitions[0].duration = 0.2;
+    morph.transitions[1].start = 0.3;
+    morph.transitions[1].duration = 0.7;
+  }).primitives[0].type, 'sprite_morph');
+  assert.throws(
+    () => parseCandidate((morph) => { morph.stages[0].frame = 1; }),
+    /stages\[0\]\.frame.*1-cell sprite layout/,
+  );
+
+  const builtIn = structuredClone(base);
+  const firstStage = builtIn.primitives[0].stages[0];
+  firstStage.spriteImage = 'builtin:sprites/v1/jellyfish_sequence';
+  delete firstStage.sheetColumns;
+  delete firstStage.sheetRows;
+  firstStage.frame = 32;
+  const secondStage = builtIn.primitives[0].stages[1];
+  secondStage.spriteImage = 'builtin:sprites/v1/fish_atlas';
+  delete secondStage.sheetColumns;
+  delete secondStage.sheetRows;
+  assert.throws(
+    () => validateProjectRecipe({
+      auxiliaryInputs: [],
+      recipe: JSON.stringify(builtIn),
+      source: { name: 'source.png' },
+    }, contracts),
+    /stages\[0\]\.frame.*32-cell sprite layout/,
+  );
+});
+
 test('does not require an auxiliary image owned only by a disabled effect', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
