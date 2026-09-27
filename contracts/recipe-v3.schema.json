@@ -9805,26 +9805,26 @@
                       "additionalProperties": false,
                       "properties": {
                         "type": {
-                          "const": "hit_flash"
+                          "const": "color_flash"
                         },
                         "enabled": {
                           "description": "Enables this Sprite FX stack entry without removing its authored settings.",
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",
@@ -9877,19 +9877,19 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",
@@ -9956,19 +9956,19 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",
@@ -10228,26 +10228,26 @@
                       "additionalProperties": false,
                       "properties": {
                         "type": {
-                          "const": "hit_flash"
+                          "const": "color_flash"
                         },
                         "enabled": {
                           "description": "Enables this Sprite FX stack entry without removing its authored settings.",
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",
@@ -10300,19 +10300,19 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",
@@ -10379,19 +10379,19 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX envelope begins.",
+                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized timeline span used by this Sprite FX envelope.",
+                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
                         },
                         "playback": {
-                          "description": "Plays once and holds, returns to neutral, or repeats within the authored envelope.",
+                          "description": "Plays once and holds, makes one round trip, or repeats one-way cycles with a reset.",
                           "enum": [
                             "once_hold",
                             "ping_pong",

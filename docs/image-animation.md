@@ -37,7 +37,7 @@ sprites require both fields.
 
 Version 3 requires an ordered `spriteEffects` array on every `sprite_layer`
 and `sprite_morph`, including an empty array when no local modifier is wanted.
-Each entry must use one complete `hit_flash`, `outline_glow`, or
+Each entry must use one complete `color_flash`, `outline_glow`, or
 `disintegration` shape from the recipe schema. Array order is render order.
 `sprite_particles` does not accept this public field in version 3.
 

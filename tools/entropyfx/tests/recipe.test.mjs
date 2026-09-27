@@ -339,7 +339,7 @@ test('validates complete Sprite FX stacks and their timeline envelopes', async (
   layer.spriteEffects = [
     {
       color: '#ffffff', duration: 0.2, easing: 'smoothstep', enabled: true,
-      intensity: 1, playback: 'once_hold', start: 0.1, type: 'hit_flash',
+      intensity: 1, playback: 'once_hold', start: 0.1, type: 'color_flash',
     },
     {
       color: '#00ffff', duration: 1, easing: 'linear', enabled: true,
