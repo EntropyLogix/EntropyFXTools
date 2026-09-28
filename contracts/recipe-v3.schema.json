@@ -319,7 +319,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "maskMode": {
                 "minLength": 1,
@@ -396,7 +396,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "maskMode": {
                 "minLength": 1,
@@ -491,7 +491,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -581,7 +581,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -670,7 +670,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -779,7 +779,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -886,7 +886,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -986,7 +986,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1058,7 +1058,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "bands": {
                 "type": "integer",
@@ -1143,7 +1143,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1233,7 +1233,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1323,7 +1323,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1413,7 +1413,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1533,7 +1533,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -1605,7 +1605,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "feather": {
                 "type": "number",
@@ -1672,7 +1672,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "feather": {
                 "type": "number",
@@ -1721,7 +1721,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -1767,7 +1767,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -1818,7 +1818,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -1859,7 +1859,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -1905,7 +1905,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -1980,7 +1980,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2077,7 +2077,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2174,7 +2174,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2271,7 +2271,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2357,7 +2357,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2448,7 +2448,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -2543,7 +2543,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -2645,7 +2645,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -2737,7 +2737,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2841,7 +2841,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -2952,7 +2952,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -3038,7 +3038,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -3133,7 +3133,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -3253,7 +3253,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -3364,7 +3364,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -3450,7 +3450,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -3544,7 +3544,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "flashDuration": {
                 "type": "number",
@@ -3658,7 +3658,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "flashDuration": {
                 "type": "number",
@@ -3739,7 +3739,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -3824,7 +3824,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -3895,7 +3895,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -3974,7 +3974,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -4064,7 +4064,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "radius": {
                 "type": "number",
@@ -4147,7 +4147,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "radius": {
                 "type": "number",
@@ -4212,7 +4212,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -4290,7 +4290,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -4380,7 +4380,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "color": {
                 "minLength": 1,
@@ -4463,7 +4463,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -4560,7 +4560,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "color": {
                 "minLength": 1,
@@ -4650,7 +4650,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -4726,7 +4726,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -4809,7 +4809,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "color": {
                 "minLength": 1,
@@ -4874,7 +4874,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               }
             },
             "required": [
@@ -4952,7 +4952,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5035,7 +5035,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -5118,7 +5118,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5201,7 +5201,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5284,7 +5284,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "color": {
                 "minLength": 1,
@@ -5367,7 +5367,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5464,7 +5464,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5575,7 +5575,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -5640,7 +5640,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "variation": {
                 "type": "number",
@@ -5706,7 +5706,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "direction": {
                 "type": "number",
@@ -5822,7 +5822,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -5925,7 +5925,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "thickness": {
                 "type": "number",
@@ -6041,7 +6041,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "baseThickness": {
                 "type": "number",
@@ -6154,7 +6154,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "thickness": {
                 "type": "number",
@@ -6267,7 +6267,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -6397,7 +6397,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "rainAmount": {
                 "type": "number",
@@ -6529,7 +6529,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -6671,7 +6671,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                    "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
                   },
                   "radius": {
                     "type": "number",
@@ -6882,7 +6882,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                    "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
                   },
                   "radius": {
                     "type": "number",
@@ -7110,7 +7110,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "warpAmount": {
                 "type": "number",
@@ -7259,7 +7259,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -7407,7 +7407,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "radius": {
                 "type": "number",
@@ -7535,7 +7535,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "lightMask": {
                 "minLength": 1,
@@ -7644,7 +7644,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "depthMap": {
                 "minLength": 1,
@@ -7811,7 +7811,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "definition": {
                 "type": "number",
@@ -7999,7 +7999,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -8127,7 +8127,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "maskColor": {
                 "minLength": 1,
@@ -8256,7 +8256,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "ribbonImage": {
                 "minLength": 1,
@@ -8373,7 +8373,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "sides": {
                 "type": "integer",
@@ -8483,7 +8483,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -8579,7 +8579,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "bladeCount": {
                 "type": "integer",
@@ -8730,7 +8730,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "gridShape": {
                 "minLength": 1,
@@ -8946,7 +8946,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "beamCount": {
                 "type": "integer",
@@ -9066,7 +9066,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -9170,7 +9170,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "pixelSize": {
                 "type": "integer",
@@ -9296,7 +9296,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "gridShape": {
                 "minLength": 1,
@@ -9722,13 +9722,13 @@
                       "maximum": 1,
                       "minimum": 0,
                       "type": "number",
-                      "description": "Normalized timeline position at which this transition begins."
+                      "description": "Sets when this transition begins on the timeline."
                     },
                     "duration": {
                       "exclusiveMinimum": 0,
                       "maximum": 1,
                       "type": "number",
-                      "description": "Normalized timeline span occupied by this transition."
+                      "description": "Sets how long this transition occupies on the timeline."
                     },
                     "method": {
                       "enum": [
@@ -9828,13 +9828,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -9893,13 +9893,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -9972,13 +9972,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -10191,16 +10191,13 @@
                 "type": "integer",
                 "minimum": -2147483648,
                 "maximum": 2147483647,
-                "description": "Loop repetitions across the timeline, or Play once speed. Negative values reverse direction; zero is not supported.",
-                "not": {
-                  "const": 0
-                }
+                "description": "Loop repetitions across the timeline, or Play once speed. Negative values reverse direction; zero holds the sequence at Phase."
               },
               "phase": {
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Initial playback progress and rotation offset. In Play once it advances the starting frame rather than delaying the layer."
+                "description": "Sets the initial playback progress and rotation offset without delaying the layer."
               },
               "angle": {
                 "type": "number",
@@ -10251,13 +10248,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -10316,13 +10313,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -10395,13 +10392,13 @@
                           "type": "boolean"
                         },
                         "start": {
-                          "description": "Normalized timeline position at which this Sprite FX begins; the Inspector shows it as a percentage.",
+                          "description": "Sets when this Sprite FX begins on the timeline.",
                           "type": "number",
                           "minimum": 0,
                           "maximum": 1
                         },
                         "duration": {
-                          "description": "Normalized transition span, or one repeated cycle when Playback is Loop; the Inspector shows it as a percentage.",
+                          "description": "Sets how long the transition lasts, or one repeated cycle in Loop playback.",
                           "type": "number",
                           "exclusiveMinimum": 0,
                           "maximum": 1
@@ -10803,7 +10800,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "spriteImage": {
                 "minLength": 1,
@@ -11336,7 +11333,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "cornerRadius": {
                 "type": "number",
@@ -11524,7 +11521,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "characterStyle": {
                 "minLength": 1,
@@ -11679,7 +11676,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "pivotX": {
                 "type": "number",
@@ -11881,7 +11878,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "targetImage": {
                 "minLength": 1,
@@ -12049,7 +12046,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "mapping": {
                 "minLength": 1,
@@ -12196,7 +12193,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "levels": {
                 "type": "integer",
@@ -12286,7 +12283,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "radius": {
                 "type": "integer",
@@ -12369,7 +12366,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "sourceMode": {
                 "minLength": 1,
@@ -12562,7 +12559,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "operator": {
                 "minLength": 1,
@@ -12741,7 +12738,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "workingSpace": {
                 "minLength": 1,
@@ -13173,7 +13170,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "revealedImage": {
                 "minLength": 1,
@@ -13258,7 +13255,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -13355,7 +13352,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -13473,7 +13470,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -13585,7 +13582,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -13683,7 +13680,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -13801,7 +13798,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -13887,7 +13884,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "density": {
                 "type": "integer",
@@ -14000,7 +13997,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -14121,7 +14118,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -14239,7 +14236,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "cellSize": {
                 "type": "integer",
@@ -14336,7 +14333,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scanlineSpacing": {
                 "type": "integer",
@@ -14447,7 +14444,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -14579,7 +14576,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "lutImage": {
                 "minLength": 1,
@@ -14682,7 +14679,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "innerRadius": {
                 "type": "number",
@@ -14780,7 +14777,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "offsetX": {
                 "type": "number",
@@ -14872,7 +14869,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "radialFirst": {
                 "type": "number",
@@ -14978,7 +14975,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "scale": {
                 "type": "number",
@@ -15089,7 +15086,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "motionMap": {
                 "minLength": 1,
@@ -15185,7 +15182,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "angle": {
                 "type": "number",
@@ -15303,7 +15300,7 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1,
-                "description": "Position within one effect cycle: 0.25 is a quarter cycle, 0.5 is half a cycle, and 1 is equivalent to 0. Use it to align or stagger effects without changing their speed."
+                "description": "Offsets where the effect begins within its repeating cycle without changing its speed."
               },
               "axis": {
                 "minLength": 1,
