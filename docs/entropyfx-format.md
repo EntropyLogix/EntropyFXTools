@@ -25,6 +25,15 @@ version-selected migration into the current complete model. Published schema
 files remain available under their original versioned names and are not
 rewritten to describe a later incompatible generation.
 
+Recipe schemas v1 and v2 are published and frozen. Schema v3 is the current
+pre-release contract planned for EntropyLogix FX 1.2.2. In v3 every protected
+area in `effectMasks` and every static entry in `elements` has a required
+boolean `enabled`; disabled entries retain their authored order and parameters
+but do not participate in rendering or require their auxiliary image. Readers
+migrating v1 or v2 supply `enabled: true`, while an incomplete v3 document is
+invalid rather than repaired through a hidden default. The 1.2.2 release freezes
+the final v3 contract.
+
 ## Byte order and file header
 
 All integers use little-endian byte order. A file starts with this 12-byte

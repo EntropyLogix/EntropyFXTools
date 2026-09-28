@@ -46,18 +46,18 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
   );
 
   recipe.effectMasks = [
-    { feather: 0, radius: 0.5, shape: 'circle', x: -0.1, y: 0.5 },
+    { enabled: true, feather: 0, radius: 0.5, shape: 'circle', x: -0.1, y: 0.5 },
     {
-      feather: 0,
+      enabled: true, feather: 0,
       region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
       shape: 'rectangle',
     },
     {
-      angle: 0, feather: 0, radiusX: 0.5, radiusY: 0.25,
+      angle: 0, enabled: true, feather: 0, radiusX: 0.5, radiusY: 0.25,
       shape: 'ellipse', x: 1.1, y: 0.5,
     },
     {
-      feather: 0,
+      enabled: true, feather: 0,
       points: [{ x: -0.2, y: 0.2 }, { x: 0.5, y: -0.2 }, { x: 1.2, y: 0.8 }],
       shape: 'lasso',
     },
@@ -65,17 +65,18 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
   recipe.elements = [
     {
       borderColor: '#ffffff', borderOpacity: 1, borderStyle: 'solid',
-      fillColor: '#000000', fillOpacity: 0,
+      enabled: true, fillColor: '#000000', fillOpacity: 0,
       region: { x: -0.5, y: 0, width: 1, height: 1 },
       thickness: 0.01, type: 'frame',
     },
     {
-      angle: 0, fit: 'contain', opacity: 1,
+      angle: 0, enabled: true, fit: 'contain', opacity: 1,
       region: { x: 0.5, y: -0.5, width: 1, height: 1.5 },
       source: 'overlay.png', type: 'image_overlay',
     },
     {
-      color: '#ffffff', direction: 'ltr', font: 'builtin:fonts/v1/inter_regular',
+      color: '#ffffff', direction: 'ltr', enabled: true,
+      font: 'builtin:fonts/v1/inter_regular',
       fontSize: 0.1, horizontalAlign: 'center', lineHeight: 1.2, opacity: 1,
       region: { x: 1.1, y: 1.1, width: 0.5, height: 0.5 },
       source: 'text.png', text: 'TEST', type: 'text',
@@ -88,6 +89,10 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
 
   const v1 = structuredClone(recipe);
   v1.schemaVersion = 1;
+  for (const mask of v1.effectMasks)
+    delete mask.enabled;
+  for (const element of v1.elements)
+    delete element.enabled;
   assert.throws(
     () => parseAndValidateRecipe(JSON.stringify(v1), contracts.recipeSchemas),
     /effectMasks.*must be at least 0|elements.*must be at least 0/,
@@ -397,6 +402,7 @@ test('requires an embedded input for every image overlay element', async () => {
   const recipe = JSON.parse(await example('minimal'));
   recipe.elements = [{
     angle: 0,
+    enabled: true,
     fit: 'contain',
     opacity: 1,
     region: { height: 0.5, width: 0.5, x: 0.25, y: 0.25 },
@@ -410,6 +416,13 @@ test('requires an embedded input for every image overlay element', async () => {
   };
   assert.throws(() => validateProjectRecipe(project, contracts),
     /referenced project input is missing/);
+  recipe.elements[0].enabled = false;
+  project.recipe = JSON.stringify(recipe);
+  assert.deepEqual(referencedAuxiliaryInputs(recipe), ['inputs/logo.png']);
+  assert.deepEqual(activeReferencedAuxiliaryInputs(recipe), []);
+  assert.equal(validateProjectRecipe(project, contracts).elements[0].enabled, false);
+  recipe.elements[0].enabled = true;
+  project.recipe = JSON.stringify(recipe);
   project.auxiliaryInputs.push({ name: 'inputs/logo.png' });
   assert.equal(validateProjectRecipe(project, contracts).elements[0].type, 'image_overlay');
 });
@@ -420,6 +433,7 @@ test('requires the canonical raster embedded for every text element', async () =
   recipe.elements = [{
     color: '#ffffff',
     direction: 'ltr',
+    enabled: true,
     font: 'builtin:fonts/v1/inconsolata_bold',
     fontSize: 0.08,
     horizontalAlign: 'center',
@@ -451,6 +465,7 @@ test('requires both the canonical raster and an explicitly selected custom font'
   recipe.elements = [{
     color: '#ffffff',
     direction: 'ltr',
+    enabled: true,
     font,
     fontSize: 0.08,
     horizontalAlign: 'center',

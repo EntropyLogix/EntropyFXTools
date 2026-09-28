@@ -81,6 +81,9 @@
               "shape": {
                 "const": "circle"
               },
+              "enabled": {
+                "type": "boolean"
+              },
               "x": {
                 "maximum": 32767,
                 "minimum": -32767,
@@ -104,6 +107,7 @@
             },
             "required": [
               "shape",
+              "enabled",
               "x",
               "y",
               "radius",
@@ -116,6 +120,9 @@
             "properties": {
               "shape": {
                 "const": "rectangle"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "region": {
                 "additionalProperties": false,
@@ -157,6 +164,7 @@
             },
             "required": [
               "shape",
+              "enabled",
               "region",
               "feather"
             ],
@@ -167,6 +175,9 @@
             "properties": {
               "shape": {
                 "const": "ellipse"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "x": {
                 "maximum": 32767,
@@ -201,6 +212,7 @@
             },
             "required": [
               "shape",
+              "enabled",
               "x",
               "y",
               "radiusX",
@@ -215,6 +227,9 @@
             "properties": {
               "shape": {
                 "const": "lasso"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "points": {
                 "items": {
@@ -248,6 +263,7 @@
             },
             "required": [
               "shape",
+              "enabled",
               "points",
               "feather"
             ],
@@ -15356,6 +15372,9 @@
               "type": {
                 "const": "frame"
               },
+              "enabled": {
+                "type": "boolean"
+              },
               "region": {
                 "additionalProperties": false,
                 "properties": {
@@ -15417,6 +15436,7 @@
             },
             "required": [
               "type",
+              "enabled",
               "region",
               "thickness",
               "borderStyle",
@@ -15432,6 +15452,9 @@
             "properties": {
               "type": {
                 "const": "frame"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "region": {
                 "additionalProperties": false,
@@ -15504,6 +15527,7 @@
             },
             "required": [
               "type",
+              "enabled",
               "region",
               "thickness",
               "borderStyle",
@@ -15521,6 +15545,9 @@
             "properties": {
               "type": {
                 "const": "frame"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "region": {
                 "additionalProperties": false,
@@ -15583,6 +15610,7 @@
             },
             "required": [
               "type",
+              "enabled",
               "region",
               "thickness",
               "borderStyle",
@@ -15598,6 +15626,9 @@
             "properties": {
               "type": {
                 "const": "image_overlay"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "source": {
                 "minLength": 1,
@@ -15656,6 +15687,7 @@
             },
             "required": [
               "type",
+              "enabled",
               "source",
               "region",
               "fit",
@@ -15669,6 +15701,9 @@
             "properties": {
               "type": {
                 "const": "text"
+              },
+              "enabled": {
+                "type": "boolean"
               },
               "text": {
                 "type": "string"
@@ -15773,6 +15808,7 @@
             },
             "required": [
               "type",
+              "enabled",
               "text",
               "source",
               "region",

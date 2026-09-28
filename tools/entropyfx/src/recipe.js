@@ -372,6 +372,8 @@ function collectReferencedAuxiliaryInputs(recipe, activeEffectsOnly) {
       visit(primitive);
   }
   for (const element of recipe.elements) {
+    if (activeEffectsOnly && element.enabled === false)
+      continue;
     visit(element);
     if (element.type === 'text'
         && typeof element.font === 'string' && element.font.startsWith('inputs/fonts/')) {

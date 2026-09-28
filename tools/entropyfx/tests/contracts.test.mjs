@@ -15,6 +15,10 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
   assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);
   assert.equal(recipeSchema.properties.primitives.items.oneOf.length, 123);
   assert.equal(recipeSchema.properties.elements.items.oneOf.length, 5);
+  for (const mask of recipeSchema.properties.effectMasks.items.oneOf)
+    assert.ok(mask.required.includes('enabled'));
+  for (const element of recipeSchema.properties.elements.items.oneOf)
+    assert.ok(element.required.includes('enabled'));
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
   assert.equal(spriteParticles.template.particleCount, 8);
