@@ -5,14 +5,7 @@ const HEADER_BYTES = 12;
 const CHUNK_HEADER_BYTES = 13;
 const CHUNK_VERSION = 1;
 const CRITICAL = 1;
-const MAX_CHUNKS = 1024;
-const MAX_CHUNK_BYTES = 128 * 1024 * 1024;
-const MAX_DESCRIPTOR_BYTES = 16 * 1024;
-const MAX_INFO_BYTES = 64 * 1024;
-const MAX_LOGICAL_NAME_BYTES = 1024;
-const MAX_OUTPUT_BYTES = 16 * 1024;
-const MAX_PROJECT_BYTES = 256 * 1024 * 1024;
-const MAX_RECIPE_BYTES = 4 * 1024 * 1024;
+const MAX_CHUNK_BYTES = 0xffffffff;
 const CORE_CHUNK_IDS = new Set(['AST', 'INF', 'OUT', 'RCP', 'SRC']);
 const INFO_FIELDS = ['title', 'author', 'version', 'description'];
 const textDecoder = new TextDecoder('utf-8', { fatal: true });
@@ -37,8 +30,8 @@ function bytes(value, context) {
 
 function concatenate(parts) {
   const size = parts.reduce((total, part) => total + part.byteLength, 0);
-  if (!Number.isSafeInteger(size) || size > MAX_PROJECT_BYTES)
-    throw new Error('project archive exceeds the 256 MiB application limit');
+  if (!Number.isSafeInteger(size))
+    throw new Error('project archive size is not representable');
   const output = new Uint8Array(size);
   let offset = 0;
   for (const part of parts) {
@@ -69,8 +62,6 @@ export function validateProjectPath(name, context) {
   const segments = name.split('/');
   if (segments.some((segment) => segment === '' || segment === '.' || segment === '..'))
     throw new Error(`${context} name must not contain empty, current, or parent segments`);
-  if (textEncoder.encode(name).byteLength > MAX_LOGICAL_NAME_BYTES)
-    throw new Error(`${context} name exceeds the 1024-byte application limit`);
 }
 
 function validateMediaType(mediaType, context) {
@@ -159,7 +150,7 @@ function encodeChunk(id, payload, { critical = true, version = CHUNK_VERSION } =
   if (!Number.isSafeInteger(version) || version < 1 || version > 0xff)
     throw new Error(`${id}: project chunk version must be from 1 to 255`);
   if (payload.byteLength > MAX_CHUNK_BYTES)
-    throw new Error(`${id}: project chunk exceeds the 128 MiB application limit`);
+    throw new Error(`${id}: project chunk exceeds the 32-bit format capacity`);
   const header = new Uint8Array(CHUNK_HEADER_BYTES);
   header.set(textEncoder.encode(id), 0);
   header[3] = version;
@@ -170,18 +161,15 @@ function encodeChunk(id, payload, { critical = true, version = CHUNK_VERSION } =
   return concatenate([header, payload]);
 }
 
-function jsonPayload(value, maximum, context) {
-  const payload = textEncoder.encode(`${JSON.stringify(value)}\n`);
-  if (payload.byteLength > maximum)
-    throw new Error(`${context} exceeds the ${maximum / 1024} KiB application limit`);
-  return payload;
+function jsonPayload(value) {
+  return textEncoder.encode(`${JSON.stringify(value)}\n`);
 }
 
 function encodeFileChunk(id, file) {
   const descriptor = jsonPayload({
     mediaType: file.mediaType,
     name: file.name,
-  }, MAX_DESCRIPTOR_BYTES, `${id}: file descriptor`);
+  });
   const length = new Uint8Array(4);
   new DataView(length.buffer).setUint32(0, descriptor.byteLength, true);
   return encodeChunk(id, concatenate([length, descriptor, file.bytes]));
@@ -229,8 +217,6 @@ export async function createProjectArchive({
   if (typeof recipe !== 'string')
     throw new Error('recipe must be a JSON string');
   const recipeBytes = textEncoder.encode(recipe);
-  if (recipeBytes.byteLength > MAX_RECIPE_BYTES)
-    throw new Error('project recipe exceeds the 4 MiB application limit');
   let parsedRecipe;
   try {
     parsedRecipe = JSON.parse(recipe);
@@ -260,17 +246,14 @@ export async function createProjectArchive({
     names.add(file.name);
   }
   const extensions = optionalChunks.map(normalizeOptionalChunk).sort(compareOptionalChunks);
-  if (3 + auxiliaryFiles.length + (projectOutput || unsupportedOutput ? 1 : 0)
-      + extensions.length > MAX_CHUNKS)
-    throw new Error('project archive exceeds the 1024-chunk application limit');
   return concatenate([
     projectHeader(),
     encodeChunk('RCP', recipeBytes),
-    encodeChunk('INF', jsonPayload(projectInfo, MAX_INFO_BYTES, 'INF chunk'), { critical: false }),
+    encodeChunk('INF', jsonPayload(projectInfo), { critical: false }),
     encodeFileChunk('SRC', sourceFile),
     ...auxiliaryFiles.map((file) => encodeFileChunk('AST', file)),
     ...(projectOutput ? [encodeChunk(
-      'OUT', jsonPayload(projectOutput, MAX_OUTPUT_BYTES, 'OUT chunk'), { critical: false },
+      'OUT', jsonPayload(projectOutput), { critical: false },
     )] : unsupportedOutput ? [encodeChunk('OUT', unsupportedOutput, { critical: false })] : []),
     ...extensions.map((chunk) => encodeChunk(chunk.id, chunk.payload, {
       critical: false,
@@ -298,8 +281,6 @@ function decodeChunks(archive) {
   const chunks = [];
   let offset = HEADER_BYTES;
   while (offset < archive.byteLength) {
-    if (chunks.length >= MAX_CHUNKS)
-      throw new Error('project archive exceeds the 1024-chunk application limit');
     if (archive.byteLength - offset < CHUNK_HEADER_BYTES)
       throw new Error('project chunk header is truncated');
     const id = textDecoder.decode(archive.subarray(offset, offset + 3));
@@ -309,8 +290,6 @@ function decodeChunks(archive) {
     const flags = archive[offset + 4];
     const header = new DataView(archive.buffer, archive.byteOffset + offset, CHUNK_HEADER_BYTES);
     const length = header.getUint32(5, true);
-    if (length > MAX_CHUNK_BYTES)
-      throw new Error(`${id}: project chunk exceeds the 128 MiB application limit`);
     const payloadStart = offset + CHUNK_HEADER_BYTES;
     const payloadEnd = payloadStart + length;
     if (!Number.isSafeInteger(payloadEnd) || payloadEnd > archive.byteLength)
@@ -338,8 +317,7 @@ function decodeFile(chunk, role, index) {
     throw new Error(`${context} file descriptor is truncated`);
   const descriptorLength = new DataView(
     chunk.payload.buffer, chunk.payload.byteOffset, 4).getUint32(0, true);
-  if (descriptorLength === 0 || descriptorLength > MAX_DESCRIPTOR_BYTES
-      || 4 + descriptorLength > chunk.payload.byteLength)
+  if (descriptorLength === 0 || 4 + descriptorLength > chunk.payload.byteLength)
     throw new Error(`${context} file descriptor is truncated`);
   const descriptor = decodeJson(
     chunk.payload.subarray(4, 4 + descriptorLength), `${context} file descriptor`);
@@ -356,8 +334,6 @@ function decodeFile(chunk, role, index) {
 
 export async function openProjectArchive(value) {
   const archive = bytes(value, 'project archive');
-  if (archive.byteLength > MAX_PROJECT_BYTES)
-    throw new Error('project archive exceeds the 256 MiB application limit');
   validateHeader(archive);
   const chunks = decodeChunks(archive);
   for (const chunk of chunks) {
@@ -383,20 +359,14 @@ export async function openProjectArchive(value) {
   let parsedRecipe;
   try {
     const recipePayload = byId('RCP')[0].payload;
-    if (recipePayload.byteLength > MAX_RECIPE_BYTES)
-      throw new Error('project recipe exceeds the 4 MiB application limit');
     recipe = textDecoder.decode(recipePayload);
     parsedRecipe = JSON.parse(recipe);
   } catch (error) {
     throw new Error(`project recipe is invalid: ${error instanceof Error ? error.message : error}`);
   }
   const infoChunk = byId('INF')[0];
-  if (infoChunk.payload.byteLength > MAX_INFO_BYTES)
-    throw new Error('INF chunk exceeds the 64 KiB application limit');
   const info = normalizeInfo(decodeJson(infoChunk.payload, 'project info'));
   const outputChunk = byId('OUT')[0];
-  if (outputChunk?.payload.byteLength > MAX_OUTPUT_BYTES)
-    throw new Error('OUT chunk exceeds the 16 KiB application limit');
   const outputValue = outputChunk ? decodeJson(outputChunk.payload, 'project output') : null;
   const unsupportedOutput = outputValue && typeof outputValue === 'object'
       && !Array.isArray(outputValue)

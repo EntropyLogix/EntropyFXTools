@@ -294,27 +294,31 @@ test('requires one RCP, INF, and SRC and at most one OUT', async () => {
   )), /more than one OUT/);
 });
 
-test('enforces application archive, chunk, count, and logical-name limits', async () => {
-  await assert.rejects(createProjectArchive({
+test('does not impose aggregate application size or count limits', async () => {
+  const longName = await createProjectArchive({
     ...project(),
     source: { ...project().source, name: `${'a'.repeat(1025)}.png` },
-  }), /1024-byte/);
-  await assert.rejects(createProjectArchive({
+  });
+  assert.equal((await openProjectArchive(longName)).source.name.length, 1029);
+  const longDescriptor = await createProjectArchive({
     ...project(),
     source: { ...project().source, mediaType: `image/${'a'.repeat(17000)}` },
-  }), /16 KiB/);
-  await assert.rejects(createProjectArchive({
+  });
+  assert.equal((await openProjectArchive(longDescriptor)).source.mediaType.length, 17006);
+  const longRecipe = await createProjectArchive({
     ...project(),
     recipe: `{"value":"${'a'.repeat(4 * 1024 * 1024)}"}`,
-  }), /4 MiB/);
-  await assert.rejects(createProjectArchive({
+  });
+  assert.ok((await openProjectArchive(longRecipe)).recipe.length > 4 * 1024 * 1024);
+  const manyChunks = await createProjectArchive({
     ...project(),
     optionalChunks: Array.from({ length: 1020 }, () => ({
       id: 'EXT', payload: new Uint8Array(), version: 1,
     })),
-  }), /1024-chunk/);
+  });
+  assert.equal((await openProjectArchive(manyChunks)).optionalChunks.length, 1020);
   const archive = await createProjectArchive(project());
   const oversized = archive.slice();
   new DataView(oversized.buffer).setUint32(HEADER_BYTES + 5, 134217729, true);
-  await assert.rejects(openProjectArchive(oversized), /128 MiB/);
+  await assert.rejects(openProjectArchive(oversized), /payload is truncated/);
 });

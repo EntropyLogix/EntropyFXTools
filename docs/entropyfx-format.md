@@ -69,13 +69,10 @@ noncritical chunk while interpreting a project, but must preserve its ID,
 version and payload unchanged when rewriting that project. Truncation, a CRC
 difference, unsupported flags and invalid core-chunk criticality are errors.
 
-The 32-bit payload length describes the binary capacity of the container, not a
-promise that an application will allocate that amount. The reference tools use
-defensive application limits: 256 MiB per project, 1,024 chunks, 128 MiB per
-chunk, 4 MiB for `RCP`, 64 KiB for `INF`, 16 KiB for `OUT` and a file
-descriptor, and 1,024 UTF-8 bytes for a logical file name. Implementations may
-use lower limits if they report them as application limits rather than format
-constraints.
+The container has no aggregate file-size or chunk-count limit. The 32-bit
+payload length limits one chunk payload to 4 GiB minus one byte. A reader may
+still fail when the host cannot allocate enough memory, but such a failure is
+an implementation constraint rather than a format rule.
 
 ## Version 1 core chunks
 
