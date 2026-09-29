@@ -15705,10 +15705,6 @@
               "text": {
                 "type": "string"
               },
-              "source": {
-                "minLength": 1,
-                "type": "string"
-              },
               "region": {
                 "additionalProperties": false,
                 "properties": {
@@ -15807,7 +15803,6 @@
               "type",
               "enabled",
               "text",
-              "source",
               "region",
               "font",
               "fontSize",

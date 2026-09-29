@@ -79,7 +79,7 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
       font: 'builtin:fonts/v1/inter_regular',
       fontSize: 0.1, horizontalAlign: 'center', lineHeight: 1.2, opacity: 1,
       region: { x: 1.1, y: 1.1, width: 0.5, height: 0.5 },
-      source: 'text.png', text: 'TEST', type: 'text',
+      text: 'TEST', type: 'text',
       verticalAlign: 'middle', wrap: 'word',
     },
   ];
@@ -427,7 +427,7 @@ test('requires an embedded input for every image overlay element', async () => {
   assert.equal(validateProjectRecipe(project, contracts).elements[0].type, 'image_overlay');
 });
 
-test('requires the canonical raster embedded for every text element', async () => {
+test('validates semantic text without an auxiliary raster', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
   recipe.elements = [{
@@ -440,7 +440,6 @@ test('requires the canonical raster embedded for every text element', async () =
     lineHeight: 1.2,
     opacity: 1,
     region: { height: 0.2, width: 0.5, x: 0.25, y: 0.4 },
-    source: 'generated/text-0001.png',
     text: 'TEXT',
     type: 'text',
     verticalAlign: 'middle',
@@ -451,13 +450,33 @@ test('requires the canonical raster embedded for every text element', async () =
     recipe: JSON.stringify(recipe),
     source: { name: 'source.png' },
   };
-  assert.throws(() => validateProjectRecipe(project, contracts),
-    /referenced project input is missing/);
+  assert.equal(validateProjectRecipe(project, contracts).elements[0].type, 'text');
+  recipe.elements[0].source = 'generated/text-0001.png';
+  project.recipe = JSON.stringify(recipe);
+  assert.throws(() => validateProjectRecipe(project, contracts), /additional|source/u);
+});
+
+test('published v2 text still requires its embedded raster', async () => {
+  const contracts = await loadContracts();
+  const recipe = JSON.parse(await example('minimal'));
+  recipe.schemaVersion = 2;
+  recipe.elements = [{
+    color: '#ffffff', direction: 'ltr',
+    font: 'builtin:fonts/v1/inter_regular', fontSize: 0.1,
+    horizontalAlign: 'center', lineHeight: 1.2, opacity: 1,
+    region: { x: 0, y: 0, width: 1, height: 1 },
+    source: 'generated/text-0001.png', text: 'TEXT', type: 'text',
+    verticalAlign: 'middle', wrap: 'word',
+  }];
+  const project = {
+    auxiliaryInputs: [], recipe: JSON.stringify(recipe), source: { name: 'source.png' },
+  };
+  assert.throws(() => validateProjectRecipe(project, contracts), /referenced project input is missing/u);
   project.auxiliaryInputs.push({ name: 'generated/text-0001.png' });
   assert.equal(validateProjectRecipe(project, contracts).elements[0].type, 'text');
 });
 
-test('requires both the canonical raster and an explicitly selected custom font', async () => {
+test('requires an explicitly selected custom text font without a generated raster', async () => {
   const contracts = await loadContracts();
   const recipe = JSON.parse(await example('minimal'));
   const font = 'inputs/fonts/'
@@ -472,14 +491,13 @@ test('requires both the canonical raster and an explicitly selected custom font'
     lineHeight: 1.2,
     opacity: 1,
     region: { height: 0.2, width: 0.5, x: 0.25, y: 0.4 },
-    source: 'generated/text-0001.png',
     text: 'TEXT',
     type: 'text',
     verticalAlign: 'middle',
     wrap: 'word',
   }];
   const project = {
-    auxiliaryInputs: [{ name: 'generated/text-0001.png' }],
+    auxiliaryInputs: [],
     recipe: JSON.stringify(recipe),
     source: { name: 'source.png' },
   };

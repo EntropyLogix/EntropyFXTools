@@ -127,9 +127,13 @@ names in one project are unique.
 
 Built-in sprite and font assets are not embedded. Recipes refer to them through
 versioned identifiers such as `builtin:sprites/v1/fireflies_atlas` or
-`builtin:fonts/v1/inter`. Every referenced image or font provided by a user is
+`builtin:fonts/v1/inter`. Static text in recipe v3 has no generated image
+`source`; its content and layout are rendered by the Engine from the recipe and
+the selected font. Every referenced image or font provided by a user is
 embedded as `AST`, so the project does not depend on its original filesystem
 location.
+Published v1/v2 text still requires its embedded raster `source`. The editor
+migrates those recipes to semantic v3 text; a v3 `text.source` is rejected.
 
 ## Deterministic writing
 

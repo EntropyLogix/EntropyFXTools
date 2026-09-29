@@ -379,7 +379,9 @@ function collectReferencedAuxiliaryInputs(recipe, activeEffectsOnly) {
         && typeof element.font === 'string' && element.font.startsWith('inputs/fonts/')) {
       names.add(element.font);
     }
-    if (['image_overlay', 'text'].includes(element.type) && typeof element.source === 'string'
+    if ((element.type === 'image_overlay'
+          || (recipe.schemaVersion < 3 && element.type === 'text'))
+        && typeof element.source === 'string'
         && element.source.length > 0) {
       names.add(element.source);
     }
