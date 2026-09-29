@@ -439,6 +439,7 @@ test('validates semantic text without an auxiliary raster', async () => {
     horizontalAlign: 'center',
     lineHeight: 1.2,
     opacity: 1,
+    outline: { color: '#000000', width: 2 },
     region: { height: 0.2, width: 0.5, x: 0.25, y: 0.4 },
     text: 'TEXT',
     type: 'text',

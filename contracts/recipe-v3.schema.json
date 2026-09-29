@@ -15797,6 +15797,25 @@
                 "maximum": 1,
                 "minimum": 0,
                 "type": "number"
+              },
+              "outline": {
+                "additionalProperties": false,
+                "properties": {
+                  "color": {
+                    "pattern": "^#[0-9A-Fa-f]{6}$",
+                    "type": "string"
+                  },
+                  "width": {
+                    "maximum": 64,
+                    "minimum": 0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "color",
+                  "width"
+                ],
+                "type": "object"
               }
             },
             "required": [
