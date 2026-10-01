@@ -7,6 +7,8 @@ const CHUNK_VERSION = 1;
 const CRITICAL = 1;
 const MAX_CHUNK_BYTES = 0xffffffff;
 const CORE_CHUNK_IDS = new Set(['AST', 'INF', 'OUT', 'RCP', 'SRC']);
+const PROJECT_PREVIEW_CHUNK_ID = 'PRV';
+const PROJECT_PREVIEW_CHUNK_VERSION = 1;
 const INFO_FIELDS = ['title', 'author', 'version', 'description'];
 const textDecoder = new TextDecoder('utf-8', { fatal: true });
 const textEncoder = new TextEncoder();
@@ -189,6 +191,19 @@ function normalizeOptionalChunk(chunk, index) {
   return { id: chunk.id, payload: bytes(chunk.payload, context), version };
 }
 
+function validateProjectPreviewChunks(optionalChunks) {
+  const previews = optionalChunks.filter((chunk) => chunk.id === PROJECT_PREVIEW_CHUNK_ID);
+  if (previews.length > 1)
+    throw new Error('project archive must not contain more than one PRV chunk');
+  const [preview] = previews;
+  if (!preview || preview.version !== PROJECT_PREVIEW_CHUNK_VERSION)
+    return;
+  if (preview.payload.byteLength < 2)
+    throw new Error('PRV: project preview payload is truncated');
+  if (preview.payload[0] === 0)
+    throw new Error('PRV: project preview type 0 is invalid');
+}
+
 function compareOptionalChunks(left, right) {
   if (left.id !== right.id)
     return left.id < right.id ? -1 : 1;
@@ -246,6 +261,7 @@ export async function createProjectArchive({
     names.add(file.name);
   }
   const extensions = optionalChunks.map(normalizeOptionalChunk).sort(compareOptionalChunks);
+  validateProjectPreviewChunks(extensions);
   return concatenate([
     projectHeader(),
     encodeChunk('RCP', recipeBytes),
@@ -394,5 +410,6 @@ export async function openProjectArchive(value) {
   const optionalChunks = chunks
     .filter((chunk) => !CORE_CHUNK_IDS.has(chunk.id))
     .map((chunk) => ({ id: chunk.id, payload: chunk.payload.slice(), version: chunk.version }));
+  validateProjectPreviewChunks(optionalChunks);
   return { auxiliaryInputs, info, optionalChunks, output, recipe, source, unsupportedOutput };
 }

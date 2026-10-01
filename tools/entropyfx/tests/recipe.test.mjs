@@ -12,12 +12,72 @@ import {
 
 const example = (name) => readFile(new URL(`../examples/${name}/recipe.json`, import.meta.url), 'utf8');
 
+const payloadKeys = { effect: 'primitive', protected: 'protection', element: 'element' };
+function recipeFixture(value) {
+  const kinds = { primitives: 'effect', effectMasks: 'protected', elements: 'element' };
+  const replace = (kind, values) => {
+    const layers = value.layers.filter((layer) => layer.kind !== kind);
+    const first = value.layers.findIndex((layer) => layer.kind === kind);
+    const next = values.map((entry) => ({
+      kind, [payloadKeys[kind]]: structuredClone(entry),
+    }));
+    layers.splice(first < 0 ? layers.length : first, 0, ...next);
+    value.layers = layers;
+  };
+  return new Proxy(value, {
+    get(target, property, receiver) {
+      if (property === 'toJSON') {
+        return () => {
+          const plain = structuredClone(target);
+          if (target.schemaVersion === 3) {
+            delete plain.primitives;
+            delete plain.effectMasks;
+            delete plain.elements;
+          } else if (target.layers) {
+            for (const [field, kind] of Object.entries(kinds))
+              plain[field] = (target.layers ?? [])
+                .filter((layer) => layer.kind === kind)
+                .map((layer) => structuredClone(layer[payloadKeys[kind]]));
+            delete plain.layers;
+          }
+          return plain;
+        };
+      }
+      if (target.schemaVersion === 3 && Object.hasOwn(kinds, property))
+        return target.layers.filter((layer) => layer.kind === kinds[property])
+          .map((layer) => layer[payloadKeys[kinds[property]]]);
+      return Reflect.get(target, property, receiver);
+    },
+    set(target, property, replacement, receiver) {
+      if (property === 'schemaVersion' && target.schemaVersion === 3 && replacement < 3) {
+        for (const [field, kind] of Object.entries(kinds))
+          target[field] = target.layers.filter((layer) => layer.kind === kind)
+            .map((layer) => structuredClone(layer[payloadKeys[kind]]));
+        delete target.layers;
+      }
+      if (target.schemaVersion === 3 && Object.hasOwn(kinds, property)) {
+        if (!Array.isArray(replacement))
+          throw new TypeError(`${property} must be an array`);
+        replace(kinds[property], replacement);
+        return true;
+      }
+      return Reflect.set(target, property, replacement, receiver);
+    },
+  });
+}
+
+const plainRecipe = (recipe) => JSON.parse(JSON.stringify(recipe));
+
+async function exampleRecipe(name) {
+  return recipeFixture(JSON.parse(await example(name)));
+}
+
 test('validates complete public examples and all catalog templates', async () => {
   const contracts = await loadContracts();
   for (const name of ['minimal', 'built-in-sprite'])
     assert.equal(parseAndValidateRecipe(await example(name), contracts.recipeSchemas).schemaVersion, 3);
   for (const effect of contracts.effects.effects) {
-    const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
     recipe.primitives = [effect.template];
     assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
       .primitives[0].type, effect.type);
@@ -26,15 +86,50 @@ test('validates complete public examples and all catalog templates', async () =>
 
 test('selects the frozen v1 schema for existing recipes', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   recipe.schemaVersion = 1;
   assert.equal(parseAndValidateRecipe(
     JSON.stringify(recipe), contracts.recipeSchemas).schemaVersion, 1);
 });
 
+test('keeps static and animated text in one v3 element contract', async () => {
+  const contracts = await loadContracts();
+  const recipe = await exampleRecipe('minimal');
+  const text = {
+    color: '#ffffff', direction: 'ltr', enabled: true,
+    font: 'builtin:fonts/v1/inter_regular', fontSize: 0.1,
+    horizontalAlign: 'center', lineHeight: 1.2, opacity: 1,
+    region: { x: 0, y: 0, width: 1, height: 1 },
+    text: 'Hello', type: 'text', verticalAlign: 'middle', wrap: 'word',
+  };
+  recipe.elements = [text];
+  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
+    .elements[0].type, 'text');
+  recipe.elements[0].animation = {
+    reveal: { mode: 'typewriter', unit: 'grapheme', start: 0, duration: 1, stagger: 0 },
+    entrance: { mode: 'none', start: 0, duration: 1, amount: 0 },
+    position: { mode: 'wave', amount: 0.03, cycles: 2, phase: 0 },
+    angle: { mode: 'none', start: 0, duration: 1, amount: 8 },
+    scale: { mode: 'none', start: 0, duration: 1, amount: 0.12 },
+    smear: { mode: 'none', start: 0, duration: 1, amount: 0.1, direction: 0, samples: 4 },
+    appearance: { mode: 'none', start: 0, duration: 1, amount: 1, color: '#ffffff' },
+    exit: { mode: 'none', start: 0, duration: 1, amount: 1 },
+  };
+  assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
+    .elements[0].animation.position.mode, 'wave');
+  const oldType = { ...recipe.elements[0], type: 'animated_text' };
+  recipe.elements = [oldType];
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
+    /layers.*element|elements/);
+  recipe.elements = [{ ...recipe.elements[0], type: 'text' }];
+  delete recipe.elements[0].animation.reveal;
+  assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
+    /animation\.reveal/);
+});
+
 test('accepts v2 composition geometry off-canvas without widening source crops', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   const shimmer = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'shimmer').template);
   shimmer.region = { x: -0.5, y: 1.25, width: 2, height: 0.5 };
@@ -46,18 +141,22 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
   );
 
   recipe.effectMasks = [
-    { enabled: true, feather: 0, radius: 0.5, shape: 'circle', x: -0.1, y: 0.5 },
     {
-      enabled: true, feather: 0,
+      allowElements: false, enabled: true, feather: 0,
+      radius: 0.5, shape: 'circle', x: -0.1, y: 0.5,
+    },
+    {
+      allowElements: false, enabled: true, feather: 0,
       region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
       shape: 'rectangle',
     },
     {
-      angle: 0, enabled: true, feather: 0, radiusX: 0.5, radiusY: 0.25,
+      allowElements: false, angle: 0, enabled: true, feather: 0,
+      radiusX: 0.5, radiusY: 0.25,
       shape: 'ellipse', x: 1.1, y: 0.5,
     },
     {
-      enabled: true, feather: 0,
+      allowElements: false, enabled: true, feather: 0,
       points: [{ x: -0.2, y: 0.2 }, { x: 0.5, y: -0.2 }, { x: 1.2, y: 0.8 }],
       shape: 'lasso',
     },
@@ -87,10 +186,12 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
   assert.equal(authored.effectMasks.length, 4);
   assert.equal(authored.elements.length, 3);
 
-  const v1 = structuredClone(recipe);
+  const v1 = recipeFixture(plainRecipe(recipe));
   v1.schemaVersion = 1;
-  for (const mask of v1.effectMasks)
+  for (const mask of v1.effectMasks) {
     delete mask.enabled;
+    delete mask.allowElements;
+  }
   for (const element of v1.elements)
     delete element.enabled;
   assert.throws(
@@ -113,7 +214,7 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
 
 test('rejects missing, unknown, duplicate, and invalid fields', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   delete recipe.primitives[0].enabled;
   assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /enabled.*required/);
@@ -127,7 +228,7 @@ test('rejects missing, unknown, duplicate, and invalid fields', async () => {
     /unexpected.*not allowed/);
   assert.throws(() => parseAndValidateRecipe('{"schemaVersion":1,"schemaVersion":1}',
     contracts.recipeSchemas), /schemaVersion.*duplicated/);
-  const outside = JSON.parse(await example('minimal'));
+  const outside = await exampleRecipe('minimal');
   outside.primitives[0].x = 2;
   assert.throws(() => parseAndValidateRecipe(JSON.stringify(outside), contracts.recipeSchemas),
     /must be at most 1/);
@@ -135,7 +236,7 @@ test('rejects missing, unknown, duplicate, and invalid fields', async () => {
     [-2147483649, /cycles.*must be at least -2147483648/],
     [2147483648, /cycles.*must be at most 2147483647/],
   ]) {
-    const outsideCycles = JSON.parse(await example('minimal'));
+    const outsideCycles = await exampleRecipe('minimal');
     outsideCycles.primitives[0].cycles = cycles;
     assert.throws(
       () => parseAndValidateRecipe(JSON.stringify(outsideCycles), contracts.recipeSchemas),
@@ -146,7 +247,7 @@ test('rejects missing, unknown, duplicate, and invalid fields', async () => {
 
 test('accepts optional color and source-ray controls from the renderer contract', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   recipe.primitives = [{
     angle: 151,
     color: '#c9bdd9',
@@ -186,7 +287,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
 
 test('accepts built-in ASCII styles without auxiliary project inputs', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   const ascii = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'ascii_art').template,
   );
@@ -195,7 +296,7 @@ test('accepts built-in ASCII styles without auxiliary project inputs', async () 
   assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
     .primitives[0].characterStyle, 'classic_ascii');
 
-  ascii.glyphAtlasSource = 'inputs/glyphs.png';
+  recipe.primitives[0].glyphAtlasSource = 'inputs/glyphs.png';
   assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
     /glyphAtlasSource.*not allowed/);
 });
@@ -209,19 +310,19 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
     source: { name: 'source.png' },
   };
   assert.equal(validateProjectRecipe(project, contracts).key, 'firefly_field');
-  const wrongColumns = JSON.parse(spriteRecipe);
+  const wrongColumns = recipeFixture(JSON.parse(spriteRecipe));
   wrongColumns.primitives[0].sheetColumns = 2;
   assert.throws(
     () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongColumns) }, contracts),
     /matches a forbidden shape/,
   );
-  const wrongRows = JSON.parse(spriteRecipe);
+  const wrongRows = recipeFixture(JSON.parse(spriteRecipe));
   wrongRows.primitives[0].sheetRows = 2;
   assert.throws(
     () => validateProjectRecipe({ ...project, recipe: JSON.stringify(wrongRows) }, contracts),
     /matches a forbidden shape/,
   );
-  const custom = JSON.parse(spriteRecipe);
+  const custom = recipeFixture(JSON.parse(spriteRecipe));
   custom.primitives[0].spriteImage = 'inputs/custom.png';
   custom.primitives[0].sheetColumns = 7;
   custom.primitives[0].sheetRows = 3;
@@ -234,7 +335,7 @@ test('requires exact project inputs and accepts cataloged built-in sprites', asy
 
 test('validates every nested Sprite morph source', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   const morph = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'sprite_morph').template,
   );
@@ -255,7 +356,7 @@ test('validates every nested Sprite morph source', async () => {
     /referenced project input is missing/,
   );
 
-  const builtIn = structuredClone(recipe);
+  const builtIn = recipeFixture(plainRecipe(recipe));
   for (const [index, stage] of builtIn.primitives[0].stages.entries()) {
     stage.spriteImage = index === 0
       ? 'builtin:sprites/v1/jellyfish_sequence'
@@ -272,12 +373,12 @@ test('validates every nested Sprite morph source', async () => {
 
 test('validates Sprite morph timing, transition count, and fixed frames', async () => {
   const contracts = await loadContracts();
-  const base = JSON.parse(await example('minimal'));
+  const base = await exampleRecipe('minimal');
   base.primitives = [structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'sprite_morph').template,
   )];
   const parseCandidate = (mutate) => {
-    const candidate = structuredClone(base);
+    const candidate = recipeFixture(plainRecipe(base));
     mutate(candidate.primitives[0]);
     return parseAndValidateRecipe(JSON.stringify(candidate), contracts.recipeSchemas);
   };
@@ -312,7 +413,7 @@ test('validates Sprite morph timing, transition count, and fixed frames', async 
     /stages\[0\]\.frame.*1-cell sprite layout/,
   );
 
-  const builtIn = structuredClone(base);
+  const builtIn = recipeFixture(plainRecipe(base));
   const firstStage = builtIn.primitives[0].stages[0];
   firstStage.spriteImage = 'builtin:sprites/v1/jellyfish_sequence';
   delete firstStage.sheetColumns;
@@ -334,7 +435,7 @@ test('validates Sprite morph timing, transition count, and fixed frames', async 
 
 test('validates complete Sprite FX stacks and their timeline envelopes', async () => {
   const contracts = await loadContracts();
-  const base = JSON.parse(await example('minimal'));
+  const base = await exampleRecipe('minimal');
   const layer = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'sprite_layer').template,
   );
@@ -365,7 +466,7 @@ test('validates complete Sprite FX stacks and their timeline envelopes', async (
       .primitives[0].spriteEffects.length,
     3,
   );
-  layer.spriteEffects[0].duration = 1;
+  base.primitives[0].spriteEffects[0].duration = 1;
   assert.throws(
     () => parseAndValidateRecipe(JSON.stringify(base), contracts.recipeSchemas),
     /spriteEffects\[0\]\.duration.*timeline position 1/,
@@ -374,7 +475,7 @@ test('validates complete Sprite FX stacks and their timeline envelopes', async (
 
 test('does not require an auxiliary image owned only by a disabled effect', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   const reveal = structuredClone(
     contracts.effects.effects.find((effect) => effect.type === 'layer_reveal').template,
   );
@@ -391,7 +492,7 @@ test('does not require an auxiliary image owned only by a disabled effect', asyn
   project.auxiliaryInputs.push({ name: reveal.revealedImage });
   assert.equal(validateProjectRecipe(project, contracts).primitives[0].enabled, false);
   project.auxiliaryInputs = [];
-  reveal.enabled = true;
+  recipe.primitives[0].enabled = true;
   project.recipe = JSON.stringify(recipe);
   assert.throws(() => validateProjectRecipe(project, contracts),
     /referenced project input is missing/);
@@ -399,7 +500,7 @@ test('does not require an auxiliary image owned only by a disabled effect', asyn
 
 test('requires an embedded input for every image overlay element', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   recipe.elements = [{
     angle: 0,
     enabled: true,
@@ -429,7 +530,7 @@ test('requires an embedded input for every image overlay element', async () => {
 
 test('validates semantic text without an auxiliary raster', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   recipe.elements = [{
     color: '#ffffff',
     direction: 'ltr',
@@ -459,7 +560,7 @@ test('validates semantic text without an auxiliary raster', async () => {
 
 test('published v2 text still requires its embedded raster', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   recipe.schemaVersion = 2;
   recipe.elements = [{
     color: '#ffffff', direction: 'ltr',
@@ -479,7 +580,7 @@ test('published v2 text still requires its embedded raster', async () => {
 
 test('requires an explicitly selected custom text font without a generated raster', async () => {
   const contracts = await loadContracts();
-  const recipe = JSON.parse(await example('minimal'));
+  const recipe = await exampleRecipe('minimal');
   const font = 'inputs/fonts/'
     + '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef-signal.ttf';
   recipe.elements = [{

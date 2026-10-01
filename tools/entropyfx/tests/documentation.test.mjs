@@ -38,24 +38,29 @@ function contractImageFields(contracts) {
     replaceStrings(primitive);
     return primitive;
   });
-  return [...new Set(referencedAuxiliaryInputs({ elements: [], primitives })
+  return [...new Set(referencedAuxiliaryInputs({
+    schemaVersion: 3,
+    layers: primitives.map((primitive) => ({ kind: 'effect', primitive })),
+  })
     .map((name) => name.split('/')[1]))].sort();
 }
 
 function conditionalEffectFields(contracts) {
   const fields = [];
-  for (const entry of contracts.recipeSchemas.get(3).properties.primitives.items.oneOf) {
-    if (!entry.oneOf || entry.oneOf.length < 2)
+  for (const entry of contracts.recipeSchemas.get(3).properties.layers.items.oneOf
+    .filter((variant) => variant.properties.kind.const === 'effect')) {
+    const primitive = entry.properties.primitive;
+    if (!primitive.oneOf || primitive.oneOf.length < 2)
       continue;
-    const type = entry.oneOf[0].properties.type.const;
-    const common = new Set(Object.keys(entry.oneOf[0].properties));
-    for (const variant of entry.oneOf.slice(1)) {
+    const type = primitive.oneOf[0].properties.type.const;
+    const common = new Set(Object.keys(primitive.oneOf[0].properties));
+    for (const variant of primitive.oneOf.slice(1)) {
       for (const field of common) {
         if (!(field in variant.properties))
           common.delete(field);
       }
     }
-    const union = new Set(entry.oneOf.flatMap((variant) => Object.keys(variant.properties)));
+    const union = new Set(primitive.oneOf.flatMap((variant) => Object.keys(variant.properties)));
     for (const field of union) {
       if (!common.has(field))
         fields.push(`${type}.${field}`);

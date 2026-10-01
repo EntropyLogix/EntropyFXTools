@@ -26,11 +26,17 @@ files remain available under their original versioned names and are not
 rewritten to describe a later incompatible generation.
 
 Recipe schemas v1 and v2 are published and frozen. Schema v3 is the current
-pre-release contract planned for EntropyLogix FX 1.2.2. In v3 every protected
-area in `effectMasks` and every static entry in `elements` has a required
-boolean `enabled`; disabled entries retain their authored order and parameters
-but do not participate in rendering or require their auxiliary image. Readers
-migrating v1 or v2 supply `enabled: true`, while an incomplete v3 document is
+pre-release contract planned for EntropyLogix FX 1.2.2. In v3 the `layers` array
+is the sole composition collection and its order is the processing order from
+the virtual Source to Output. Each entry has one of the kinds `effect`,
+`protected` or `element` and wraps its unchanged kind-specific payload under
+`primitive`, `protection` or `element` respectively. Protected entries have
+required `enabled` and
+`allowElements` booleans. Disabled entries retain their authored order and
+parameters but do not participate in rendering or require their auxiliary image.
+Readers migrating v1 or v2 supply the explicit v3 fields and place legacy
+protected areas first, effects in the middle and elements last. A v3 document
+containing the retired `primitives`, `effectMasks` or `elements` arrays is
 invalid rather than repaired through a hidden default. The 1.2.2 release freezes
 the final v3 contract.
 
@@ -127,20 +133,45 @@ names in one project are unique.
 
 Built-in sprite and font assets are not embedded. Recipes refer to them through
 versioned identifiers such as `builtin:sprites/v1/fireflies_atlas` or
-`builtin:fonts/v1/inter`. Static text in recipe v3 has no generated image
-`source`; its content and layout are rendered by the Engine from the recipe and
-the selected font. Its optional `outline` object stores the output-pixel width
-and color of the glyph outline; a zero width disables it. Every referenced image
+`builtin:fonts/v1/inter`. Text in recipe v3 has no generated image `source`;
+its content and layout are rendered by the Engine from the recipe and the
+selected font. An optional `animation` object stores explicit text channels;
+its absence or wholly inactive channels use the static prepared raster. The
+optional `outline` object stores the output-pixel width and color of the glyph
+outline; a zero width disables it. Every referenced image
 or font provided by a user is
 embedded as `AST`, so the project does not depend on its original filesystem
 location.
 Published v1/v2 text still requires its embedded raster `source`. The editor
 migrates those recipes to semantic v3 text; a v3 `text.source` is rejected.
 
+## Version 1 project preview extension
+
+`PRV` is an optional, noncritical chunk containing a compact animated preview
+of the saved project. It occurs at most once. Its chunk version is `1`, and its
+payload contains a one-byte media type followed directly by the complete
+encoded media file:
+
+| Payload offset | Size | Field |
+| ---: | ---: | --- |
+| 0 | 1 | Preview media type |
+| 1 | remaining payload | Encoded media bytes |
+
+Type `0x01` is an MP4 file containing H.264 video. Type `0x00` is invalid.
+Other values are currently unassigned and unsupported. A version-1 writer only
+creates type `0x01`; an editor that cannot play a nonzero type preserves the
+noncritical chunk unchanged and uses its static fallback. The media payload
+must not be empty.
+
+The MP4 owns its dimensions, frame rate and duration, so `PRV` does not repeat
+those fields and does not contain a JSON descriptor or file name. The preview
+is advisory presentation data: removing it does not change the recipe, source,
+assets or rendered output of the project.
+
 ## Deterministic writing
 
 A version-1 writer emits `RCP`, `INF`, `SRC`, then `AST` chunks sorted by logical
-name, followed by `OUT` when present. Preserved noncritical extensions follow,
-sorted by ID, version and payload bytes. JSON uses UTF-8 without a byte-order
-mark. Given the same recipe text, information, output preset and input bytes,
-the writer produces the same archive bytes.
+name, followed by `OUT` when present. Preserved noncritical extensions, including
+`PRV`, follow, sorted by ID, version and payload bytes. JSON uses UTF-8 without
+a byte-order mark. Given the same recipe text, information, output preset, input
+bytes and extension payloads, the writer produces the same archive bytes.

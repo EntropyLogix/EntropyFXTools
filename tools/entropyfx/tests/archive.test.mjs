@@ -272,6 +272,27 @@ test('preserves unknown optional chunks and rejects unknown critical chunks', as
   await assert.rejects(openProjectArchive(critical), /unknown critical project chunk/);
 });
 
+test('preserves one valid or future PRV and rejects an invalid version-1 envelope', async () => {
+  const preview = { id: 'PRV', payload: new Uint8Array([1, 0, 0, 0, 24]), version: 1 };
+  const archive = await createProjectArchive({
+    ...project(), optionalChunks: [preview],
+  });
+  assert.deepEqual((await openProjectArchive(archive)).optionalChunks, [preview]);
+  await assert.rejects(createProjectArchive({
+    ...project(), optionalChunks: [preview, preview],
+  }), /more than one PRV/);
+  await assert.rejects(createProjectArchive({
+    ...project(), optionalChunks: [{ id: 'PRV', payload: new Uint8Array([1]), version: 1 }],
+  }), /truncated/);
+  await assert.rejects(createProjectArchive({
+    ...project(), optionalChunks: [{ id: 'PRV', payload: new Uint8Array([0, 1]), version: 1 }],
+  }), /type 0/);
+  const future = { id: 'PRV', payload: new Uint8Array([2, 8]), version: 1 };
+  assert.deepEqual((await openProjectArchive(await createProjectArchive({
+    ...project(), optionalChunks: [future],
+  }))).optionalChunks, [future]);
+});
+
 test('rejects unsupported flags and chunk versions after checksum verification', async () => {
   const archive = await createProjectArchive(project());
   const data = chunks(archive).find((chunk) => chunk.id === 'RCP');

@@ -44,12 +44,28 @@ function matchesType(value, type) {
 
 function selectedAlternative(value, alternatives) {
   if (value && typeof value === 'object' && !Array.isArray(value)) {
-    const discriminator = value.type ?? value.shape;
+    const payloadKey = value.kind === 'effect'
+      ? 'primitive'
+      : value.kind === 'protected'
+        ? 'protection'
+        : value.kind === 'element' ? 'element' : undefined;
+    const payload = payloadKey ? value[payloadKey] : value;
+    const discriminator = payload?.type ?? payload?.shape ?? value.kind;
     if (typeof discriminator === 'string') {
+      const matchesDiscriminator = (schema) =>
+        Object.values(schema?.properties ?? {}).some((property) => property.const === discriminator)
+        || (schema?.oneOf ?? []).some((candidate) => matchesDiscriminator(candidate));
       const match = alternatives.find((candidate) =>
-        Object.values(candidate.properties ?? {}).some((property) => property.const === discriminator));
+        matchesDiscriminator(payloadKey ? candidate.properties?.[payloadKey] : candidate)
+          && (!payloadKey || candidate.properties?.[payloadKey]));
       if (match)
         return match;
+      if (payloadKey) {
+        const kindMatch = alternatives.find((candidate) =>
+          candidate.properties?.kind?.const === value.kind);
+        if (kindMatch)
+          return kindMatch;
+      }
     }
   }
   return undefined;
@@ -262,7 +278,8 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
       && ['x', 'y', 'width', 'height'].every((key) => typeof value[key] === 'number')) {
     const compositionRegion = schemaVersion >= 2
       && (/^recipe\.(?:primitives|elements)\[\d+\]\.region$/u.test(path)
-        || /^recipe\.effectMasks\[\d+\]\.region$/u.test(path));
+        || /^recipe\.effectMasks\[\d+\]\.region$/u.test(path)
+        || /^recipe\.layers\[\d+\]\.(?:primitive|protection|element)\.region$/u.test(path));
     if (!compositionRegion) {
       if (value.x + value.width > 1)
         fail(path, 'x plus width must not exceed 1');
@@ -280,6 +297,46 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
 
 const spriteMorphTimingEpsilon = 1e-9;
 
+const compositionPayloadKeys = Object.freeze({
+  effect: 'primitive',
+  protected: 'protection',
+  element: 'element',
+});
+
+function compositionEntries(recipe, kind, legacyField) {
+  if (recipe.schemaVersion < 3)
+    return recipe[legacyField].map((entry, index) => ({
+      entry,
+      path: `recipe.${legacyField}[${index}]`,
+    }));
+  return recipe.layers
+    .map((layer, index) => ({
+      entry: layer[compositionPayloadKeys[layer.kind]],
+      layer,
+      path: `recipe.layers[${index}].${compositionPayloadKeys[layer.kind]}`,
+    }))
+    .filter(({ layer }) => layer.kind === kind);
+}
+
+function defineCompositionViews(recipe) {
+  for (const [property, kind, payloadKey] of [
+    ['primitives', 'effect', 'primitive'],
+    ['effectMasks', 'protected', 'protection'],
+    ['elements', 'element', 'element'],
+  ]) {
+    Object.defineProperty(recipe, property, {
+      configurable: true,
+      enumerable: false,
+      get() {
+        return recipe.layers
+          .filter((layer) => layer.kind === kind)
+          .map((layer) => layer[payloadKey]);
+      },
+    });
+  }
+  return recipe;
+}
+
 function validateSpriteMorphFrame(stage, path, columns, rows) {
   if (stage.frameMode !== 'fixed_frame')
     return;
@@ -289,10 +346,10 @@ function validateSpriteMorphFrame(stage, path, columns, rows) {
 }
 
 function validateSpriteMorphSemantics(recipe) {
-  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+  for (const { entry: primitive, path } of compositionEntries(
+    recipe, 'effect', 'primitives')) {
     if (primitive.type !== 'sprite_morph')
       continue;
-    const path = `recipe.primitives[${primitiveIndex}]`;
     const requiredTransitions = primitive.playback === 'loop'
       ? primitive.stages.length : primitive.stages.length - 1;
     if (primitive.transitions.length !== requiredTransitions) {
@@ -319,13 +376,14 @@ function validateSpriteMorphSemantics(recipe) {
 }
 
 function validateSpriteEffectSemantics(recipe) {
-  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+  for (const { entry: primitive, path } of compositionEntries(
+    recipe, 'effect', 'primitives')) {
     if (!Array.isArray(primitive.spriteEffects))
       continue;
     for (const [effectIndex, effect] of primitive.spriteEffects.entries()) {
       if (effect.start + effect.duration > 1 + spriteMorphTimingEpsilon) {
         fail(
-          `recipe.primitives[${primitiveIndex}].spriteEffects[${effectIndex}].duration`,
+          `${path}.spriteEffects[${effectIndex}].duration`,
           'must end at or before timeline position 1',
         );
       }
@@ -351,7 +409,7 @@ export function parseAndValidateRecipe(text, recipeSchemas) {
   validateRegions(recipe, recipe.schemaVersion);
   validateSpriteMorphSemantics(recipe);
   validateSpriteEffectSemantics(recipe);
-  return recipe;
+  return recipe.schemaVersion === 3 ? defineCompositionViews(recipe) : recipe;
 }
 
 function collectReferencedAuxiliaryInputs(recipe, activeEffectsOnly) {
@@ -367,11 +425,11 @@ function collectReferencedAuxiliaryInputs(recipe, activeEffectsOnly) {
     for (const [key, child] of Object.entries(value))
       visit(child, key);
   };
-  for (const primitive of recipe.primitives) {
+  for (const { entry: primitive } of compositionEntries(recipe, 'effect', 'primitives')) {
     if (!activeEffectsOnly || primitive.enabled)
       visit(primitive);
   }
-  for (const element of recipe.elements) {
+  for (const { entry: element } of compositionEntries(recipe, 'element', 'elements')) {
     if (activeEffectsOnly && element.enabled === false)
       continue;
     visit(element);
@@ -423,7 +481,8 @@ export function validateProjectRecipe(project, contracts) {
     if (!embedded.has(name))
       throw new Error(`${name}: project input is not referenced by the recipe`);
   }
-  for (const [primitiveIndex, primitive] of recipe.primitives.entries()) {
+  for (const { entry: primitive, path } of compositionEntries(
+    recipe, 'effect', 'primitives')) {
     if (primitive.type !== 'sprite_morph')
       continue;
     for (const [stageIndex, stage] of primitive.stages.entries()) {
@@ -431,7 +490,7 @@ export function validateProjectRecipe(project, contracts) {
       if (sprite) {
         validateSpriteMorphFrame(
           stage,
-          `recipe.primitives[${primitiveIndex}].stages[${stageIndex}]`,
+          `${path}.stages[${stageIndex}]`,
           sprite.sheet.columns,
           sprite.sheet.rows,
         );

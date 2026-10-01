@@ -11,20 +11,21 @@
     "height": 960
   },
   "seed": 38318869,
-  "effectMasks": [],
-  "primitives": [
+  "layers": [
     {
-      "type": "brightness_pulse",
-      "enabled": true,
-      "x": 0.45,
-      "y": 0.55,
-      "radius": 0.35,
-      "intensity": 1,
-      "cycles": 1,
-      "phase": 0,
-      "maskMode": "source",
-      "feather": 0.02
+      "kind": "effect",
+      "primitive": {
+        "type": "brightness_pulse",
+        "enabled": true,
+        "x": 0.45,
+        "y": 0.55,
+        "radius": 0.35,
+        "intensity": 1,
+        "cycles": 1,
+        "phase": 0,
+        "maskMode": "source",
+        "feather": 0.02
+      }
     }
-  ],
-  "elements": []
+  ]
 }

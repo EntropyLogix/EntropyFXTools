@@ -8,17 +8,27 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
   const recipeSchema = contracts.recipeSchemas.get(3);
   assert.equal(contracts.effects.formatVersion, 1);
   assert.equal(contracts.sprites.formatVersion, 1);
-  assert.equal(contracts.effects.effects.length, 123);
+  assert.equal(contracts.effects.effects.length, 124);
   assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2, 3]);
   assert.equal(contracts.sprites.sprites.length, 110);
-  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 123);
+  assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 124);
   assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);
-  assert.equal(recipeSchema.properties.primitives.items.oneOf.length, 123);
-  assert.equal(recipeSchema.properties.elements.items.oneOf.length, 5);
-  for (const mask of recipeSchema.properties.effectMasks.items.oneOf)
-    assert.ok(mask.required.includes('enabled'));
-  for (const element of recipeSchema.properties.elements.items.oneOf)
-    assert.ok(element.required.includes('enabled'));
+  const layerVariants = recipeSchema.properties.layers.items.oneOf;
+  const effectVariants = layerVariants.filter((variant) =>
+    variant.properties.kind.const === 'effect');
+  const protectedVariants = layerVariants.filter((variant) =>
+    variant.properties.kind.const === 'protected');
+  const elementVariants = layerVariants.filter((variant) =>
+    variant.properties.kind.const === 'element');
+  assert.equal(effectVariants.length, 124);
+  assert.equal(elementVariants.length, 5);
+  for (const mask of protectedVariants) {
+    const protection = mask.properties.protection;
+    assert.ok(protection.required.includes('enabled'));
+    assert.ok(protection.required.includes('allowElements'));
+  }
+  for (const element of elementVariants)
+    assert.ok(element.properties.element.required.includes('enabled'));
   const spriteParticles = contracts.effects.effects.find(
     (effect) => effect.type === 'sprite_particles');
   assert.equal(spriteParticles.template.particleCount, 8);
@@ -47,7 +57,7 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
     assert.ok(effect.mainControl in mainControls, `${effect.type} has an unknown main control`);
     mainControls[effect.mainControl] += 1;
     assert.equal(typeof effect.template[effect.mainControl], 'number');
-    const schema = recipeSchema.properties.primitives.items.oneOf[index];
+    const schema = effectVariants[index].properties.primitive;
     const variants = schema.oneOf ?? [schema];
     for (const variant of variants) {
       assert.ok(variant.properties[effect.mainControl],
@@ -56,7 +66,7 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
         `${effect.type} schema does not require its main control`);
     }
   }
-  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 16, strength: 31 });
+  assert.deepEqual(mainControls, { intensity: 44, mix: 32, opacity: 16, strength: 32 });
 });
 
 test('uses role-based image fields throughout the public effect contract', async () => {

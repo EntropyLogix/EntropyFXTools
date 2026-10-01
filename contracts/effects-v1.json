@@ -111,13 +111,13 @@
         "enabled": true,
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.08,
-        "intensity": 1,
+        "radius": 0.45,
+        "intensity": 3,
         "cycles": 1,
         "phase": 0,
         "angle": 0,
-        "width": 0.22,
-        "colorSource": "point",
+        "width": 0.8,
+        "colorSource": "custom",
         "color": "#ffffff"
       },
       "type": "ray_fan",
@@ -469,10 +469,38 @@
         "type": "tape_tracking",
         "enabled": true,
         "strength": 1,
+        "bandWidth": 0.018,
+        "artifactDensity": 0.1,
+        "rgbSplit": 1,
+        "noise": 0.1,
         "cycles": 1,
         "phase": 0
       },
       "type": "tape_tracking",
+      "mainControl": "strength"
+    },
+    {
+      "group": "Color & signal",
+      "label": "Camera glitch",
+      "description": "Adds a deterministic moving shutter, stepped camera jitter, and optional signal dropout.",
+      "geometry": "region",
+      "template": {
+        "type": "camera_glitch",
+        "enabled": true,
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "strength": 1,
+        "cycles": 1,
+        "phase": 0,
+        "shutter": 0.35,
+        "jitter": 0.35,
+        "dropout": 0.2
+      },
+      "type": "camera_glitch",
       "mainControl": "strength"
     },
     {

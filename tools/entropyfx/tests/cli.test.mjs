@@ -63,7 +63,7 @@ test('fails before writing an incomplete project or replacing a target', async (
   const temporary = await mkdtemp(path.join(tmpdir(), 'entropyfx-'));
   try {
     const recipe = JSON.parse(await readFile(path.join(root, 'examples/minimal/recipe.json'), 'utf8'));
-    recipe.primitives[0].spriteImage = 'inputs/missing.png';
+    recipe.layers[0].primitive.spriteImage = 'inputs/missing.png';
     const recipePath = path.join(temporary, 'recipe.json');
     const sourcePath = path.join(temporary, 'source.png');
     const projectPath = path.join(temporary, 'project.entropyfx');
@@ -77,7 +77,7 @@ test('fails before writing an incomplete project or replacing a target', async (
       '--out', projectPath,
     ]));
     await assert.rejects(readFile(projectPath), /ENOENT/);
-    delete recipe.primitives[0].spriteImage;
+    delete recipe.layers[0].primitive.spriteImage;
     await writeFile(recipePath, `${JSON.stringify(recipe)}\n`);
     await execute(process.execPath, [
       tool,
@@ -109,7 +109,7 @@ test('packs a disabled image effect without requiring its optional preserved inp
       effects.effects.find((effect) => effect.type === 'layer_reveal').template,
     );
     reveal.enabled = false;
-    recipe.primitives = [reveal];
+    recipe.layers = [{ kind: 'effect', primitive: reveal }];
     const recipePath = path.join(temporary, 'recipe.json');
     const sourcePath = path.join(temporary, 'source.png');
     const revealedPath = path.join(temporary, 'revealed.png');
