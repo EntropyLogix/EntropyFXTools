@@ -10604,7 +10604,15 @@
                             "fixed_frame"
                           ],
                           "type": "string",
-                          "description": "Animated sequence advances from the first to the last source frame during the transition that introduces this stage. Fixed frame always uses one selected cell."
+                          "description": "Animated sequence advances according to sequenceDirection during the transition that introduces this stage. Fixed frame always uses one selected cell."
+                        },
+                        "sequenceDirection": {
+                          "enum": [
+                            "forward",
+                            "reverse"
+                          ],
+                          "type": "string",
+                          "description": "Chooses whether this stage sequence advances from its first frame to its last or in reverse."
                         },
                         "frame": {
                           "maximum": 4095,
@@ -10786,9 +10794,17 @@
                                   "const": "sequence"
                                 }
                               },
+                              "required": [
+                                "sequenceDirection"
+                              ],
                               "type": "object"
                             },
                             {
+                              "not": {
+                                "required": [
+                                  "sequenceDirection"
+                                ]
+                              },
                               "properties": {
                                 "frameMode": {
                                   "const": "fixed_frame"
@@ -12184,6 +12200,14 @@
                     "minimum": 0,
                     "maximum": 1,
                     "description": "Normalized particle age at which the exit fade begins."
+                  },
+                  "sequenceDirection": {
+                    "enum": [
+                      "forward",
+                      "reverse"
+                    ],
+                    "type": "string",
+                    "description": "Chooses whether particle-age playback advances from the first frame to the last or in reverse."
                   }
                 },
                 "required": [
@@ -12390,6 +12414,37 @@
                       },
                       "type": "object"
                     }
+                  },
+                  {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "frameSelection": {
+                            "const": "particle_age"
+                          }
+                        },
+                        "required": [
+                          "sequenceDirection"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "not": {
+                          "required": [
+                            "sequenceDirection"
+                          ]
+                        },
+                        "properties": {
+                          "frameSelection": {
+                            "enum": [
+                              "random_per_particle",
+                              "emitter_angle"
+                            ]
+                          }
+                        },
+                        "type": "object"
+                      }
+                    ]
                   }
                 ]
               }
