@@ -16924,6 +16924,15 @@
                     "maximum": 2,
                     "minimum": 0,
                     "type": "number"
+                  },
+                  "featherFalloff": {
+                    "enum": [
+                      "smooth",
+                      "linear",
+                      "sharp",
+                      "wide"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -16933,7 +16942,8 @@
                   "x",
                   "y",
                   "radius",
-                  "feather"
+                  "feather",
+                  "featherFalloff"
                 ],
                 "type": "object"
               }
@@ -16998,6 +17008,15 @@
                     "maximum": 2,
                     "minimum": 0,
                     "type": "number"
+                  },
+                  "featherFalloff": {
+                    "enum": [
+                      "smooth",
+                      "linear",
+                      "sharp",
+                      "wide"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -17005,7 +17024,8 @@
                   "enabled",
                   "allowElements",
                   "region",
-                  "feather"
+                  "feather",
+                  "featherFalloff"
                 ],
                 "type": "object"
               }
@@ -17063,6 +17083,15 @@
                     "maximum": 2,
                     "minimum": 0,
                     "type": "number"
+                  },
+                  "featherFalloff": {
+                    "enum": [
+                      "smooth",
+                      "linear",
+                      "sharp",
+                      "wide"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -17074,7 +17103,8 @@
                   "radiusX",
                   "radiusY",
                   "angle",
-                  "feather"
+                  "feather",
+                  "featherFalloff"
                 ],
                 "type": "object"
               }
@@ -17131,6 +17161,15 @@
                     "maximum": 2,
                     "minimum": 0,
                     "type": "number"
+                  },
+                  "featherFalloff": {
+                    "enum": [
+                      "smooth",
+                      "linear",
+                      "sharp",
+                      "wide"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -17138,7 +17177,8 @@
                   "enabled",
                   "allowElements",
                   "points",
-                  "feather"
+                  "feather",
+                  "featherFalloff"
                 ],
                 "type": "object"
               }

@@ -32,8 +32,11 @@ the virtual Source to Output. Each entry has one of the kinds `effect`,
 `protected` or `element` and wraps its unchanged kind-specific payload under
 `primitive`, `protection` or `element` respectively. Protected entries have
 required `enabled` and
-`allowElements` booleans. Disabled entries retain their authored order and
-parameters but do not participate in rendering or require their auxiliary image.
+`allowElements` booleans. Protected entries also require `featherFalloff`, one
+of `smooth`, `linear`, `sharp` or `wide`; it controls the curve from full
+protection at the shape boundary to zero at the end of the feather band.
+Disabled entries retain their authored order and parameters but do not
+participate in rendering or require their auxiliary image.
 Readers migrating v1 or v2 supply the explicit v3 fields and place legacy
 protected areas first, effects in the middle and elements last. A v3 document
 containing the retired `primitives`, `effectMasks` or `elements` arrays is

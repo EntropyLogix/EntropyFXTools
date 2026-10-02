@@ -142,21 +142,22 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
 
   recipe.effectMasks = [
     {
-      allowElements: false, enabled: true, feather: 0,
+      allowElements: false, enabled: true, feather: 0, featherFalloff: 'smooth',
       radius: 0.5, shape: 'circle', x: -0.1, y: 0.5,
     },
     {
-      allowElements: false, enabled: true, feather: 0,
+      allowElements: false, enabled: true, feather: 0, featherFalloff: 'smooth',
       region: { x: -0.1, y: 0, width: 0.5, height: 0.5 },
       shape: 'rectangle',
     },
     {
       allowElements: false, angle: 0, enabled: true, feather: 0,
+      featherFalloff: 'smooth',
       radiusX: 0.5, radiusY: 0.25,
       shape: 'ellipse', x: 1.1, y: 0.5,
     },
     {
-      allowElements: false, enabled: true, feather: 0,
+      allowElements: false, enabled: true, feather: 0, featherFalloff: 'smooth',
       points: [{ x: -0.2, y: 0.2 }, { x: 0.5, y: -0.2 }, { x: 1.2, y: 0.8 }],
       shape: 'lasso',
     },
@@ -196,7 +197,7 @@ test('accepts v2 composition geometry off-canvas without widening source crops',
     delete element.enabled;
   assert.throws(
     () => parseAndValidateRecipe(JSON.stringify(v1), contracts.recipeSchemas),
-    /effectMasks.*must be at least 0|elements.*must be at least 0/,
+    /effectMasks.*must be at least 0|elements.*must be at least 0|featherFalloff.*not allowed/,
   );
 
   recipe.effectMasks = [];
