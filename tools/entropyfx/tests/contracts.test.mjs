@@ -10,9 +10,9 @@ test('ships versioned recipe schemas and unique effect and sprite catalogs', asy
   assert.equal(contracts.sprites.formatVersion, 1);
   assert.equal(contracts.effects.effects.length, 124);
   assert.deepEqual([...contracts.recipeSchemas.keys()], [1, 2, 3]);
-  assert.equal(contracts.sprites.sprites.length, 110);
+  assert.equal(contracts.sprites.sprites.length, 111);
   assert.equal(new Set(contracts.effects.effects.map((effect) => effect.type)).size, 124);
-  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 110);
+  assert.equal(new Set(contracts.sprites.sprites.map((sprite) => sprite.id)).size, 111);
   const layerVariants = recipeSchema.properties.layers.items.oneOf;
   const effectVariants = layerVariants.filter((variant) =>
     variant.properties.kind.const === 'effect');

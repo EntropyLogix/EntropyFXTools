@@ -2039,6 +2039,26 @@
         "wormhole_vortex_sequence"
       ],
       "title": "Black hole horizon"
+    },
+    {
+      "category": "symbols",
+      "id": "builtin:sprites/v1/camera_rec_sequence",
+      "key": "camera_rec_sequence",
+      "purpose": "A compact red recording indicator whose LED blinks while REC stays visible.",
+      "recommendation": "Place above Camera glitch as a Sprite layer and use Loop playback to blink only the recording LED.",
+      "sheet": {
+        "columns": 2,
+        "rows": 1,
+        "frames": 2,
+        "kind": "sequence",
+        "recommendedFrameSelection": "particle_age",
+        "gutterPixels": 8
+      },
+      "similarTo": [
+        "technical_glyphs_atlas",
+        "hud_reticles_atlas"
+      ],
+      "title": "Camera REC indicator"
     }
   ]
 }
