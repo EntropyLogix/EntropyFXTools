@@ -17,7 +17,7 @@
       "primitive": {
         "type": "brightness_pulse",
         "enabled": true,
-        "scope": "radial",
+        "area": "radial",
         "x": 0.45,
         "y": 0.55,
         "radius": 0.35,

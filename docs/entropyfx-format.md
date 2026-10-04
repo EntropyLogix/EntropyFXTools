@@ -37,7 +37,7 @@ and falls to zero across that outer band according to the required
 `featherFalloff` profile (`smooth`, `linear`, `sharp` or `wide`). Disabled
 entries retain their authored order and parameters but do not participate in
 rendering or require their auxiliary image.
-The pre-release v3 scope rollout currently covers `radial_blur`,
+The pre-release v3 area rollout currently covers `radial_blur`,
 `color_multiply`, `color_key`, `opacity`, `tint`, `posterize`, `tone_mapping`,
 `film_grain`, `blur`, `precise_blur`, `motion_blur`, `edge_detection`,
 `local_contrast`, `dithering`, `clouds`, `fog`, `energy_veins`, `color_remap`,
@@ -56,7 +56,7 @@ The pre-release v3 scope rollout currently covers `radial_blur`,
 `leaves`, `glyphs`, `dna_helix`, `glitter`, `constellation`, `perspective`,
 `skew`, `projective_transform`, `bloom`, `star_glare`, `fluid_lens`,
 `brightness_pulse`, `flicker`, `local_shift`, `lens_flare`, `spotlight` and `fluid`.
-Each requires a scalar `primitive.scope` selector (`radial`, `rectangular`
+Each requires a scalar `primitive.area` selector (`radial`, `rectangular`
 or `global`), with flat `x`, `y`, `radius`, `width` and `height` fields.
 There are no separate `radial` or `region` sections for these effects.
 Both shapes share the same center `x/y`; the rectangle starts at
@@ -64,7 +64,7 @@ Both shapes share the same center `x/y`; the rectangle starts at
 The selector changes the output area, not the sampling algorithm, except
 for the explicitly shape-aware `fluid_lens`, `brightness_pulse`, `flicker` and `local_shift`
 profiles described below.
-Global has no local output restriction. Scope permits changes inside its area;
+Global has no local output restriction. Area permits changes inside its area;
 it does not require every pixel inside to change.
 Brightness pulse and Flicker preserve their original radial profiles. Their
 rectangular Source profile applies the same smoothstep falloff to the maximum
@@ -77,10 +77,10 @@ Global also ignores inactive size fields and `feather`. Timing, Flicker's
 randomness, intensity, RGB amplification and alpha are unchanged.
 The required v3 `maskMode` is `source` or `geometry`; frozen v1/v2 retain
 `source` or `radial`. Migration maps `radial` to `geometry`, selects radial
-scope and adds inactive `width: 1`, `height: 1`, preserving the original
+area and adds inactive `width: 1`, `height: 1`, preserving the original
 output. A v3 primitive using the old value is rejected, not repaired.
 Local shift preserves its original motion and rendering inside the radial
-scope. An approved correction clips legacy writes outside the displayed
+area. An approved correction clips legacy writes outside the displayed
 circle, also when rendering v1/v2; those pixels retain the current layer's
 input, without changing the algorithm's center or movement profile. Rectangular
 uses the same `1 - smoothstep(0.65, 1, distance)` movement falloff with distance
@@ -88,8 +88,8 @@ equal to the maximum distance from the shared center normalized to each
 half-extent. Global applies the unchanged motion to the whole frame, without
 local falloff; inactive Position and size values do not affect the result.
 Strength, Angle, animation and deterministic random motion are unchanged.
-Sampling outside Scope remains available, while RGBA writes remain inside.
-Legacy v1/v2 explicitly migrates to radial scope with inactive `width: 1`
+Sampling outside Area remains available, while RGBA writes remain inside.
+Legacy v1/v2 explicitly migrates to radial area with inactive `width: 1`
 and `height: 1`, retaining all old parameters. Incomplete v3 is rejected.
 Lens flare, Spotlight and Fluid default to Global, preserving their former
 full-frame output. Their shared `x/y` remains the optical source, light center
@@ -97,13 +97,13 @@ or emitter position, including in Global. The former algorithmic `radius`
 is required in v3 as `flareScale`, `lightRadius` or `emitterRadius`, respectively.
 Values, ranges `(0, 2]` and mathematics are unchanged: `flareScale` is a
 dimensionless optical coefficient; the other two are normalized to the shorter
-frame side. The independent `radius` now defines only the Scope circle.
-Local scopes clip final RGBA writes without restricting fluid simulation,
+frame side. The independent `radius` now defines only the Area circle.
+Local areas clip final RGBA writes without restricting fluid simulation,
 shape-image reads or lens-ghost calculations. Legacy v1/v2 explicitly migrates
 to Global with `radius: 0.25`, `width: 1`, `height: 1`, preserving source positions
 and renaming, not changing, the algorithmic radius. Incomplete v3 is rejected.
-Scope coordinates and rectangular extents are normalized to their frame axes;
-the radial radius is normalized to the shorter frame side. This scope has no
+Area coordinates and rectangular extents are normalized to their frame axes;
+the radial radius is normalized to the shorter frame side. This area has no
 new feather parameter. Legacy v1/v2 Radial blur explicitly migrates to Global;
 incomplete v3 primitives are not repaired. Legacy rectangles are explicitly
 migrated from their top-left corner to the shared center. Sampling radii use
@@ -113,44 +113,44 @@ sampling extent. Their original values, units and mathematics are unchanged.
 Shimmer, Light sweep and X-ray scan use `bandWidth` in v3 for the former
 algorithmic `width`, retaining its values, units and range `(0, 1]`.
 Published v1/v2 continue to require `width` and `region`; migration explicitly
-renames the band thickness and moves the rectangle to flat scope geometry,
-preserving their output. For these three effects, the visible scope also
+renames the band thickness and moves the rectangle to flat area geometry,
+preserving their output. For these three effects, the visible area also
 defines the band's travel domain: Rectangular uses the rectangle, Radial
 uses the circle's diameter bounding square and clips writes to the circle,
 and Global uses the whole frame. Inactive geometry does not affect that path.
-The band's profile, phase and cycle timing remain unchanged; a larger scope
+The band's profile, phase and cycle timing remain unchanged; a larger area
 extends its travel in the same cycle time. There is no separate field size.
 Gradient blend, Flame field, Image ribbon, Image transition, Waveform and
-Vignette also use the active scope as their visible field geometry. Their
+Vignette also use the active area as their visible field geometry. Their
 local gradient, height profile, ribbon deformation, transition field,
 waveform and vignette profile use the same rectangle, circle-diameter square
 or full-frame coordinates, without a second Position/Size. Their profile
 parameters, animation timing and auxiliary-image sampling are unchanged.
-Both the warp and color stages of Flame field respect the output scope.
-Sway uses the same active scope for its visible deformation domain. Its former
+Both the warp and color stages of Flame field respect the output area.
+Sway uses the same active area for its visible deformation domain. Its former
 algorithmic `radius` is named `wavelength` in v3 and remains a normalized wave
-period relative to the active scope height; `strength` remains the deformation
+period relative to the active area height; `strength` remains the deformation
 amplitude. Legacy v1/v2 `radius` is explicitly migrated to `wavelength`.
 Analog display, Grid scan, Topographic contours and ASCII art use the active
-scope as their visible display, projected room, contour field or character
+area as their visible display, projected room, contour field or character
 grid domain. Their scanline spacing, noise, projection, contour profile and
 character sampling retain their original mathematics. Sample reads can extend
-outside the scope; only the final output is clipped to its selected shape.
+outside the area; only the final output is clipped to its selected shape.
 Pixel grid uses the active domain's top-left grid origin and its unchanged
 `cellSize`, `offsetX` and `offsetY` sampling. Pixel sorting retains complete
-row or column spans of the active domain's rectangular bounds. A radial scope
+row or column spans of the active domain's rectangular bounds. A radial area
 clips the sorted output to the circle, not the input pool used for sorting.
 Global uses the full frame; legacy rectangular sampling and edge profiles
 remain unchanged.
 Stars, Shooting stars, Dust, Rain, Snow, Bubbles, Swarm, Droplets, Leaves,
 Glyphs and DNA helix retain their particle placement and movement in the
-active domain. A radial scope clips each disk, line and glow's final pixels
+active domain. A radial area clips each disk, line and glow's final pixels
 to the circle rather than rejecting particles by their center. Rectangular
 retains the legacy integer bounds, including pixels touched by fractional edges.
 Global uses the full frame. Random draws, clocks, particle sizes, trails and
 glow profiles retain their original mathematics.
 Glitter and Constellation use the same active placement domain and clip their
-disks, glows and lines to the selected scope. Their previous writes outside the
+disks, glows and lines to the selected area. Their previous writes outside the
 rectangle were a bug: the approved correction also applies when reading v1/v2
 or migrating them. Interior pixels and effect mathematics remain unchanged;
 outside pixels retain the layer input RGBA. This is an explicit exception to
@@ -161,15 +161,15 @@ or the full frame. The radial shape clips final writes, not sample reads.
 Pivot, rotations, scales, offsets, bend and source edge handling retain their
 existing mathematics. Projective transform's `edgeMode` still repeats, clamps
 or clears samples outside the transformed source rectangle; clearing alpha
-never changes pixels outside the output scope. No second transform region is added.
-Bloom and Star glare retain light extraction in the active scope's bounding
+never changes pixels outside the output area. No second transform region is added.
+Bloom and Star glare retain light extraction in the active area's bounding
 domain: the rectangle, the circle's diameter bounding square or the full frame.
 Sample reads outside the circle remain allowed; the radial shape clips only
 final writes. Bloom's former algorithmic `radius` is named `spread` in v3,
 retaining its dimensionless 0–10 scale of multilevel blur and emitted energy.
 Star glare's former `radius` is named `rayLength`, retaining its length relative
 to the shorter frame side, dependent blur and independent `intensity` control.
-Both are separate from the output scope `radius`. Published v1/v2 keep the old
+Both are separate from the output area `radius`. Published v1/v2 keep the old
 field; migration explicitly renames it without changing its value or mathematics.
 Rectangular retains the original output, including Bloom's full-rectangle edge
 exception. No second light-source region is added.
@@ -178,7 +178,7 @@ normals, rim light and shadow from an actual circle; Rectangular uses rounded
 rectangle geometry. Global covers the whole frame without a local or source-alpha
 outline, retaining magnification, blur, frost, tint, brightness and liquid motion.
 Source alpha is unchanged. `cornerRadius` is active only in Rectangular but remains
-stored in other scopes. `blurRadius` and the other algorithm fields keep their
+stored in other areas. `blurRadius` and the other algorithm fields keep their
 names, with the approved v3 `lensZoom` range extended to 0–0.9; published v1/v2
 keep 0–0.2. Interior magnification is `1 / (1 - lensZoom)`, reaching 10× at 0.9;
 1 and inverted scaling are rejected. Curved-edge normals and proximity use the
@@ -189,14 +189,14 @@ Legacy pixel identity is not required for this effect; published
 v1/v2 field schemas remain frozen and explicitly migrate their region to Rectangular.
 Radial blur and Chromatic aberration also use `x/y` as their optical center.
 Hex field uses the same `x/y` as its pattern center, editable in Global too;
-`scale` still controls cell size. Inactive scope sizes do not scale its pattern.
-Radial scopes
+`scale` still controls cell size. Inactive area sizes do not scale its pattern.
+Radial areas
 clip output to the circle without introducing a new soft boundary; existing
 rectangular profiles and effect feather behavior remain unchanged.
-Scopes can extend beyond the frame; input sampling is not clipped to them.
+Areas can extend beyond the frame; input sampling is not clipped to them.
 `tileRegion` remains the independent tiling source crop. Auxiliary depth,
 lighting, motion maps and LUT layout retain their original sampling coordinates.
-The primitive contains scope geometry only for the shapes supported by its effect;
+The primitive contains area geometry only for the shapes supported by its effect;
 those geometries remain required even while inactive. Unsupported shape
 geometries are rejected. The full-catalog rollout remains in progress.
 For sprite animation, `sprite_layer` keeps the signed `cycles` direction

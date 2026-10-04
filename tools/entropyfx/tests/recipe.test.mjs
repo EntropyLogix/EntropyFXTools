@@ -88,26 +88,26 @@ test('selects the frozen v1 schema for existing recipes', async () => {
   const contracts = await loadContracts();
   const recipe = await exampleRecipe('minimal');
   recipe.schemaVersion = 1;
-  for (const field of ['scope', 'width', 'height'])
+  for (const field of ['area', 'width', 'height'])
     delete recipe.primitives[0][field];
   assert.equal(parseAndValidateRecipe(
     JSON.stringify(recipe), contracts.recipeSchemas).schemaVersion, 1);
 });
 
-test('validates global-source scope sizes separately from optical and emitter parameters', async () => {
+test('validates global-source area sizes separately from optical and emitter parameters', async () => {
   const contracts = await loadContracts();
   for (const [type, field] of [['lens_flare', 'flareScale'],
     ['spotlight', 'lightRadius'], ['fluid', 'emitterRadius']]) {
     const template = contracts.effects.effects.find((effect) => effect.type === type).template;
-    assert.equal(template.scope, 'global');
-    for (const scope of ['radial', 'rectangular', 'global']) {
+    assert.equal(template.area, 'global');
+    for (const area of ['radial', 'rectangular', 'global']) {
       const recipe = await exampleRecipe('minimal');
-      recipe.primitives = [{ ...template, scope, x: -0.2, y: 1.3,
+      recipe.primitives = [{ ...template, area, x: -0.2, y: 1.3,
         radius: 0.2, width: 0.6, height: 0.4 }];
       assert.deepEqual(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
         .primitives[0], recipe.primitives[0]);
     }
-    for (const missing of ['scope', 'radius', 'width', 'height', field]) {
+    for (const missing of ['area', 'radius', 'width', 'height', field]) {
       const recipe = await exampleRecipe('minimal');
       recipe.primitives = [structuredClone(template)];
       delete recipe.primitives[0][missing];
@@ -117,7 +117,7 @@ test('validates global-source scope sizes separately from optical and emitter pa
       const recipe = await exampleRecipe('minimal');
       recipe.schemaVersion = schemaVersion;
       const primitive = { ...template, radius: template[field] };
-      for (const removed of ['scope', 'width', 'height', field])
+      for (const removed of ['area', 'width', 'height', field])
         delete primitive[removed];
       recipe.primitives = [primitive];
       assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
@@ -128,18 +128,18 @@ test('validates global-source scope sizes separately from optical and emitter pa
   }
 });
 
-test('validates Local shift flat scopes without accepting them in frozen legacy recipes', async () => {
+test('validates Local shift flat areas without accepting them in frozen legacy recipes', async () => {
   const contracts = await loadContracts();
   const template = contracts.effects.effects.find((effect) => effect.type === 'local_shift').template;
-  for (const scope of ['radial', 'rectangular', 'global']) {
+  for (const area of ['radial', 'rectangular', 'global']) {
     const recipe = await exampleRecipe('minimal');
-    const primitive = { ...structuredClone(template), scope, x: -0.2, y: 1.3,
+    const primitive = { ...structuredClone(template), area, x: -0.2, y: 1.3,
       width: 0.7, height: 0.4, radius: 0.2, strength: 2.5, angle: -27 };
     recipe.primitives = [primitive];
     assert.deepEqual(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
       .primitives[0], primitive);
   }
-  for (const field of ['scope', 'x', 'y', 'radius', 'width', 'height']) {
+  for (const field of ['area', 'x', 'y', 'radius', 'width', 'height']) {
     const recipe = await exampleRecipe('minimal');
     recipe.primitives = [structuredClone(template)];
     delete recipe.primitives[0][field];
@@ -150,27 +150,27 @@ test('validates Local shift flat scopes without accepting them in frozen legacy 
     const recipe = await exampleRecipe('minimal');
     recipe.schemaVersion = schemaVersion;
     recipe.primitives = [structuredClone(template)];
-    for (const field of ['scope', 'width', 'height'])
+    for (const field of ['area', 'width', 'height'])
       delete recipe.primitives[0][field];
     assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
       .primitives[0].type, 'local_shift');
-    for (const field of ['scope', 'width', 'height']) {
+    for (const field of ['area', 'width', 'height']) {
       const invalid = recipeFixture(plainRecipe(recipe));
-      invalid.primitives[0][field] = field === 'scope' ? 'radial' : 1;
+      invalid.primitives[0][field] = field === 'area' ? 'radial' : 1;
       assert.throws(() => parseAndValidateRecipe(JSON.stringify(invalid), contracts.recipeSchemas),
         new RegExp(field));
     }
   }
 });
 
-test('validates pulse scope profiles and versioned geometry masking without repairing recipes', async () => {
+test('validates pulse area profiles and versioned geometry masking without repairing recipes', async () => {
   const contracts = await loadContracts();
   for (const type of ['brightness_pulse', 'flicker']) {
     const template = contracts.effects.effects.find((effect) => effect.type === type).template;
-    for (const scope of ['radial', 'rectangular', 'global']) {
+    for (const area of ['radial', 'rectangular', 'global']) {
       for (const maskMode of ['source', 'geometry']) {
         const recipe = await exampleRecipe('minimal');
-        const primitive = { ...structuredClone(template), scope, maskMode,
+        const primitive = { ...structuredClone(template), area, maskMode,
           x: -0.2, y: 1.3, width: 0.7, height: 0.4, radius: 0.2 };
         recipe.primitives = [primitive];
         assert.deepEqual(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
@@ -183,7 +183,7 @@ test('validates pulse scope profiles and versioned geometry masking without repa
       assert.throws(() => parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas),
         /maskMode/);
     }
-    for (const field of ['scope', 'x', 'y', 'radius', 'width', 'height', 'maskMode']) {
+    for (const field of ['area', 'x', 'y', 'radius', 'width', 'height', 'maskMode']) {
       const recipe = await exampleRecipe('minimal');
       recipe.primitives = [structuredClone(template)];
       delete recipe.primitives[0][field];
@@ -196,7 +196,7 @@ test('validates pulse scope profiles and versioned geometry masking without repa
         recipe.schemaVersion = schemaVersion;
         recipe.primitives[0].type = type;
         recipe.primitives[0].maskMode = maskMode;
-        for (const field of ['scope', 'width', 'height'])
+        for (const field of ['area', 'width', 'height'])
           delete recipe.primitives[0][field];
         assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
           .primitives[0].maskMode, maskMode);
@@ -309,7 +309,7 @@ test('accepts composition geometry off-canvas without widening source crops', as
     ...shimmer, region: { x: -0.5, y: 1.25, width: 2, height: 0.5 },
     width: shimmer.bandWidth,
   };
-  for (const field of ['scope', 'x', 'y', 'height', 'radius', 'bandWidth'])
+  for (const field of ['area', 'x', 'y', 'height', 'radius', 'bandWidth'])
     delete v1.primitives[0][field];
   for (const mask of v1.effectMasks) {
     delete mask.enabled;
@@ -404,7 +404,7 @@ test('accepts optional color and source-ray controls from the renderer contract'
     intensity: 1,
     threshold: 0.4,
     type: 'directional_source_rays',
-    scope: 'global',
+    area: 'global',
     x: 0.5, y: 0.5, radius: 0.25, width: 1, height: 1,
   }];
   assert.equal(parseAndValidateRecipe(JSON.stringify(recipe), contracts.recipeSchemas)
@@ -688,7 +688,7 @@ test('published v2 text still requires its embedded raster', async () => {
   const contracts = await loadContracts();
   const recipe = await exampleRecipe('minimal');
   recipe.schemaVersion = 2;
-  for (const field of ['scope', 'width', 'height'])
+  for (const field of ['area', 'width', 'height'])
     delete recipe.primitives[0][field];
   recipe.elements = [{
     color: '#ffffff', direction: 'ltr',

@@ -5,7 +5,7 @@
       "label": "Brightness pulse",
       "description": "Cyclically brightens the existing color around a point.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -13,7 +13,7 @@
       "template": {
         "type": "brightness_pulse",
         "enabled": true,
-        "scope": "radial",
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
@@ -33,7 +33,7 @@
       "label": "Flicker",
       "description": "Irregularly animates an existing light source.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -41,7 +41,7 @@
       "template": {
         "type": "flicker",
         "enabled": true,
-        "scope": "radial",
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
@@ -61,7 +61,7 @@
       "label": "Shimmer",
       "description": "Moves a band that amplifies the existing color.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -73,7 +73,7 @@
       "template": {
         "type": "shimmer",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -93,7 +93,7 @@
       "label": "Light sweep",
       "description": "Moves a band of optional emission through a region.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -105,7 +105,7 @@
       "template": {
         "type": "light_sweep",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -154,7 +154,7 @@
       "label": "Glitter",
       "description": "Places periodically twinkling points.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -162,7 +162,7 @@
       "template": {
         "type": "glitter",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -184,7 +184,7 @@
       "label": "Caustics",
       "description": "Creates a moving network of cellular light bands.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -192,7 +192,7 @@
       "template": {
         "type": "caustics",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -213,7 +213,7 @@
       "label": "Sway",
       "description": "Bends region content with a wave-like motion.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -225,7 +225,7 @@
       "template": {
         "type": "sway",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -264,7 +264,7 @@
       "label": "Surface ripple",
       "description": "Distorts a region with two directional waves.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -276,7 +276,7 @@
       "template": {
         "type": "surface_ripple",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -296,7 +296,7 @@
       "label": "Vector warp",
       "description": "Warps the image through a procedural direction field.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -309,7 +309,7 @@
       "template": {
         "type": "vector_warp",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -329,7 +329,7 @@
       "label": "Water flow",
       "description": "Advects the image through a flow field and crossfades loop phases.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -341,7 +341,7 @@
       "template": {
         "type": "water_flow",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -361,7 +361,7 @@
       "label": "Parallax",
       "description": "Offsets image layers using automatic depth or a project depth map.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -373,7 +373,7 @@
       "template": {
         "type": "parallax",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -397,7 +397,7 @@
       "label": "Heat haze",
       "description": "Adds a subtle, undulating distortion.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -405,7 +405,7 @@
       "template": {
         "type": "heat_haze",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -463,7 +463,7 @@
       "label": "Drift",
       "description": "Moves the entire image back and forth along a selected direction.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -475,7 +475,7 @@
       "template": {
         "type": "drift",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -494,7 +494,7 @@
       "label": "Shake",
       "description": "Adds closed-loop irregular shake.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -502,7 +502,7 @@
       "template": {
         "type": "shake",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -520,7 +520,7 @@
       "label": "Chromatic aberration",
       "description": "Separates RGB channels across the full image around an adjustable optical center.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -528,7 +528,7 @@
       "template": {
         "type": "chromatic_aberration",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -546,7 +546,7 @@
       "label": "Film grain",
       "description": "Applies deterministic luminance noise.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -554,7 +554,7 @@
       "template": {
         "type": "film_grain",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -573,7 +573,7 @@
       "label": "Tape tracking",
       "description": "Combines tracking, gated artifacts, noise, and RGB separation.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -581,7 +581,7 @@
       "template": {
         "type": "tape_tracking",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -603,7 +603,7 @@
       "label": "Camera glitch",
       "description": "Adds a deterministic moving shutter, stepped camera jitter, and optional signal dropout.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -611,7 +611,7 @@
       "template": {
         "type": "camera_glitch",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -632,7 +632,7 @@
       "label": "Energy veins",
       "description": "Overlays moving blue-white energy veins with a brightening blend.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -644,7 +644,7 @@
       "template": {
         "type": "energy_veins",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -665,7 +665,7 @@
       "label": "Clouds",
       "description": "Blends a procedural cloud field with the image.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -677,7 +677,7 @@
       "template": {
         "type": "clouds",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -698,7 +698,7 @@
       "label": "Fog",
       "description": "Adds a broad, soft atmospheric layer.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -710,7 +710,7 @@
       "template": {
         "type": "fog",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -731,7 +731,7 @@
       "label": "Flame field",
       "description": "Distorts and illuminates a region like a flame.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -743,7 +743,7 @@
       "template": {
         "type": "flame_field",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -765,7 +765,7 @@
       "label": "Fluid",
       "description": "Simulates dye and flow emitted from a selected point.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -778,7 +778,7 @@
       "template": {
         "type": "fluid",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.25,
@@ -882,7 +882,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -890,7 +890,7 @@
       "template": {
         "type": "stars",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -916,7 +916,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -924,7 +924,7 @@
       "template": {
         "type": "shooting_stars",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -951,7 +951,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -959,7 +959,7 @@
       "template": {
         "type": "dust",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1042,7 +1042,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1050,7 +1050,7 @@
       "template": {
         "type": "rain",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1077,7 +1077,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1085,7 +1085,7 @@
       "template": {
         "type": "snow",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1176,9 +1176,9 @@
     {
       "group": "Motion & deformation",
       "label": "Local shift",
-      "description": "Offsets the selected scope, with local falloff for radial and rectangular areas.",
+      "description": "Offsets the selected area, with local falloff for radial and rectangular areas.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1191,7 +1191,7 @@
       "template": {
         "type": "local_shift",
         "enabled": true,
-        "scope": "radial",
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
@@ -1210,7 +1210,7 @@
       "label": "Oscillating shift",
       "description": "Moves a region back and forth along a closed path.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1222,7 +1222,7 @@
       "template": {
         "type": "oscillating_shift",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1265,7 +1265,7 @@
       "label": "Directional waves",
       "description": "Offsets samples perpendicular to the wave direction.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1277,7 +1277,7 @@
       "template": {
         "type": "directional_waves",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1297,7 +1297,7 @@
       "label": "Blur",
       "description": "Blurs a region with a compact sampling kernel.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1305,7 +1305,7 @@
       "template": {
         "type": "blur",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1324,7 +1324,7 @@
       "label": "Precise blur",
       "description": "Blurs a region with a denser kernel.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1332,7 +1332,7 @@
       "template": {
         "type": "precise_blur",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1351,7 +1351,7 @@
       "label": "Radial blur",
       "description": "Blurs the image along rays from a point.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1359,7 +1359,7 @@
       "template": {
         "type": "radial_blur",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 0.4,
@@ -1382,7 +1382,7 @@
         "kind": "axis",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1390,7 +1390,7 @@
       "template": {
         "type": "motion_blur",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1410,7 +1410,7 @@
       "label": "Color multiply",
       "description": "Periodically multiplies a region by one color.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1418,7 +1418,7 @@
       "template": {
         "type": "color_multiply",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1437,7 +1437,7 @@
       "label": "Gradient blend",
       "description": "Blends a region with a directional gradient.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1449,7 +1449,7 @@
       "template": {
         "type": "gradient_blend",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1470,7 +1470,7 @@
       "label": "Color key",
       "description": "Reduces the alpha of pixels similar to a selected color.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1478,7 +1478,7 @@
       "template": {
         "type": "color_key",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1498,7 +1498,7 @@
       "label": "Opacity",
       "description": "Periodically reduces alpha within a region.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1506,7 +1506,7 @@
       "template": {
         "type": "opacity",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1524,7 +1524,7 @@
       "label": "Reflection",
       "description": "Blends a region with its reflected variant.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1536,7 +1536,7 @@
       "template": {
         "type": "reflection",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1555,7 +1555,7 @@
       "label": "Tint",
       "description": "Gently colors a region while preserving luminance.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1563,7 +1563,7 @@
       "template": {
         "type": "tint",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1600,7 +1600,7 @@
       "label": "Perspective",
       "description": "Projects a region using perspective division.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1612,7 +1612,7 @@
       "template": {
         "type": "perspective",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1631,7 +1631,7 @@
       "label": "Refraction",
       "description": "Distorts the image through a procedural normal field.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1639,7 +1639,7 @@
       "template": {
         "type": "refraction",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1658,7 +1658,7 @@
       "label": "Skew",
       "description": "Offsets rows proportionally to their height.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1666,7 +1666,7 @@
       "template": {
         "type": "skew",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1685,7 +1685,7 @@
       "label": "Region shift",
       "description": "Periodically shifts a region in a selected direction.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1697,7 +1697,7 @@
       "template": {
         "type": "region_shift",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1716,7 +1716,7 @@
       "label": "Edge detection",
       "description": "Emphasizes image gradients.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1724,7 +1724,7 @@
       "template": {
         "type": "edge_detection",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1743,7 +1743,7 @@
       "label": "Edge glow",
       "description": "Derives an original directional glow from image edges.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1755,7 +1755,7 @@
       "template": {
         "type": "edge_glow",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1776,7 +1776,7 @@
       "label": "Star glare",
       "description": "Casts multi-directional streaks from bright image areas.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1788,7 +1788,7 @@
       "template": {
         "type": "star_glare",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1811,7 +1811,7 @@
       "label": "Local contrast",
       "description": "Enhances local contrast like a simple unsharp mask.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1819,7 +1819,7 @@
       "template": {
         "type": "local_contrast",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1859,7 +1859,7 @@
       "label": "Directional source rays",
       "description": "Extracts bright source pixels into broad rays along one direction.",
       "geometry": "global",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1872,7 +1872,7 @@
       "template": {
         "type": "directional_source_rays",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -1898,7 +1898,7 @@
       "label": "Lens flare",
       "description": "Adds a source glow, chromatic lens ghosts, and an anamorphic streak.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -1911,7 +1911,7 @@
       "template": {
         "type": "lens_flare",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.25,
@@ -2044,7 +2044,7 @@
       "label": "Rain on glass",
       "description": "Refracts and frosts the image through moving drops and wet trails.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2052,7 +2052,7 @@
       "template": {
         "type": "rain_on_glass",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2078,7 +2078,7 @@
       "label": "Constellation",
       "description": "Connects drifting deterministic points into a changing luminous network.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2086,7 +2086,7 @@
       "template": {
         "type": "constellation",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2113,7 +2113,7 @@
       "label": "Bokeh",
       "description": "Blurs through a spiral aperture while retaining bright lens discs.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2121,7 +2121,7 @@
       "template": {
         "type": "bokeh",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2158,7 +2158,7 @@
       "label": "Signal breakup",
       "description": "Tears image space through moving faults, interlace, noise, and RGB separation.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2166,7 +2166,7 @@
       "template": {
         "type": "signal_breakup",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2225,7 +2225,7 @@
       "label": "Bloom",
       "description": "Extracts bright pixels and spreads them through a broad multiscale glow.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2233,7 +2233,7 @@
       "template": {
         "type": "bloom",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2258,7 +2258,7 @@
       "label": "Masked lighting",
       "description": "Adds colored light using a light mask and an unlit image.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2266,7 +2266,7 @@
       "template": {
         "type": "masked_lighting",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2289,7 +2289,7 @@
       "label": "Depth fog",
       "description": "Uses a project depth map to place noisy fog behind and between image features.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2297,7 +2297,7 @@
       "template": {
         "type": "depth_fog",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2328,7 +2328,7 @@
       "label": "Volumetric clouds",
       "description": "Ray-marches a lit procedural cloud volume over the image.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2336,7 +2336,7 @@
       "template": {
         "type": "volumetric_clouds",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2370,7 +2370,7 @@
       "label": "Light pillar",
       "description": "Ray-marches one rotating, four-octave deformed axial light field.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2382,7 +2382,7 @@
       "template": {
         "type": "light_pillar",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2410,7 +2410,7 @@
       "label": "Spotlight",
       "description": "Darkens the complete image and restores albedo inside a soft procedural or managed shape.",
       "geometry": "point",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2418,7 +2418,7 @@
       "template": {
         "type": "spotlight",
         "enabled": true,
-        "scope": "global",
+        "area": "global",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.25,
@@ -2444,7 +2444,7 @@
       "label": "Image ribbon",
       "description": "Deforms a managed transparent image before compositing it as an independent moving layer.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2456,7 +2456,7 @@
       "template": {
         "type": "image_ribbon",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2510,7 +2510,7 @@
       "label": "Iridescence",
       "description": "Modulates source colors with a flowing silk-like interference field.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2522,7 +2522,7 @@
       "template": {
         "type": "iridescence",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2578,7 +2578,7 @@
       "label": "Grid scan",
       "description": "Projects a perspective room grid with a moving luminous scan band.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2586,7 +2586,7 @@
       "template": {
         "type": "grid_scan",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2649,7 +2649,7 @@
       "label": "Topographic contours",
       "description": "Overlays animated contour lines derived from a procedural height field.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2657,7 +2657,7 @@
       "template": {
         "type": "topographic_contours",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2679,7 +2679,7 @@
       "label": "Dithering",
       "description": "Pixelates and reduces colors through an explicit ordered or noise threshold raster.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2691,7 +2691,7 @@
       "template": {
         "type": "dithering",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2716,7 +2716,7 @@
       "label": "Halftone",
       "description": "Rebuilds image tone from sampled dots on square or hexagonal color-separation grids.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2728,7 +2728,7 @@
       "template": {
         "type": "halftone",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2928,7 +2928,7 @@
       "label": "Fluid lens",
       "description": "Creates circular or rounded rectangular liquid glass, or a full-frame frosted surface.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2936,7 +2936,7 @@
       "template": {
         "type": "fluid_lens",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -2970,7 +2970,7 @@
       "label": "ASCII art",
       "description": "Overlays a built-in ordered character style derived from image luminance.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -2978,7 +2978,7 @@
       "template": {
         "type": "ascii_art",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3006,7 +3006,7 @@
       "label": "Projective transform",
       "description": "Projects a region as a rotatable 3D plane with optional cylindrical bend.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3014,7 +3014,7 @@
       "template": {
         "type": "projective_transform",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3049,7 +3049,7 @@
       "label": "Image transition",
       "description": "Moves a deterministic threshold field between the current and target images.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3061,7 +3061,7 @@
       "template": {
         "type": "image_transition",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3091,7 +3091,7 @@
       "label": "Color remap",
       "description": "Selectively replaces one color or maps a two-anchor color range while preserving texture.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3099,7 +3099,7 @@
       "template": {
         "type": "color_remap",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3128,7 +3128,7 @@
       "label": "Posterize",
       "description": "Reduces saturated source channels to a small explicit set of color levels.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3136,7 +3136,7 @@
       "template": {
         "type": "posterize",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3156,7 +3156,7 @@
       "label": "Painterly smoothing",
       "description": "Uses a Kuwahara filter to create painterly flat regions while preserving edges.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3164,7 +3164,7 @@
       "template": {
         "type": "painterly_smoothing",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3183,7 +3183,7 @@
       "label": "Tiling array",
       "description": "Repeats a current-image crop or project tile image along a closed path.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3195,7 +3195,7 @@
       "template": {
         "type": "tiling_array",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3228,7 +3228,7 @@
       "label": "Tone mapping",
       "description": "Compresses or reshapes luminance through one of eleven explicit tone curves.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3236,7 +3236,7 @@
       "template": {
         "type": "tone_mapping",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3267,7 +3267,7 @@
       "label": "Color grading",
       "description": "Combines neutral base corrections in a fixed, documented processing order.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3275,7 +3275,7 @@
       "template": {
         "type": "color_grading",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3367,7 +3367,7 @@
       "label": "X-ray scan",
       "description": "Moves an original band of inverted or tinted imagery.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3379,7 +3379,7 @@
       "template": {
         "type": "xray_scan",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3404,7 +3404,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3412,7 +3412,7 @@
       "template": {
         "type": "bubbles",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3440,7 +3440,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3448,7 +3448,7 @@
       "template": {
         "type": "swarm",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3500,7 +3500,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3508,7 +3508,7 @@
       "template": {
         "type": "droplets",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3536,7 +3536,7 @@
         "kind": "direction",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3544,7 +3544,7 @@
       "template": {
         "type": "leaves",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3589,7 +3589,7 @@
       "label": "Glyphs",
       "description": "Animates procedural runes built from rings, polygons, swirls, and glow.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3597,7 +3597,7 @@
       "template": {
         "type": "glyphs",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3626,7 +3626,7 @@
         "parameter": "angle",
         "degreesFactor": -1
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3634,7 +3634,7 @@
       "template": {
         "type": "dna_helix",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3658,7 +3658,7 @@
       "label": "Pixel grid",
       "description": "Reduces a region to stable blocks sampled from the source.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3666,7 +3666,7 @@
       "template": {
         "type": "pixel_grid",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3687,7 +3687,7 @@
       "label": "Analog display",
       "description": "Adds scanlines, raster noise, flicker, and display-edge shading.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3695,7 +3695,7 @@
       "template": {
         "type": "analog_display",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3722,7 +3722,7 @@
         "kind": "axis",
         "parameter": "angle"
       },
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3730,7 +3730,7 @@
       "template": {
         "type": "hex_field",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3756,7 +3756,7 @@
       "label": "Color LUT",
       "description": "Maps source colors through a regular two-dimensional cube LUT.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3764,7 +3764,7 @@
       "template": {
         "type": "color_lut",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3786,7 +3786,7 @@
       "label": "Vignette",
       "description": "Shades the boundary of a region with a controllable rounded profile.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3794,7 +3794,7 @@
       "template": {
         "type": "vignette",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3816,7 +3816,7 @@
       "label": "Drop shadow",
       "description": "Builds a soft offset shadow from transparent pixels in the current image.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3824,7 +3824,7 @@
       "template": {
         "type": "drop_shadow",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3868,7 +3868,7 @@
       "label": "Noise field",
       "description": "Creates a periodic tinted noise field with optional source displacement.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3876,7 +3876,7 @@
       "template": {
         "type": "noise_field",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3899,7 +3899,7 @@
       "label": "Flow blur",
       "description": "Blurs each pixel along a direction encoded by a flow-map image.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3907,7 +3907,7 @@
       "template": {
         "type": "flow_blur",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3928,7 +3928,7 @@
       "label": "Waveform",
       "description": "Draws a glowing procedural waveform across a selected region.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3940,7 +3940,7 @@
       "template": {
         "type": "waveform",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
@@ -3964,7 +3964,7 @@
       "label": "Pixel sorting",
       "description": "Sorts contiguous luminance-selected spans along a chosen image axis.",
       "geometry": "region",
-      "scopeShapes": [
+      "areaShapes": [
         "radial",
         "rectangular",
         "global"
@@ -3972,7 +3972,7 @@
       "template": {
         "type": "pixel_sorting",
         "enabled": true,
-        "scope": "rectangular",
+        "area": "rectangular",
         "x": 0.5,
         "y": 0.5,
         "width": 1,
