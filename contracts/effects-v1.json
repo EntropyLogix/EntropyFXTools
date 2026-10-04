@@ -5,12 +5,20 @@
       "label": "Brightness pulse",
       "description": "Cyclically brightens the existing color around a point.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "brightness_pulse",
         "enabled": true,
+        "scope": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
+        "width": 1,
+        "height": 1,
         "intensity": 1,
         "cycles": 1,
         "phase": 0,
@@ -25,12 +33,20 @@
       "label": "Flicker",
       "description": "Irregularly animates an existing light source.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "flicker",
         "enabled": true,
+        "scope": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
+        "width": 1,
+        "height": 1,
         "intensity": 1,
         "cycles": 1,
         "phase": 0,
@@ -749,6 +765,11 @@
       "label": "Fluid",
       "description": "Simulates dye and flow emitted from a selected point.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "angleIndicator": {
         "kind": "direction",
         "parameter": "angle",
@@ -757,9 +778,13 @@
       "template": {
         "type": "fluid",
         "enabled": true,
+        "scope": "global",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.08,
+        "radius": 0.25,
+        "width": 1,
+        "height": 1,
+        "emitterRadius": 0.08,
         "strength": 1,
         "cycles": 1,
         "phase": 0,
@@ -1151,8 +1176,13 @@
     {
       "group": "Motion & deformation",
       "label": "Local shift",
-      "description": "Softly offsets a selected disc of the image.",
+      "description": "Offsets the selected scope, with local falloff for radial and rectangular areas.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "angleIndicator": {
         "kind": "axis",
         "parameter": "angle",
@@ -1161,9 +1191,12 @@
       "template": {
         "type": "local_shift",
         "enabled": true,
+        "scope": "radial",
         "x": 0.5,
         "y": 0.5,
         "radius": 0.08,
+        "width": 1,
+        "height": 1,
         "strength": 1,
         "cycles": 1,
         "phase": 0,
@@ -1865,6 +1898,11 @@
       "label": "Lens flare",
       "description": "Adds a source glow, chromatic lens ghosts, and an anamorphic streak.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "angleIndicator": {
         "kind": "axis",
         "parameter": "angle",
@@ -1873,9 +1911,13 @@
       "template": {
         "type": "lens_flare",
         "enabled": true,
+        "scope": "global",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.35,
+        "radius": 0.25,
+        "width": 1,
+        "height": 1,
+        "flareScale": 0.35,
         "intensity": 1,
         "cycles": 1,
         "phase": 0,
@@ -2368,12 +2410,21 @@
       "label": "Spotlight",
       "description": "Darkens the complete image and restores albedo inside a soft procedural or managed shape.",
       "geometry": "point",
+      "scopeShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "spotlight",
         "enabled": true,
+        "scope": "global",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.3,
+        "radius": 0.25,
+        "width": 1,
+        "height": 1,
+        "lightRadius": 0.3,
         "mix": 1,
         "cycles": 0,
         "phase": 0,

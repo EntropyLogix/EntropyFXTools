@@ -88,23 +88,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
                   },
                   "intensity": {
                     "type": "number",
@@ -129,23 +149,26 @@
                     "type": "string",
                     "enum": [
                       "source",
-                      "radial"
+                      "geometry"
                     ],
-                    "description": "Uses source-color similarity around the selected point or a geometric radial mask."
+                    "description": "Uses source-color similarity at the shared Position or only the selected Scope geometry. Global has no spatial falloff."
                   },
                   "feather": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 0.2,
-                    "description": "Soft transition extending inward from the pulse radius in radial mask mode. 0 makes a hard disc."
+                    "description": "Soft transition extending inward from the local Scope edge in Geometry mask mode. 0 makes a hard edge. Inactive in Source mode and Global scope."
                   }
                 },
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "intensity",
                   "cycles",
                   "phase",
@@ -178,23 +201,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
                   },
                   "intensity": {
                     "type": "number",
@@ -219,23 +262,26 @@
                     "type": "string",
                     "enum": [
                       "source",
-                      "radial"
+                      "geometry"
                     ],
-                    "description": "Uses source-color similarity around the selected point or a geometric radial mask."
+                    "description": "Uses source-color similarity at the shared Position or only the selected Scope geometry. Global has no spatial falloff."
                   },
                   "feather": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 0.2,
-                    "description": "Soft transition extending inward from the flicker radius in radial mask mode. 0 makes a hard disc."
+                    "description": "Soft transition extending inward from the local Scope edge in Geometry mask mode. 0 makes a hard edge. Inactive in Source mode and Global scope."
                   }
                 },
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "intensity",
                   "cycles",
                   "phase",
@@ -2894,23 +2940,49 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
+                  },
+                  "emitterRadius": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "description": "Radius of the fluid emitter relative to the shorter image side; independent of the output scope, so flow may travel beyond the emitter."
                   },
                   "strength": {
                     "type": "number",
@@ -2961,9 +3033,13 @@
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
+                  "emitterRadius",
                   "strength",
                   "cycles",
                   "phase",
@@ -4493,23 +4569,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
                   },
                   "strength": {
                     "type": "number",
@@ -4539,9 +4635,12 @@
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "strength",
                   "cycles",
                   "phase",
@@ -4549,7 +4648,7 @@
                 ],
                 "type": "object",
                 "title": "Local shift",
-                "description": "Softly offsets a selected disc of the image."
+                "description": "Offsets the selected scope, with local falloff for radial and rectangular areas."
               }
             },
             "required": [
@@ -7108,23 +7207,49 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
+                  },
+                  "flareScale": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "description": "Optical scale of the flare, ghosts and streaks; independent of the output scope."
                   },
                   "intensity": {
                     "type": "number",
@@ -7184,9 +7309,13 @@
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
+                  "flareScale",
                   "intensity",
                   "cycles",
                   "phase",
@@ -9678,23 +9807,49 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "scope": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope radius normalized to the shorter frame side."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Scope height normalized to the frame height."
+                  },
+                  "lightRadius": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "description": "Radius of the illuminated area relative to the shorter image side; independent of the output scope."
                   },
                   "mix": {
                     "type": "number",
@@ -9762,9 +9917,13 @@
                 "required": [
                   "type",
                   "enabled",
+                  "scope",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
+                  "lightRadius",
                   "mix",
                   "cycles",
                   "phase",

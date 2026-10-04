@@ -280,7 +280,9 @@ function validateRegions(value, schemaVersion, path = 'recipe') {
       && (/^recipe\.(?:primitives|elements)\[\d+\]\.region$/u.test(path)
         || /^recipe\.effectMasks\[\d+\]\.region$/u.test(path)
         || /^recipe\.layers\[\d+\]\.(?:primitive|protection|element)\.region$/u.test(path));
-    if (!compositionRegion) {
+    const centeredScope = schemaVersion === 3 && typeof value.scope === 'string'
+      && /^recipe\.layers\[\d+\]\.primitive$/u.test(path);
+    if (!compositionRegion && !centeredScope) {
       if (value.x + value.width > 1)
         fail(path, 'x plus width must not exceed 1');
       if (value.y + value.height > 1)

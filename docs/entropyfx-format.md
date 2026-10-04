@@ -54,16 +54,54 @@ The pre-release v3 scope rollout currently covers `radial_blur`,
 `topographic_contours`, `ascii_art`, `pixel_grid`, `pixel_sorting`, `stars`,
 `shooting_stars`, `dust`, `rain`, `snow`, `bubbles`, `swarm`, `droplets`,
 `leaves`, `glyphs`, `dna_helix`, `glitter`, `constellation`, `perspective`,
-`skew`, `projective_transform`, `bloom`, `star_glare` and `fluid_lens`.
+`skew`, `projective_transform`, `bloom`, `star_glare`, `fluid_lens`,
+`brightness_pulse`, `flicker`, `local_shift`, `lens_flare`, `spotlight` and `fluid`.
 Each requires a scalar `primitive.scope` selector (`radial`, `rectangular`
 or `global`), with flat `x`, `y`, `radius`, `width` and `height` fields.
 There are no separate `radial` or `region` sections for these effects.
 Both shapes share the same center `x/y`; the rectangle starts at
 `x - width/2`, `y - height/2`. Sizes remain stored when inactive.
 The selector changes the output area, not the sampling algorithm, except
-for the explicitly shape-aware `fluid_lens` geometry described below.
+for the explicitly shape-aware `fluid_lens`, `brightness_pulse`, `flicker` and `local_shift`
+profiles described below.
 Global has no local output restriction. Scope permits changes inside its area;
 it does not require every pixel inside to change.
+Brightness pulse and Flicker preserve their original radial profiles. Their
+rectangular Source profile applies the same smoothstep falloff to the maximum
+of the distances from the shared center, normalized to each half-extent.
+Geometry mode uses the existing inward `feather`, measured from the nearest
+rectangle edge and capped at the shorter half-extent. Global has no spatial
+falloff. Source mode still compares each input pixel's RGB with the input
+sample at shared `x/y`, including in Global. Geometry mode ignores that sample;
+Global also ignores inactive size fields and `feather`. Timing, Flicker's
+randomness, intensity, RGB amplification and alpha are unchanged.
+The required v3 `maskMode` is `source` or `geometry`; frozen v1/v2 retain
+`source` or `radial`. Migration maps `radial` to `geometry`, selects radial
+scope and adds inactive `width: 1`, `height: 1`, preserving the original
+output. A v3 primitive using the old value is rejected, not repaired.
+Local shift preserves its original motion and rendering inside the radial
+scope. An approved correction clips legacy writes outside the displayed
+circle, also when rendering v1/v2; those pixels retain the current layer's
+input, without changing the algorithm's center or movement profile. Rectangular
+uses the same `1 - smoothstep(0.65, 1, distance)` movement falloff with distance
+equal to the maximum distance from the shared center normalized to each
+half-extent. Global applies the unchanged motion to the whole frame, without
+local falloff; inactive Position and size values do not affect the result.
+Strength, Angle, animation and deterministic random motion are unchanged.
+Sampling outside Scope remains available, while RGBA writes remain inside.
+Legacy v1/v2 explicitly migrates to radial scope with inactive `width: 1`
+and `height: 1`, retaining all old parameters. Incomplete v3 is rejected.
+Lens flare, Spotlight and Fluid default to Global, preserving their former
+full-frame output. Their shared `x/y` remains the optical source, light center
+or emitter position, including in Global. The former algorithmic `radius`
+is required in v3 as `flareScale`, `lightRadius` or `emitterRadius`, respectively.
+Values, ranges `(0, 2]` and mathematics are unchanged: `flareScale` is a
+dimensionless optical coefficient; the other two are normalized to the shorter
+frame side. The independent `radius` now defines only the Scope circle.
+Local scopes clip final RGBA writes without restricting fluid simulation,
+shape-image reads or lens-ghost calculations. Legacy v1/v2 explicitly migrates
+to Global with `radius: 0.25`, `width: 1`, `height: 1`, preserving source positions
+and renaming, not changing, the algorithmic radius. Incomplete v3 is rejected.
 Scope coordinates and rectangular extents are normalized to their frame axes;
 the radial radius is normalized to the shorter frame side. This scope has no
 new feather parameter. Legacy v1/v2 Radial blur explicitly migrates to Global;
