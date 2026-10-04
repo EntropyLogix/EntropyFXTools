@@ -1935,14 +1935,22 @@
     {
       "group": "Graphics & overlays",
       "label": "HUD ring",
-      "description": "Draws a rotating segmented HUD ring around a selected point.",
+      "description": "Moves a segmented HUD band around the selected area outline.",
       "geometry": "point",
+      "areaShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "hud_ring",
         "enabled": true,
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.25,
+        "radius": 0.3,
+        "width": 1,
+        "height": 1,
         "opacity": 1,
         "cycles": 1,
         "phase": 0,
@@ -1961,14 +1969,22 @@
     {
       "group": "Graphics & overlays",
       "label": "HUD cog",
-      "description": "Draws a rotating procedural gear around a selected point.",
+      "description": "Moves a toothed HUD band around the selected area outline.",
       "geometry": "point",
+      "areaShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "hud_cog",
         "enabled": true,
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.2,
+        "radius": 0.28,
+        "width": 1,
+        "height": 1,
         "opacity": 1,
         "cycles": 1,
         "phase": 0,
@@ -1986,14 +2002,22 @@
     {
       "group": "Graphics & overlays",
       "label": "Radial ticks",
-      "description": "Rotates sparse deterministic tick marks around a selected point.",
+      "description": "Moves sparse deterministic ticks around the selected area outline.",
       "geometry": "point",
+      "areaShapes": [
+        "radial",
+        "rectangular",
+        "global"
+      ],
       "template": {
         "type": "radial_ticks",
         "enabled": true,
+        "area": "radial",
         "x": 0.5,
         "y": 0.5,
-        "radius": 0.25,
+        "radius": 0.27,
+        "width": 1,
+        "height": 1,
         "opacity": 1,
         "cycles": 1,
         "phase": 0,

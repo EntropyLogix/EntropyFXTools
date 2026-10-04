@@ -55,14 +55,16 @@ The pre-release v3 area rollout currently covers `radial_blur`,
 `shooting_stars`, `dust`, `rain`, `snow`, `bubbles`, `swarm`, `droplets`,
 `leaves`, `glyphs`, `dna_helix`, `glitter`, `constellation`, `perspective`,
 `skew`, `projective_transform`, `bloom`, `star_glare`, `fluid_lens`,
-`brightness_pulse`, `flicker`, `local_shift`, `lens_flare`, `spotlight` and `fluid`.
+`brightness_pulse`, `flicker`, `local_shift`, `lens_flare`, `spotlight`, `fluid`,
+`hud_ring`, `hud_cog` and `radial_ticks`.
 Each requires a scalar `primitive.area` selector (`radial`, `rectangular`
 or `global`), with flat `x`, `y`, `radius`, `width` and `height` fields.
 There are no separate `radial` or `region` sections for these effects.
 Both shapes share the same center `x/y`; the rectangle starts at
 `x - width/2`, `y - height/2`. Sizes remain stored when inactive.
 The selector changes the output area, not the sampling algorithm, except
-for the explicitly shape-aware `fluid_lens`, `brightness_pulse`, `flicker` and `local_shift`
+for the explicitly shape-aware `fluid_lens`, `brightness_pulse`, `flicker`, `local_shift`
+and perimeter HUD
 profiles described below.
 Global has no local output restriction. Area permits changes inside its area;
 it does not require every pixel inside to change.
@@ -102,6 +104,19 @@ Local areas clip final RGBA writes without restricting fluid simulation,
 shape-image reads or lens-ghost calculations. Legacy v1/v2 explicitly migrates
 to Global with `radius: 0.25`, `width: 1`, `height: 1`, preserving source positions
 and renaming, not changing, the algorithmic radius. Incomplete v3 is rejected.
+HUD ring, HUD cog and Radial ticks move their patterns around the selected
+outline: a circle, a rectangle or the full frame perimeter. A cycle is a
+complete lap; rectangular motion uses distance along the perimeter, not
+rotation of the rectangle. Radius is the exterior boundary, with band
+thickness and teeth extending inward. The outline starts at the top center;
+positive cycles move left, down, right and up. In Global, inactive position
+and sizes do not affect the frame outline. Legacy v1/v2 retains its old
+circular renderer. Migration adds half the band thickness to radius, or
+half Base thickness plus any external Tooth length for HUD cog, selects
+Radial and stores inactive width/height as 1. V3 uses the common Area center
+instead of the legacy point center, so migrated HUD pixels may differ.
+Orbit markers is not part of this perimeter extension.
+
 Area coordinates and rectangular extents are normalized to their frame axes;
 the radial radius is normalized to the shorter frame side. This area has no
 new feather parameter. Legacy v1/v2 Radial blur explicitly migrates to Global;

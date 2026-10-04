@@ -7353,23 +7353,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "area": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Outer HUD radius normalized to the shorter frame side; bands and teeth extend inward."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area height normalized to the frame height."
                   },
                   "opacity": {
                     "type": "number",
@@ -7393,7 +7413,7 @@
                     "type": "number",
                     "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Total radial thickness of a generated ring, measured against the image’s shorter side."
+                    "description": "Band thickness measured inward from the selected area outline."
                   },
                   "radialSegments": {
                     "type": "integer",
@@ -7441,9 +7461,12 @@
                 "required": [
                   "type",
                   "enabled",
+                  "area",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "opacity",
                   "cycles",
                   "phase",
@@ -7458,7 +7481,7 @@
                 ],
                 "type": "object",
                 "title": "HUD ring",
-                "description": "Draws a rotating segmented HUD ring around a selected point."
+                "description": "Moves a segmented HUD band around the selected area outline."
               }
             },
             "required": [
@@ -7482,23 +7505,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "area": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Outer HUD radius normalized to the shorter frame side; bands and teeth extend inward."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area height normalized to the frame height."
                   },
                   "opacity": {
                     "type": "number",
@@ -7522,13 +7565,13 @@
                     "type": "number",
                     "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Thickness of the continuous body of a generated gear."
+                    "description": "Thickness of the continuous band inside the selected area outline."
                   },
                   "toothLength": {
                     "type": "number",
                     "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Radial distance by which gear teeth extend beyond the base."
+                    "description": "Tooth depth inside the selected area; external teeth fill its outermost band."
                   },
                   "toothCount": {
                     "type": "integer",
@@ -7568,9 +7611,12 @@
                 "required": [
                   "type",
                   "enabled",
+                  "area",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "opacity",
                   "cycles",
                   "phase",
@@ -7584,7 +7630,7 @@
                 ],
                 "type": "object",
                 "title": "HUD cog",
-                "description": "Draws a rotating procedural gear around a selected point."
+                "description": "Moves a toothed HUD band around the selected area outline."
               }
             },
             "required": [
@@ -7608,23 +7654,43 @@
                   "enabled": {
                     "type": "boolean"
                   },
+                  "area": {
+                    "enum": [
+                      "radial",
+                      "rectangular",
+                      "global"
+                    ],
+                    "type": "string"
+                  },
                   "x": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Horizontal position in the image; 0 is the left edge and 1 is the right edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center x normalized to the frame width."
                   },
                   "y": {
                     "type": "number",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "description": "Vertical position in the image; 0 is the top edge and 1 is the bottom edge."
+                    "minimum": -32767,
+                    "maximum": 32767,
+                    "description": "Shared effect center y normalized to the frame height."
                   },
                   "radius": {
                     "type": "number",
                     "exclusiveMinimum": 0,
-                    "maximum": 2,
-                    "description": "Effect radius as a fraction of the image’s shorter side."
+                    "maximum": 32767,
+                    "description": "Outer HUD radius normalized to the shorter frame side; bands and teeth extend inward."
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area width normalized to the frame width."
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 32767,
+                    "description": "Area height normalized to the frame height."
                   },
                   "opacity": {
                     "type": "number",
@@ -7648,7 +7714,7 @@
                     "type": "number",
                     "exclusiveMinimum": 0,
                     "maximum": 2,
-                    "description": "Total radial thickness of a generated ring, measured against the image’s shorter side."
+                    "description": "Tick depth measured inward from the selected area outline."
                   },
                   "segmentCount": {
                     "type": "integer",
@@ -7693,9 +7759,12 @@
                 "required": [
                   "type",
                   "enabled",
+                  "area",
                   "x",
                   "y",
                   "radius",
+                  "width",
+                  "height",
                   "opacity",
                   "cycles",
                   "phase",
@@ -7710,7 +7779,7 @@
                 ],
                 "type": "object",
                 "title": "Radial ticks",
-                "description": "Rotates sparse deterministic tick marks around a selected point."
+                "description": "Moves sparse deterministic ticks around the selected area outline."
               }
             },
             "required": [
